@@ -2,7 +2,6 @@
 import React from 'react';
 
 // == Import
-
 // == Composant
 const App = () => (
   <div className="app">

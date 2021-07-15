@@ -1,0 +1,19 @@
+header{
+  background-color: green;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  div{
+    padding: 100px;
+    a{
+      margin-left: 70px;
+    }
+  }
+
+  img{
+    height: 90%;
+  }
+}
