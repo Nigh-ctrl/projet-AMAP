@@ -1,19 +1,60 @@
+@import '../../styles/_vars.scss';
 header{
   background-color: green;
   display: flex;
-  height: 60px;
+  height: 70px;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
-
+  flex: 1 1 1;
   div{
-    padding: 100px;
-    a{
-      margin-left: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0px 50px ;
+
+  &.right a:nth-child(2){
+    margin-left: 50px;
     }
-  }
 
   img{
     height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  }
+  div.burger{
+    display: none;
+  }
+
+  @media(max-width: 375px){
+    padding: 0;
+    position: relative; 
+
+    div.left{
+      display: none;
+    }
+    div.right{
+      display: none;
+    }
+    div.center{
+      width: 100%;
+    }
+    div.burger{
+      padding: 0;
+      display: block;
+      box-sizing: border-box;
+      height: 100%;
+      max-width: 5%;
+      background-color: orange;
+      position: absolute;
+      right: 0px;
+      div{
+        height: 5px;
+        width: 10px;
+        background-color: blue;
+        margin-bottom: 3px;
+      }
+    }
   }
 }
