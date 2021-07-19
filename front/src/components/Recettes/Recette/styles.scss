@@ -1,4 +1,50 @@
 
+
+.nav-bar{
+  background-color: red;
+  height: 80px;
+  width: 100%;
+  border-bottom: solid 1px;
+}
+
+
+
+.nav__links{
+  
+  margin-right: 20px;
+
+
+}
+
+
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.titre{
+  text-align:center;
+  font-size: 2em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+  .header{
+    background-color: lightseagreen;
+    width: 100%;
+    height: 40px; 
+    padding-bottom: 50px;
+  
+
+
+  }
+
+  
+
+
+
 .card-recette{
   border-radius: 10%;
   width: 500px;

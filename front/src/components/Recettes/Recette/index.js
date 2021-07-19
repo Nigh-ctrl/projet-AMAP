@@ -8,6 +8,25 @@ function Recette(){
 
         
         <div>
+            <div class="header"></div>
+
+            <div class="titre">
+              <h1>Recettes</h1>
+              </div>
+
+              <div class="">
+              <nav class="nav-bar">
+
+                <ul class="nav__links">
+                  <li><a href="#">Printemps</a></li>
+                  <li><a href="#">Eté</a></li>
+                  <li><a href="#">Automne</a></li>
+                  <li><a href="#">Hiver</a></li>
+
+                </ul>
+              </nav>
+              
+              </div>
 
 
             <div class="card-recette">

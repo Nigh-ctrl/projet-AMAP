@@ -6,7 +6,7 @@ import Recette from '../Recettes/Recette';
 // == Composant
 const App = () => (
   <div className="app">
-    <h1>hello world!</h1>
+    
     <Recette/>
   </div>
 );
