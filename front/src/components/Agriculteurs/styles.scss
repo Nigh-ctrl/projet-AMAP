@@ -1,3 +1,15 @@
+.page-title {
+    font-size: 2.5em;
+    margin: 3rem;
+    text-align: center;
+}
+.relative-card {
+  position: relative;
+  top: -3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .agriculteurs {
   width: 100%;
 
@@ -7,13 +19,15 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    input {
+    &--select {
       width: 15em;
+      margin-right: 4em;
     }
   }
   &-text {
-    padding: 2em;
+    padding: 3rem;
     margin: auto;
+    font-size: 1.3em;
   }
   &-list {
     width: 100%;
@@ -25,8 +39,10 @@
   &-card {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    margin: 5em auto;
+    justify-content: center;
+    max-width: 27%;
+    max-height: 600px;
+    margin: 4em auto;
     padding: 1em;
     background-color: rgba(194, 192, 192, 0.445);
     border-radius: 2.5em;
@@ -40,46 +56,72 @@
     }
   }
   &-img {
-    width: 21.5em;
-    height: 20em;
-    // border-radius: 50%;
-    clip-path:ellipse(50% 50%);
+    max-width: 22em;
+    max-height: 22em;
+    border-radius: 50%;
     margin: auto;
-    position: relative;
-    top: -7em;
+    margin-bottom: 2em;
   }
   &-name {
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
+    margin-bottom: 1.2em;
   }
   &-card-text {
-    padding-bottom: 2em;
+    padding: 2em;
     margin: auto;
+    font-size: 1.1em;
   }
   &-tags {
-  display: flex;
-  justify-content: space-around;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    p{
+      color: white;
+      background-color: rgb(0, 131, 0);
+      max-height: 1.5em;
+      border-radius: 0.5em;
+      margin: 0.7em 0;
+      padding: 0 0.3em;
+    }
+  }
 }
 a {
   text-align: right;
   text-decoration: underline;
+  margin-right: 2.5em;
+  color: black;
 }
-.tag {
-  // tester avec un width: fit-content
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(0, 131, 0);
-  width: 10%;
-  height: 1.5em;
-  border-radius: 0.5em;
-  margin: 0.7em 0;
-}
-.page-title {
-    font-size: 2.5em;
-    padding: 1em;
-    text-align: center;
+@media screen and (max-width: 1400px)
+{
+  .agriculteurs-list {
+    flex-wrap: wrap;
   }
+  .agriculteurs-card {
+    flex-direction: column;
+    max-width: 45%;
+  }
+}
+@media screen and (max-width: 800px)
+{
+  .agriculteurs{
+    &-card {
+    flex-direction: column;
+    max-width: 60%;
+    max-height: 38rem;
+    }
+    &-img {
+    max-width: 80%;
+    }
+    &-form--select {
+      max-width: 80%;
+      max-height: 20%;
+      margin: 1em auto 2.5em auto;
+    }
+    &-text {
+      display: none;
+    }
+  }
+}

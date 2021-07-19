@@ -8,7 +8,7 @@
   padding: 0.3em 1em 0 1em;
   color: black;
 }
-.articles {
+.evenements {
   width: 100%;
 
   &-navBar {
@@ -19,17 +19,17 @@
     border-bottom: black 1px solid;
   }
   &-list {
-    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 2em auto;
+    margin: 2em 0;
   }
   &-card {
     display: flex;
     flex-direction: column;
-    max-width: 30%;
-    margin: 1.5em 2em;
+    width: 60%;
+    height: 35%;
+    margin: 1.5em auto;
     padding: 1em;
     background-color: rgba(194, 192, 192, 0.445);
     border-radius: 2.5em;
@@ -41,20 +41,13 @@
       background-color: rgb(194, 192, 192);
     }
   }
-  &-img {
-    max-width: 21em;
-    max-height: 15em;
+  &-title {
+    font-size: 2em;
+    margin: 1em 0;
     margin: auto;
   }
-  &-title {
-    font-size: 1em;
-    margin: 1em 0;
-  }
-  &-read-more {
-    margin-top: 1em;
-    text-align: right;
-    text-decoration: underline;
-    color: black;
+  &-text {
+    padding: 2em;
   }
 }
 .page-title {
@@ -64,25 +57,25 @@
   }
   @media screen and (max-width: 1240px)
   {
-    .articles-img {
+    .evenements-img {
       max-width: 100%;
     }
   }
-  @media screen and (max-width: 900px)
+  @media screen and (max-width: 1000px)
   {
-    .articles {
+    .evenements {
       &-navBar {
         display: none;
       }
       &-card {
-        max-width: 45%;
+        min-width: 50%;
       }
       &-list {
         flex-wrap: wrap;
+        flex-direction: column;
       }
       &-img {
         max-width: 100%;
       }
     }
   }
-
