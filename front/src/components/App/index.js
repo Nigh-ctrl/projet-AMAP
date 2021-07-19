@@ -2,12 +2,10 @@
 import React from 'react';
 
 // == Import
-import Annonces from'../Articles/Annonces';
 // == Composant
 const App = () => (
   <div className="app">
-    {/* <h1>hello world!</h1> */}
-    <Annonces />
+    <h1>hello world!</h1>
   </div>
 );
 

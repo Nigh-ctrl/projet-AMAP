@@ -52,4 +52,4 @@ const Annonces = () => (
 //   
 // };
 
-export default Annonces;Annonces
+export default Annonces;
