@@ -4,6 +4,16 @@
   display: flex;
   flex-direction: column;
   flex: auto 1 auto;
+
+  header{
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .app img {
