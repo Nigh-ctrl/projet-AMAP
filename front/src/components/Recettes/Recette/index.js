@@ -19,7 +19,7 @@ function Recette(){
             <div class="card-recette">
                 <div class="photo-recette"></div>
                 <h1 class="titre-recette">Titre recette</h1>
-                <h2 class="description-recette">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ad, officiis voluptatum in ipsa quas, architecto corporis sapiente aperiam, recusandae enim harum et repellendus eveniet maxime earum laborum quisquam quibusdam!</h2>
+                <h2 class="description-recette">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ad, officiis voluptatum in ipsa quas, architecto corporis sapiente aperiam, recusandae enim harum et repellendus eveniet maxime earum laborum quisquam quibusdam!</h2>
             </div>
             <div class="card-recette"> 
                 <div class="photo-recette"></div>
