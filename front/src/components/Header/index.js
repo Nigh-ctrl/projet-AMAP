@@ -6,10 +6,10 @@ import logo from "../../../public/logos/round.png"
 const Header =  () => (
     <header>
         <div className="left">
-            <span>Amap la Seyne sur Mer</span>
+                <img src={logo}/>
         </div>
         <div className="center">
-                <img src={logo}/>
+            <span>Amap la Seyne sur Mer</span>
         </div>
         <div className="right">
             <a>contact</a>
