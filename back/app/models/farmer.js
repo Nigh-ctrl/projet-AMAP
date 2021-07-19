@@ -7,7 +7,7 @@ class Farmer{
      * @param {Object} obj a litteral object with properties copied into the instance
      */
     constructor(obj={}){
-        for(propName in obj){
+        for(const propName in obj){
             this[propName]=obj[propName];
         }
     }
@@ -28,7 +28,7 @@ class Farmer{
             console.log(error);
         }
     }
-
+    
     /**
      * Fetches a single Farmer from the database
      * @static
