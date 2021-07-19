@@ -16,65 +16,62 @@ const Agriculteurs = () => (
     <div className="agriculteurs-list">
       {/* Ici un map lors de la dynamisation */}
       <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-        <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
+        <div className="relative-card">
+          <img className="agriculteurs-img" src={image} alt=""/>
+          <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
+          <div className="agriculteurs-tags">
+            <p className="tag">Miel</p>
+            <p className="tag">Fromage</p>
+          </div>
+          <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a className="read-more" href="">En savoir plus</a>
         </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
       </div>
       {/* fin du map */}
       <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-        <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
+        <div className="relative-card">
+          <img className="agriculteurs-img" src={image} alt=""/>
+          <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
+          <div className="agriculteurs-tags">
+            <p className="tag">Miel</p>
+            <p className="tag">Fromage</p>
+          </div>
+          <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a className="read-more" href="">En savoir plus</a>
         </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
-      </div>
-      <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-        <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
+      </div><div className="agriculteurs-card">
+        <div className="relative-card">
+          <img className="agriculteurs-img" src={image} alt=""/>
+          <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
+          <div className="agriculteurs-tags">
+            <p className="tag">Miel</p>
+            <p className="tag">Fromage</p>
+          </div>
+          <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a className="read-more" href="">En savoir plus</a>
         </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
-      </div>
-      <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-        <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
+      </div><div className="agriculteurs-card">
+        <div className="relative-card">
+          <img className="agriculteurs-img" src={image} alt=""/>
+          <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
+          <div className="agriculteurs-tags">
+            <p className="tag">Miel</p>
+            <p className="tag">Fromage</p>
+          </div>
+          <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a className="read-more" href="">En savoir plus</a>
         </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
-      </div>
-      <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-        <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
+      </div><div className="agriculteurs-card">
+        <div className="relative-card">
+          <img className="agriculteurs-img" src={image} alt=""/>
+          <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
+          <div className="agriculteurs-tags">
+            <p className="tag">Miel</p>
+            <p className="tag">Fromage</p>
+          </div>
+          <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a className="read-more" href="">En savoir plus</a>
         </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
-      </div>
-      <div className="agriculteurs-card">
-        <img className="agriculteurs-img" src={image} alt=""/>
-        <h3 className="agriculteurs-name">Nom de l'agriculteur</h3>
-       <div className="agriculteurs-tags">
-          <p className="tag">Tags</p>
-          <p className="tag">Tags</p>
-        </div>
-        <p className="agriculteurs-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="">En savoir plus</a>
       </div>
     </div>
   </article>
