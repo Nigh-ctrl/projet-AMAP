@@ -34,7 +34,7 @@ const Ete = () => (
         <a className="été-read-more" href="">En savoir plus</a>
       </article>
       <article className="été-card">
-        <h3 className="été-title">Recette d'Eté 3</h3>
+        <h3 className="été-title">Recette d'Eté  3</h3>
         <p></p>
         <img className="été-img" src="https://previews.123rf.com/images/timolina/timolina1803/timolina180300451/97690451-assiette-de-salade-saine-recette-de-fruits-de-mer-frais-crevettes-grill%C3%A9es-et-salade-de-l%C3%A9gumes-frai.jpg" alt=""/>
         <a className="été-read-more" href="">En savoir plus</a>
