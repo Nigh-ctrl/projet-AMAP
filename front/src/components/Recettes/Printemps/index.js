@@ -10,10 +10,10 @@ const Printemps = () => (
     <h1 className="page-title">Recettes de Printemps</h1>
     {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
     <nav className="printemps-navBar">
-      <a className="clicked" href="">Printemps</a>
-      <a className="nav-link" href="">Eté</a>
-      <a className="nav-link" href="">Automne</a>
-      <a className="nav-link" href="">Hiver</a>
+      <a className="clicked" href="">Recette de printemps</a>
+      <a className="nav-link" href="">Recette d'été</a>
+      <a className="nav-link" href="">Recette d'automne</a>
+      <a className="nav-link" href="">Recette d'hiver</a>
       <form action="POST">
       <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher...'/>
       </form>
@@ -23,20 +23,20 @@ const Printemps = () => (
       <article className="printemps-card">
         <h3 className="printemps-title">Recette de Printemps 1</h3>
         <p></p>
-        <img className="printemps-img" src="https://media.istockphoto.com/photos/senior-grandmother-with-grandson-carrying-wooden-box-with-apples-in-picture-id1059234782?s=612x612" alt=""/>
+        <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
       {/* fin du map */}
       <article className="printemps-card">
         <h3 className="printemps-title">Recette de Printemps 2</h3>
         <p></p>
-        <img className="printemps-img" src="https://media.istockphoto.com/photos/senior-grandmother-with-grandson-carrying-wooden-box-with-apples-in-picture-id1059234782?s=612x612" alt=""/>
+        <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
       <article className="printemps-card">
         <h3 className="printemps-title">Recette de Printemps 3</h3>
         <p></p>
-        <img className="printemps-img" src="https://media.istockphoto.com/photos/senior-grandmother-with-grandson-carrying-wooden-box-with-apples-in-picture-id1059234782?s=612x612" alt=""/>
+        <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
     </div>
