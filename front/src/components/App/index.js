@@ -9,11 +9,14 @@ import Footer from '../Footer'
 import Agriculteurs from '../Agriculteurs'
 import Articles from '../Articles'
 import Recettes from '../Recettes';
+
+
+
 // == Composant
 const App = () => (
   <div className="app">
     <Header/>
-    <Recettes />
+    
     <Footer/>
   </div>
 );
