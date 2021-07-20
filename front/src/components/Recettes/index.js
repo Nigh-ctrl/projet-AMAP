@@ -42,7 +42,7 @@ const Recettes = () => (
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
       <article className="recettes-card">
-        <h3 className="recettes-title">Recette 5</h3>
+        <h3 className="recettes-title">Recettes 5</h3>
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
