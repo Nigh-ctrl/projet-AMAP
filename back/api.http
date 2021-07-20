@@ -4,5 +4,8 @@ GET http://localhost:4000/agriculteurs
 ### Get one farmer
 GET http://localhost:4000/agriculteurs/4
 
+### Delete one farmer
+DELETE http://localhost:4000/agriculteurs/1
+
 ### Get farmers by product
 GET http://localhost:4000/agriculteurs/produits/4

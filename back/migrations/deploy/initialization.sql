@@ -51,8 +51,8 @@ CREATE TABLE recipe(
 );
 
 CREATE TABLE farmer_to_product(
-    farmer_id INT NOT NULL REFERENCES farmer(id),
-    product_id INT NOT NULL REFERENCES product(id)
+    farmer_id INT NOT NULL REFERENCES farmer(id) ON DELETE CASCADE,
+    product_id INT NOT NULL REFERENCES product(id) ON DELETE CASCADE
 );
 
 COMMIT;

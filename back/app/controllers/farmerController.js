@@ -27,6 +27,20 @@ const farmerController={
         response.json(farmers);
     },
 
+    delete: async (request, response) => {
+        try{
+            const id = parseInt(request.params.id, 10);
+            const farmer = await Farmer.findOne(id);
+
+            await farmer.delete();
+
+            response.json(true);
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+
 };
 
 module.exports=farmerController;

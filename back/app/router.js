@@ -22,6 +22,9 @@ router.get('/agriculteurs',farmerController.findAll);
  */
 router.get('/agriculteurs/:id(\\d+)',farmerController.findOne);
 
+
+router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
+
 /**
  * Responds with farmers with a specific product from database
  * @route GET /agriculteurs/produits/{id}
@@ -58,7 +61,7 @@ router.get('/agriculteurs/:id(\\d+)',farmerController.findOne);
   */
   router.get('/articles/categorie/:id(\\d+)', articleController.findByCategory);
 
-  
+
 
 /**
  * @route GET /recettes
