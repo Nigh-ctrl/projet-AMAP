@@ -12,9 +12,10 @@
   //selectionne seulement les enfants direct de acceuil
   > div {
     display: flex;
+    //alignement
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    //dimensions
     min-height: 30%;
     width: 90%;
     margin-top: auto;
@@ -25,9 +26,34 @@
     .text{
       display: flex;
       align-items: center;
-      height: 6em;
+      height: 6rem;
+      color: white;
+      text-shadow: 1px 1px grey;
+      font-size: large;
       }
 
+      background-size: 100%;
+      //image de fond pour chaques catégories
+    }
+      .presentation{
+        background-image: url(../../../public/images/presentation.jpg);
+        background-position: 0 150px;
+      }
+      .producteurs{
+        background-image: url(../../../public/images/producteurs.jpg);
+        background-position: 0 -40px;
+    }
+      .calendrier{
+        background-image: url(../../../public/images/calendrier.jpg);
+    }
+      .actu{
+        background-image: url(../../../public/images/actu.jpg);
+        background-position: 0 -50px;
+    }
+      .recettes{
+        background-size: 115%;
+        background-image: url(../../../public/images/recettes.jpg);
+        background-position: -20px -200px;
     }
 
 }
