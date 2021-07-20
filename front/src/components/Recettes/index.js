@@ -11,7 +11,7 @@ const Recettes = () => (
     {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
     <nav className="recettes-navBar">
       <a className="clicked" href="">Printemps</a>
-      <a className="nav-link" href="">Ete</a>
+      <a className="nav-link" href="">Eté</a>
       <a className="nav-link" href="">Automne</a>
       <a className="nav-link" href="">Hiver</a>
       <form action="POST">
