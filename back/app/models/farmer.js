@@ -13,7 +13,7 @@ class Farmer{
     }
     
     /**
-     * Fetches all Farmer from the database
+     * Fetches all farmer from the database
      * @static
      * @async
      * @returns {Array<Farmer>}
@@ -39,7 +39,7 @@ class Farmer{
     }
     
     /**
-     * Fetches a single Farmer from the database
+     * Fetches a single farmer from the database
      * @static
      * @async
      * @param {id} id 
@@ -70,11 +70,11 @@ class Farmer{
     }
 
     /**
-     * Fetches all posts with the given category id from database
+     * Fetches all farmers with the given category id from database
      * @static
      * @async
      * @param {number} productId The id of the searched product
-     * @returns {Array<Farmer>} can be empty with unpopular categories
+     * @returns {Array<Farmer>} can be empty with unpopular products
      */
     static async findByProduct(productId){
         try{
