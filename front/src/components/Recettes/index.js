@@ -10,7 +10,8 @@ const Recettes = () => (
     <h1 className="page-title">Recettes</h1>
     {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
     <nav className="recettes-navBar">
-      <a className="clicked" href="">Recette de printemps</a>
+    <a className="clicked" href="">Accueil des Recettes</a>
+      <a className="nav-link" href="">Recette de printemps</a>
       <a className="nav-link" href="">Recette d'été</a>
       <a className="nav-link" href="">Recette d'automne</a>
       <a className="nav-link" href="">Recette d'hiver</a>

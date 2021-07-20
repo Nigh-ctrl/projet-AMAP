@@ -16,7 +16,7 @@ import Recettes from '../Recettes';
 const App = () => (
   <div className="app">
     <Header/>
-    
+
     <Footer/>
   </div>
 );
