@@ -11,7 +11,7 @@ class Farmer{
             this[propName]=obj[propName];
         }
     }
-
+    
     /**
      * Fetches all Farmer from the database
      * @static
@@ -20,7 +20,16 @@ class Farmer{
      */
     static async findAll(){
         try{
-            const {rows}=await client.query('SELECT * FROM farmer');
+            const preparedQuery ={
+                text:`SELECT farmer.*,STRING_AGG(product.label,',') AS products 
+                FROM farmer 
+                JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id 
+                JOIN product ON product.id=farmer_to_product.product_id 
+                GROUP BY farmer.id 
+                ORDER BY farmer.id;`
+            }
+
+            const {rows}=await client.query(preparedQuery);
 
             return rows.map(row=>new Farmer(row));
 
@@ -39,7 +48,12 @@ class Farmer{
     static async findOne(id){
         try{
             const preparedQuery={
-                text:'SELECT * FROM farmer WHERE id=$1',
+                text:`SELECT farmer.*,STRING_AGG(product.label,',') AS products
+                FROM farmer
+                JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id
+                JOIN product ON product.id=farmer_to_product.product_id
+                WHERE farmer.id=$1
+                GROUP BY farmer.id;`,
                 values:[id]
             }
 
@@ -49,6 +63,34 @@ class Farmer{
             }else{
                 return null;
             }
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    /**
+     * Fetches all posts with the given category id from database
+     * @static
+     * @async
+     * @param {number} productId The id of the searched product
+     * @returns {Array<Farmer>} can be empty with unpopular categories
+     */
+    static async findByProduct(productId){
+        try{
+            const preparedQuery={
+                text:`SELECT farmer.*,product.label AS products
+                FROM farmer
+                JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id
+                JOIN product ON product.id=farmer_to_product.product_id
+                WHERE product.id=$1
+                ORDER BY farmer.id;`,
+                values:[productId]
+            }
+
+            const {rows}=await client.query(preparedQuery);
+
+            return rows.map(row=>new Farmer(row));
 
         }catch(error){
             console.log(error);
