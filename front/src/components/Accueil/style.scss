@@ -1,3 +1,36 @@
+@import '../../styles/_vars.scss';
+
+//agencement pour le telephone
+@media(max-width: $bp-phone) {
 .accueil{
   flex: 1;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 5% 0;
+
+  //selectionne seulement les enfants direct de acceuil
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    min-height: 30%;
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    border-radius: 25px;
+    //text a l'interieur des enfants direct
+    .text{
+      display: flex;
+      align-items: center;
+      height: 6em;
+      }
+
+    }
+
 }
+
+}
+
