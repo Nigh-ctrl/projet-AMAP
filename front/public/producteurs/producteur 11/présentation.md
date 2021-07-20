@@ -9,8 +9,8 @@ Son engagement principal est de produire des fruits de grande qualité. Les quan
 
 Vincent Mélé travaille en famille de façon artisanale. Tout est question de respect de la châtaigneraie et du produit. 
 
-	•	Le ramassage des châtaignes se fait au sol à la main avec un seau et une forcole. La main d'œuvre est familiale. Seules les plus belles châtaignes sont ramassées, les plus petits fruits sont laissés au sol pour nourrir les brebis. 
-	•	- Le tri des châtaignes est aussi réalisé à la main (calibre et variété). Puis elles sont trempées dans une grande bassine d'eau pour éliminer les châtaignes véreuses. Les autres sont mises à sécher sur une grille pour les conditionner plus tard.
+•Le ramassage des châtaignes se fait au sol à la main avec un seau et une forcole. La main d'œuvre est familiale. Seules les plus belles châtaignes sont ramassées, les plus petits fruits sont laissés au sol pour nourrir les brebis. 
+•Le tri des châtaignes est aussi réalisé à la main (calibre et variété). Puis elles sont trempées dans une grande bassine d'eau pour éliminer les châtaignes véreuses. Les autres sont mises à sécher sur une grille pour les conditionner plus tard.
 
 
 Les principales variétés de châtaignes cultivées sont : La Comballe (ancienne variété de châtaigne très gustative et légèrement sucrée), La Bouche Rouge et la Garinche

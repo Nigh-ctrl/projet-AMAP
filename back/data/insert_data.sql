@@ -13,7 +13,7 @@ Tomates longues, rondes, jaunes rouges…
 Courgettes longues, rondes, jaune ou vertes
 Aubergines (blanches ou violettes)
 Poivrons
-melons
+Melons
 Pomme de terre
 Celeri rave
 Salade
@@ -65,3 +65,23 @@ Son engagement principal est de produire des fruits de grande qualité. Les quan
 Les principales variétés de châtaignes cultivées sont : La Comballe (ancienne variété de châtaigne très gustative et légèrement sucrée), La Bouche Rouge et la Garinche
 La farine de châtaigne est une farine sans gluten-.
 La confiture de châtaigne est dite extra car c''est le produit le plus concentré en purée de châtaigne (minimum 45 % de purée de châtaigne) par rapport à une crème de marron (38 %) et une confiture de châtaigne (35 %)',1);
+
+INSERT INTO "product" ("label") VALUES
+('Légumes'),
+('Fruits'),
+('Plantes'),
+('Fromages'),
+('Légumineuse'),
+('Céréale'),
+('Confiture');
+
+INSERT INTO "farmer_to_product" ("farmer_id","product_id") VALUES
+(1,1),
+(1,2),
+(1,3),
+(2,4),
+(3,4),
+(4,5),
+(4,6),
+(5,2),
+(5,7);
