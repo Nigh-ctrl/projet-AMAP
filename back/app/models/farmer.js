@@ -79,7 +79,7 @@ class Farmer{
     static async findByProduct(productId){
         try{
             const preparedQuery={
-                text:`SELECT farmer.*,product.label::array AS products
+                text:`SELECT farmer.*,product.label AS products
                 FROM farmer
                 JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id
                 JOIN product ON product.id=farmer_to_product.product_id
@@ -97,15 +97,27 @@ class Farmer{
         }
     }
 
-    async delete(){
-        const id =this.id;
+    /**
+     * Delete the farmer from the database
+     * @async
+     * @returns {true}
+     */
+     async delete(){
 
-        const preparedQuery={
-            text:`DELETE FROM farmer WHERE id=$1`,
-            values:[id]
+        try{
+            const id =this.id;
+
+            const preparedQuery={
+                text:`DELETE FROM farmer WHERE id=$1`,
+                values:[id]
+            }
+
+            await client.query(preparedQuery);
+            
+        }catch(error){
+            console.log(error);
         }
-
-        await client.query(preparedQuery);
+        
     }
 
 };

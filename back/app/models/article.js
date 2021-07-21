@@ -26,7 +26,7 @@ class Article{
 
             const {rows}=await client.query(preparedQuery);
 
-            return rows.map(row=>new Farmer(row));
+            return rows.map(row=>new Article(row));
 
         }catch(error){
             console.log(error);
@@ -49,7 +49,7 @@ class Article{
             
             const {rows}=await client.query(preparedQuery);
             if(rows[0]){
-                return new Farmer(rows[0]);
+                return new Article(rows[0]);
             }else{
                 return null;
             }
@@ -75,11 +75,53 @@ class Article{
 
             const {rows}=await client.query(preparedQuery);
 
-            return rows.map(row=>new Farmer(row));
+            return rows.map(row=>new Article(row));
 
         }catch(error){
             console.log(error);
         }
+    }
+
+    /**
+     * Add an article in the database
+     * @async
+     */
+    async save(){
+        try{
+            const preparedQuery={
+                text:`INSERT INTO article(title, content, admin_id, category_id) 
+                VALUES($1, $2, $3, $4) RETURNING id`,
+                values:[this.title,this.content,this.admin_id,this.category_id]
+            }
+
+            await client.query(preparedQuery);
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    /**
+     * Delete the article from the database
+     * @async
+     * @returns {true}
+     */
+    async delete(){
+
+        try{
+            const id =this.id;
+
+            const preparedQuery={
+                text:`DELETE FROM article WHERE id=$1`,
+                values:[id]
+            }
+
+            await client.query(preparedQuery);
+
+        }catch(error){
+            console.log(error);
+        }
+        
     }
     
 };

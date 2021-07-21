@@ -4,8 +4,59 @@ GET http://localhost:4000/agriculteurs
 ### Get one farmer
 GET http://localhost:4000/agriculteurs/4
 
+### Get farmers by product
+GET http://localhost:4000/agriculteurs/produits/4
+
 ### Delete one farmer
 DELETE http://localhost:4000/agriculteurs/1
 
-### Get farmers by product
-GET http://localhost:4000/agriculteurs/produits/4
+
+
+### Get all articles
+GET http://localhost:4000/articles
+
+### Get one article
+GET http://localhost:4000/articles/4
+
+### Get articles by category
+GET http://localhost:4000/articles/categorie/4
+
+### Add an article
+POST http://localhost:4000/articles
+Content-Type: application/json
+
+{
+    "title": "Ceci est un article",
+    "content": "Troll du danemark",
+    "admin_id": 1,
+    "category_id": 2
+}
+
+### Delete one article
+DELETE http://localhost:4000/articles/2
+
+
+
+### Get all recipes
+GET http://localhost:4000/recettes
+
+### Get one recipe
+GET http://localhost:4000/recettes/4
+
+### Get recipes by season
+GET http://localhost:4000/articles/saison/4
+
+### Add an recipe
+POST http://localhost:4000/recettes
+Content-Type: application/json
+
+{
+    "title": "Ceci est une recette",
+    "ingredients": "Oeuf",
+    "description": "Faire cuire un oeuf",
+    "admin_id": 1,
+    "season_id": 2
+}
+
+### Delete one recipe
+DELETE http://localhost:4000/recettes/2

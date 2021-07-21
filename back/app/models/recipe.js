@@ -26,7 +26,7 @@ class Recipe{
 
             const {rows}=await client.query(preparedQuery);
 
-            return rows.map(row=>new Farmer(row));
+            return rows.map(row=>new Recipe(row));
 
         }catch(error){
             console.log(error);
@@ -49,7 +49,7 @@ class Recipe{
             
             const {rows}=await client.query(preparedQuery);
             if(rows[0]){
-                return new Farmer(rows[0]);
+                return new Recipe(rows[0]);
             }else{
                 return null;
             }
@@ -75,13 +75,56 @@ class Recipe{
 
             const {rows}=await client.query(preparedQuery);
 
-            return rows.map(row=>new Farmer(row));
+            return rows.map(row=>new Recipe(row));
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    /**
+     * Add a recipe in the database
+     * @async
+     */
+     async save(){
+        try{
+            const preparedQuery={
+                text:`INSERT INTO recipe(title, ingredients, description, admin_id, season_id) 
+                VALUES($1, $2, $3, $4, $5) RETURNING id`,
+                values:[this.title,this.ingredients, this.description,this.admin_id,this.season_id]
+            }
+
+            await client.query(preparedQuery);
 
         }catch(error){
             console.log(error);
         }
     }
     
+
+    /**
+     * Delete the recipe from the database
+     * @async
+     * @returns {true}
+     */
+     async delete(){
+
+        try{
+            const id =this.id;
+
+            const preparedQuery={
+                text:`DELETE FROM recipe WHERE id=$1`,
+                values:[id]
+            }
+
+            await client.query(preparedQuery);
+            
+        }catch(error){
+            console.log(error);
+        }
+        
+    }
+
 };
 
 module.exports=Recipe;

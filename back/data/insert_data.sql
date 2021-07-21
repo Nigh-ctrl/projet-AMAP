@@ -85,3 +85,9 @@ INSERT INTO "farmer_to_product" ("farmer_id","product_id") VALUES
 (4,6),
 (5,2),
 (5,7);
+
+INSERT INTO "category" ("label") VALUES
+('Panier de produits'),
+('Evenements'),
+('Annonces'),
+('Nutrition');

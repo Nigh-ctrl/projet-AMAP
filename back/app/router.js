@@ -6,6 +6,8 @@ const farmerController=require('./controllers/farmerController');
 const articleController=require('./controllers/articleController');
 const recipeController=require('./controllers/recipeController');
 
+/*******farmer********/
+
 /**
  * @route GET /agriculteurs
  * @group Farmers
@@ -22,9 +24,6 @@ router.get('/agriculteurs',farmerController.findAll);
  */
 router.get('/agriculteurs/:id(\\d+)',farmerController.findOne);
 
-
-router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
-
 /**
  * Responds with farmers with a specific product from database
  * @route GET /agriculteurs/produits/{id}
@@ -34,7 +33,16 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
  */
  router.get('/agriculteurs/produits/:id(\\d+)', farmerController.findByProduct);
 
+ /**
+ * @route DELETE /agriculteurs/{id}
+ * @group Farmers
+ * @param {number} id.path.required The id of the farmer to delete
+ * @returns {String} true or 500 - An error message
+ */
+router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
 
+
+/*******article********/
 
 /**
  * @route GET /articles
@@ -61,7 +69,24 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   */
   router.get('/articles/categorie/:id(\\d+)', articleController.findByCategory);
 
+  /**
+   * @route POST /articles
+   * @group Articles
+   * @returns {Object} 201 - The article just created
+   * @returns {String} 500 - An error message
+   */
+  router.post('/articles',articleController.addArticle);
 
+  /**
+   * @route DELETE /articles/{id}
+   * @group Farmers
+   * @param {number} id.path.required The id of the article to delete
+   * @returns {String} true or 500 - An error message
+   */
+  router.delete('/articles/:id(\\d+)',articleController.delete);
+
+
+/*******Recipe********/
 
 /**
  * @route GET /recettes
@@ -77,7 +102,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   * @returns {Article.model} 200 - A single recipe identified by its id
   * @returns {String} 404 - An error message
   */
- router.get('/recettes/:id(\\d+)',recipeController.findOne);
+  router.get('/recettes/:id(\\d+)',recipeController.findOne);
  
  /**
   * Responds with recipes with a specific season from database
@@ -88,11 +113,25 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   */
   router.get('/recettes/saison/:id(\\d+)', recipeController.findBySeason);
 
+  /**
+   * @route POST /recettes
+   * @group Recipes
+   * @returns {Object} 201 - The recipe just created
+   * @returns {String} 500 - An error message
+   */
+   router.post('/recettes',recipeController.addRecipe);
 
+   /**
+   * @route DELETE /recettes/{id}
+   * @group Recipes
+   * @param {number} id.path.required The id of the recipe to delete
+   * @returns {String} true or 500 - An error message
+   */
+  router.delete('/recettes/:id(\\d+)',recipeController.delete);
 
-router.use((_,response)=>{
-    response.status(404).json('Page non trouvée');
-});
+  router.use((_,response)=>{
+      response.status(404).json('Page non trouvée');
+  });
 
 
 module.exports=router;
