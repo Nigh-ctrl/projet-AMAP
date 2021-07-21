@@ -18,17 +18,14 @@
     justify-content: space-between;
     border-bottom: black 1px solid;
   }
+    h3{
 
-}
+      text-align: center;
+    }
 
-.recette-title {
-    font-size: 2.5em;
-    padding: 1em;
-    text-align: center;
-
-
-
+  &-img{
+    width: 50%;
+    height: 40%;
   }
 
-
-
+  }

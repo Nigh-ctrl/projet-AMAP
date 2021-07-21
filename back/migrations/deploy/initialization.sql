@@ -18,11 +18,17 @@ CREATE TABLE farmer(
     admin_id INT NOT NULL REFERENCES admin(id)
 );
 
+CREATE TABLE category(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    label VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE article(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
     content TEXT NOT NULL,
-    admin_id INT NOT NULL REFERENCES admin(id)
+    admin_id INT NOT NULL REFERENCES admin(id),
+    category_id INT NOT NULL REFERENCES category(id)
 );
 
 CREATE TABLE product(
@@ -30,37 +36,23 @@ CREATE TABLE product(
     label VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE season(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    label VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE recipe(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
-    ingredients VARCHAR(50) NOT NULL,
-    "description" VARCHAR(100) NOT NULL,
-    admin_id INT NOT NULL REFERENCES admin(id)
-);
-
-CREATE TABLE recipe_category(
-    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    label VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE article_category(
-    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    label VARCHAR(50) NOT NULL
+    ingredients TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    admin_id INT NOT NULL REFERENCES admin(id),
+    season_id INT NOT NULL REFERENCES season(id)
 );
 
 CREATE TABLE farmer_to_product(
-    farmer_id INT NOT NULL REFERENCES farmer(id),
-    product_id INT NOT NULL REFERENCES product(id)
-);
-
-CREATE TABLE recipe_to_recipe_category(
-    recipe_id INT NOT NULL REFERENCES recipe(id),
-    recipe_category_id INT NOT NULL REFERENCES recipe_category(id)
-);
-
-CREATE TABLE article_to_article_category(
-    article_id INT NOT NULL REFERENCES article(id),
-    article_category_id INT NOT NULL REFERENCES article_category(id)
+    farmer_id INT NOT NULL REFERENCES farmer(id) ON DELETE CASCADE,
+    product_id INT NOT NULL REFERENCES product(id) ON DELETE CASCADE
 );
 
 COMMIT;

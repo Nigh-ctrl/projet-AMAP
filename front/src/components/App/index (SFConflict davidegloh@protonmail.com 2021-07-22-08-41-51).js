@@ -26,7 +26,7 @@ import Recette from '../Recettes/Recette';
 const App = () => (
   <div className="app">
     <Header/>
-    <Automne/>
+    <Recette/>
     <Footer/>
   </div>
 );
