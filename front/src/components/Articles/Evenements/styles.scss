@@ -1,23 +1,10 @@
-.clicked {
-  background-color:  rgb(0, 131, 0);
-  color: white;
-  padding: 0.3em 1em 0 1em;
-  border-radius: 0.3em 0.3em 0 0;
-}
-.nav-link {
-  padding: 0.3em 1em 0 1em;
-  color: black;
-}
+// import des variables sass 
+@import '../../../styles/_vars.scss'; 
+
 .evenements {
   width: 100%;
+  flex: 1;
 
-  &-navBar {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: black 1px solid;
-  }
   &-list {
     display: flex;
     flex-wrap: wrap;
@@ -55,18 +42,15 @@
     padding: 1em;
     text-align: center;
   }
-  @media screen and (max-width: 1240px)
+  @media(max-width: $bp-tablet)
   {
     .evenements-img {
       max-width: 100%;
     }
   }
-  @media screen and (max-width: 1000px)
+  @media(max-width: $bp-tablet)
   {
     .evenements {
-      &-navBar {
-        display: none;
-      }
       &-card {
         min-width: 50%;
       }
