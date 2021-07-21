@@ -1,23 +1,13 @@
 import React from 'react';
+import NavBarre from '../NavBarre'
 // import PropTypes from 'prop-types';
-import 'semantic-ui-css/semantic.min.css';
-import { Icon, Input } from 'semantic-ui-react';
 
 import './styles.scss';
 
 const Evenements = () => (
 <section className="evenements">
     <h1 className="page-title">Événements</h1>
-    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-    <nav className="evenements-navBar">
-      <a className="nav-link" href="">Paniers de produits</a>
-      <a className="clicked" href="">Événements</a>
-      <a className="nav-link" href="">Annonces</a>
-      <a className="nav-link" href="">Nutrition</a>
-      <form action="POST">
-      <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher...'/>
-      </form>
-    </nav>
+    <NavBarre />
     <div className="evenements-list">
       {/* Ici un map lors de la dynamisation */}
       <article className="evenements-card">

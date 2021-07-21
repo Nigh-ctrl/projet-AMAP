@@ -1,3 +1,6 @@
+// import des variables sass 
+@import '../../styles/_vars.scss';
+
 .page-title {
     font-size: 2.5em;
     margin: 3rem;
@@ -94,7 +97,7 @@ a {
   margin-right: 2.5em;
   color: black;
 }
-@media screen and (max-width: 1400px)
+@media(max-width: $bp-tablet)
 {
   .agriculteurs-list {
     flex-wrap: wrap;
@@ -104,8 +107,11 @@ a {
     max-width: 45%;
   }
 }
-@media screen and (max-width: 800px)
+@media(max-width: $bp-phone)
 {
+  .page-title {
+    margin: auto;
+  }
   .agriculteurs{
     &-card {
     flex-direction: column;

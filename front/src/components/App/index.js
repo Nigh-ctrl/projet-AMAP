@@ -4,6 +4,7 @@ import React from 'react';
 import './styles.scss'
 // == Import
 import Header from '../Header'
+import Contact from '../Contact'
 import Accueil from '../Accueil'
 import Footer from '../Footer'
 import Agriculteurs from '../Agriculteurs'
