@@ -10,7 +10,8 @@ const Recettes = () => (
     <h1 className="page-title">Recettes</h1>
     {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
     <nav className="recettes-navBar">
-      <a className="clicked" href="">Recette de printemps</a>
+    <a className="clicked" href="">Accueil des Recettes</a>
+      <a className="nav-link" href="">Recette de printemps</a>
       <a className="nav-link" href="">Recette d'été</a>
       <a className="nav-link" href="">Recette d'automne</a>
       <a className="nav-link" href="">Recette d'hiver</a>
@@ -22,29 +23,36 @@ const Recettes = () => (
       {/* Ici un map lors de la dynamisation */}
       <article className="recettes-card">
         <h3 className="recettes-title">Recette 1 </h3>
+        
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
       {/* fin du map */}
       <article className="recettes-card">
         <h3 className="recettes-title"> Recette 2</h3>
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
       <article className="recettes-card">
         <h3 className="recettes-title">Recette 3 </h3>
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
       <article className="recettes-card">
         <h3 className="recettes-title">Recette 4 </h3>
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="recettes-read-more" href="">En savoir plus</a>
       </article>
       <article className="recettes-card">
         <h3 className="recettes-title">Recettes 5</h3>
         <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="recettes-read-more" href="">En savoir plus</a>
+      
       </article>
     </div>
   </section>
