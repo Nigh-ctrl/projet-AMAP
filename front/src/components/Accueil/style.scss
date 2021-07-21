@@ -1,3 +1,160 @@
+@import '../../styles/_vars.scss';
+
 .accueil{
   flex: 1;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 5% 0;
+
+  //selectionne seulement les enfants direct de acceuil
+  > div {
+    display: flex;
+    //alignement
+    justify-content: center;
+    align-items: center;
+    //dimensions
+    min-height: 30%;
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-size: 100%;
+
+    //text a l'interieur des enfants direct
+    .text{
+      display: flex;
+      align-items: center;
+      height: 6rem;
+      color: white;
+      text-shadow: 1px 1px grey;
+      font-size: large;
+      }
+  }
+
+  //image de fond pour chaque section
+  .presentation{
+    background-image: url(../../../public/images/presentation.jpg);
+  }
+  .producteurs{
+    background-image: url(../../../public/images/producteurs.jpg);
+  }
+  .calendrier{
+    background-image: url(../../../public/images/calendrier.jpg);
+  }
+  .actu{
+    background-image: url(../../../public/images/actu.jpg);
+  }
+  .recettes{
+    background-image: url(../../../public/images/recettes.jpg);
+  }
 }
+
+//agencement pour le telephone
+@media(max-width: $bp-phone) {
+  .accueil{
+      .presentation{
+        background-position: 0 150px;
+      }
+      .producteurs{
+        background-position: 0 -40px;
+    }
+      .actu{
+        background-position: 0 -50px;
+    }
+      .recettes{
+        background-size: 115%;
+        background-position: -20px -200px;
+    }
+  }
+}
+
+//agencement pour la tablette
+@media(min-width: $bp-phone){
+  .accueil{
+    min-height: 800px;
+    >div{
+      .text{
+        height: 7rem;
+      }
+    }
+    .presentation{
+      background-position: 0 -160px;
+    }
+    .producteurs{
+      background-position: 0 -95px;
+    }
+    .actu{
+      background-position: 0 -150px;
+    }
+    .recettes{
+      background-size: 120%;
+      background-position: -50px -270px;
+    }
+  }
+}
+
+//arrangement ordinateur
+@media(min-width: $bp-tablet){
+  .accueil{
+    padding: 2% 0 ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: 2fr;
+    grid-column-start: 1;
+    align-items: center;
+    justify-items: center;
+
+    > div {
+      width: 90%;
+      height: 90%;
+      background-size: 50%;
+      background-attachment: fixed;
+      .text{
+        font-size: 1.7em;
+      }
+    }
+
+
+    .presentation{
+      grid-column-start:  span 2;
+      grid-row-start: span 3;
+      order: -1;
+      height: 93%;
+      width: 95%;
+      background-size: 90%;
+      background-position: 220% 70% ;
+      
+    }
+    .producteurs{
+      grid-row-start: span 2;
+      order: -2;
+      background-position: 0 -5%;
+    }
+    .calendrier{
+      grid-row-start: span 2;
+      margin-top: 3vh;
+      background-position: 0% 110%;
+    }
+
+    .actu{
+      background-position:-10% 20%;
+      background-size: 40%;
+    }
+
+    .recettes{
+      background-size: 40%;
+      background-position: -30% -200%;
+    }
+
+    .presentation:hover{
+      size: 100%;
+      transition: ease-in-out(1s);
+    }
+
+
+  }
+}
+

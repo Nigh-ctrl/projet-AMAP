@@ -21,7 +21,7 @@ import Ete from '../Recettes/Ete';
 const App = () => (
   <div className="app">
     <Header/>
-    <Ete/>
+    <Accueil/>
     <Footer/>
   </div>
 );
