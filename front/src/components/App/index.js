@@ -14,11 +14,12 @@ import Evenements from '../Articles/Evenements'
 import Nutrition from '../Articles/Nutrition'
 import Paniers from '../Articles/Paniers'
 import Connexion from '../Connexion'
+import Presentation from '../Presentation'
 // == Composant
 const App = () => (
   <div className="app">
     <Header/>
-    <Accueil />
+    <Presentation />
     <Footer/>
   </div>
 );
