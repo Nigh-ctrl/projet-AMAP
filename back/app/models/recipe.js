@@ -87,17 +87,36 @@ class Recipe{
      * @async
      */
      async save(){
-        try{
-            const preparedQuery={
-                text:`INSERT INTO recipe(title, ingredients, description, admin_id, season_id) 
-                VALUES($1, $2, $3, $4, $5) RETURNING id`,
-                values:[this.title,this.ingredients, this.description,this.admin_id,this.season_id]
+
+        if(this.id){
+            try{
+                const preparedQuery={
+                    text:`UPDATE recipe
+                    SET title=$1, ingredients=$2, description=$3, admin_id=$4, season_id=$5
+                    WHERE id=$6`,
+                    values:[this.title,this.ingredients,this.description,this.admin_id,this.season_id,this.id]
+                }
+                
+                await client.query(preparedQuery);
+
+            }catch(error){
+                console.log(error);
             }
 
-            await client.query(preparedQuery);
+        }else{
+            try{
+                const preparedQuery={
+                    text:`INSERT INTO recipe(title, ingredients, description, admin_id, season_id) 
+                    VALUES($1, $2, $3, $4, $5) RETURNING id`,
+                    values:[this.title,this.ingredients, this.description,this.admin_id,this.season_id]
+                }
+    
+                await client.query(preparedQuery);
+    
+            }catch(error){
+                console.log(error);
+            }
 
-        }catch(error){
-            console.log(error);
         }
     }
     

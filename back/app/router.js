@@ -70,12 +70,22 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   router.get('/articles/categorie/:id(\\d+)', articleController.findByCategory);
 
   /**
+   * Create a new article object and insert it in the database
    * @route POST /articles
    * @group Articles
-   * @returns {Object} 201 - The article just created
+   * @returns {Article.model} 201 - The article just created
    * @returns {String} 500 - An error message
    */
   router.post('/articles',articleController.addArticle);
+
+   /**
+  * Update the corresponding article in the database
+  * @route GET /articles/categorie/{id}
+  * @group Articles
+  * @param {number} id.path.required The id of the product
+  * @returns {Article.model} 200 - An array of articles with a specific category
+  */
+    router.patch('/articles/:id(\\d+)', articleController.updateArticle);
 
   /**
    * @route DELETE /articles/{id}
@@ -91,7 +101,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
 /**
  * @route GET /recettes
  * @group Recipes
- * @returns {Array<Article>} 200 - An array of recipes
+ * @returns {Array<Recipe>} 200 - An array of recipes
  */
  router.get('/recettes',recipeController.findAll);
 
@@ -99,7 +109,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   * @route GET /recettes/{id}
   * @group Recipes
   * @param {number} id.path.required The id of the recipe to fetch
-  * @returns {Article.model} 200 - A single recipe identified by its id
+  * @returns {Recipe.model} 200 - A single recipe identified by its id
   * @returns {String} 404 - An error message
   */
   router.get('/recettes/:id(\\d+)',recipeController.findOne);
@@ -109,17 +119,27 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   * @route GET /recettes/saison/{id}
   * @group Recipes
   * @param {number} id.path.required The id of the season
-  * @returns {Array<Article>} 200 - An array of recipes with a specific season
+  * @returns {Array<Recipe>} 200 - An array of recipes with a specific season
   */
   router.get('/recettes/saison/:id(\\d+)', recipeController.findBySeason);
 
   /**
+   * Create a new recipe object and insert it in the database
    * @route POST /recettes
    * @group Recipes
-   * @returns {Object} 201 - The recipe just created
+   * @returns {Recipe.model} 201 - The recipe just created
    * @returns {String} 500 - An error message
    */
    router.post('/recettes',recipeController.addRecipe);
+  
+   /**
+  * Update the corresponding article in the database
+  * @route GET /articles/categorie/{id}
+  * @group Articles
+  * @param {number} id.path.required The id of the product
+  * @returns {Recipe.model} 200 - An array of articles with a specific category
+  */
+    router.patch('/recettes/:id(\\d+)', recipeController.updateRecipe);
 
    /**
    * @route DELETE /recettes/{id}

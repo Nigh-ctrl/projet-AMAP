@@ -46,7 +46,49 @@ const recipeController={
             const recipe = new Recipe(request.body);
             await recipe.save();
 
-            response.status(201).json(article);
+            response.status(201).json(recipe);
+
+        }catch(error){
+            response.status(500).json(error.message);
+        }
+
+    },
+
+    updateRecipe: async (request, response) => {
+
+        const id = parseInt(request.params.id, 10);
+
+        try{
+
+            const recipe = await Recipe.findOne(id);
+
+            const {title,ingredients,description,admin_id,season_id}=request.body;
+
+            //We do the test for each property of the object
+            //We modify the property only if it exists
+            if(recipe){
+                recipe.title = title;
+            }
+            
+            if(ingredients){
+                recipe.ingredients = ingredients;
+            }
+
+            if(description){
+                recipe.description = description;
+            }
+
+            if(admin_id){
+                recipe.admin_id = admin_id;
+            }
+            
+            if(season_id){
+                recipe.season_id = season_id;
+            }
+
+            await recipe.save();
+
+            response.status(201).json(recipe);
 
         }catch(error){
             response.status(500).json(error.message);

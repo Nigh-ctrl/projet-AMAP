@@ -83,21 +83,39 @@ class Article{
     }
 
     /**
-     * Add an article in the database
+     * Add or update an article in the database
      * @async
      */
     async save(){
-        try{
-            const preparedQuery={
-                text:`INSERT INTO article(title, content, admin_id, category_id) 
-                VALUES($1, $2, $3, $4) RETURNING id`,
-                values:[this.title,this.content,this.admin_id,this.category_id]
+
+        if(this.id){
+            try{
+                const preparedQuery={
+                    text:`UPDATE article
+                    SET title=$1, content=$2, admin_id=$3, category_id=$4
+                    WHERE id=$5`,
+                    values:[this.title,this.content,this.admin_id,this.category_id,this.id]
+                }
+                
+                await client.query(preparedQuery);
+
+            }catch(error){
+                console.log(error);
             }
 
-            await client.query(preparedQuery);
-
-        }catch(error){
-            console.log(error);
+        }else{
+            try{
+                const preparedQuery={
+                    text:`INSERT INTO article(title, content, admin_id, category_id) 
+                    VALUES($1, $2, $3, $4) RETURNING id`,
+                    values:[this.title,this.content,this.admin_id,this.category_id]
+                }
+    
+                await client.query(preparedQuery);
+    
+            }catch(error){
+                console.log(error);
+            }
         }
     }
 
