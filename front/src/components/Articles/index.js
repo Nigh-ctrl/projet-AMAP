@@ -1,7 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import 'semantic-ui-css/semantic.min.css'
-import { Icon, Input } from 'semantic-ui-react';
+import NavBarre from './NavBarre';
 
 import './styles.scss';
 
@@ -9,15 +8,7 @@ const Articles = () => (
   <section className="articles">
     <h1 className="page-title">Articles</h1>
     {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-    <nav className="articles-navBar">
-      <a className="clicked" href="">Paniers de produits</a>
-      <a className="nav-link" href="">Evenements</a>
-      <a className="nav-link" href="">Annonces</a>
-      <a className="nav-link" href="">Nutrition</a>
-      <form action="POST">
-      <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher par produit...'/>
-      </form>
-    </nav>
+    <NavBarre />
     <div className="articles-list">
       {/* Ici un map lors de la dynamisation */}
       <article className="articles-card">

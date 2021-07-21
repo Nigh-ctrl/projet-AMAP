@@ -1,4 +1,4 @@
-.nutrition {
+.paniers {
   width: 100%;
   flex: 1;
 
@@ -12,8 +12,7 @@
   &-card {
     display: flex;
     flex-direction: column;
-    width: 45%;
-    height: fit-content;
+    max-width: 30%;
     margin: 1.5em 2em;
     padding: 1em;
     background-color: rgba(194, 192, 192, 0.445);
@@ -27,19 +26,15 @@
     }
   }
   &-img {
-    width: 100%;
+    max-width: 100%;
     margin: auto;
-  }
-  &-text {
-    font-size: 1em;
-    margin: 1em auto;
   }
   &-title {
     font-size: 1em;
     margin: 1em 0;
   }
   &-read-more {
-    margin-bottom: 1em;
+    margin-top: 1em;
     text-align: right;
     text-decoration: underline;
     color: black;
@@ -50,19 +45,17 @@
     padding: 1em;
     text-align: center;
   }
-  @media screen and (max-width: 1400px)
+  @media screen and (max-width: 1240px)
   {
-    .nutrition {
-      &-card {
-        width: 60%;
-      }
+    .paniers-img {
+      max-width: 100%;
     }
   }
   @media screen and (max-width: 900px)
   {
-    .nutrition {
+    .paniers {
       &-card {
-        width: 90%;
+        max-width: 45%;
       }
       &-list {
         flex-wrap: wrap;
@@ -72,4 +65,3 @@
       }
     }
   }
-
