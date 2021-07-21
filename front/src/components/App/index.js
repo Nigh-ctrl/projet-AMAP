@@ -9,6 +9,10 @@ import Footer from '../Footer'
 import Agriculteurs from '../Agriculteurs'
 import Articles from '../Articles'
 import Recettes from '../Recettes';
+import Annonces from '../Articles/Annonces';
+import Evenements from '../Articles/Evenements';
+import Automne from '../Recettes/Automne';
+import Ete from '../Recettes/Ete';
 
 
 
@@ -16,7 +20,7 @@ import Recettes from '../Recettes';
 const App = () => (
   <div className="app">
     <Header/>
-
+    <Ete/>
     <Footer/>
   </div>
 );
