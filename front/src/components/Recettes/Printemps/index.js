@@ -24,19 +24,21 @@ const Printemps = () => (
         <h3 className="printemps-title">Recette de Printemps 1</h3>
         <p></p>
         <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
       {/* fin du map */}
       <article className="printemps-card">
         <h3 className="printemps-title">Recette de Printemps 2</h3>
-        <p></p>
         <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
       <article className="printemps-card">
         <h3 className="printemps-title">Recette de Printemps 3</h3>
-        <p></p>
+
         <img className="printemps-img" src="https://previews.123rf.com/images/svariophoto/svariophoto1409/svariophoto140900135/32083185-p-tes-aux-tomates-fra-ches-et-basilic.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="printemps-read-more" href="">En savoir plus</a>
       </article>
     </div>
