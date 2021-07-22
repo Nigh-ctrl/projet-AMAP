@@ -22,21 +22,22 @@ const Hiver = () => (
       {/* Ici un map lors de la dynamisation */}
       <article className="hiver-card">
         <h3 className="hiver-title">Recette d'hiver 1</h3>
-        <p></p>
         <img className="hiver-img" src="https://previews.123rf.com/images/foodandmore/foodandmore1609/foodandmore160900128/62635343-gourmet-d%C3%AEner-fondue-suisse-un-soir-d-hiver-avec-assortiment-de-fromages-sur-une-planche-%C3%A0-c%C3%B4t%C3%A9-d-un.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        
         <a className="hiver-read-more" href="">En savoir plus</a>
       </article>
       {/* fin du map */}
       <article className="hiver-card">
         <h3 className="hiver-title">Recette d'hiver 2</h3>
-        <p></p>
         <img className="hiver-img" src="https://previews.123rf.com/images/foodandmore/foodandmore1609/foodandmore160900128/62635343-gourmet-d%C3%AEner-fondue-suisse-un-soir-d-hiver-avec-assortiment-de-fromages-sur-une-planche-%C3%A0-c%C3%B4t%C3%A9-d-un.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="hiver-read-more" href="">En savoir plus</a>
       </article>
       <article className="hiver-card">
         <h3 className="hiver-title">Recette d'hiver 3</h3>
-        <p></p>
         <img className="hiver-img" src="https://previews.123rf.com/images/foodandmore/foodandmore1609/foodandmore160900128/62635343-gourmet-d%C3%AEner-fondue-suisse-un-soir-d-hiver-avec-assortiment-de-fromages-sur-une-planche-%C3%A0-c%C3%B4t%C3%A9-d-un.jpg" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         <a className="hiver-read-more" href="">En savoir plus</a>
       </article>
     </div>

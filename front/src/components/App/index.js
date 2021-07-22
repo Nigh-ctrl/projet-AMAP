@@ -12,8 +12,13 @@ import Articles from '../Articles'
 import Recettes from '../Recettes';
 import Annonces from '../Articles/Annonces';
 import Evenements from '../Articles/Evenements';
+import Printemps from '../Recettes/Printemps'
 import Automne from '../Recettes/Automne';
 import Ete from '../Recettes/Ete';
+import Hiver from '../Recettes/Hiver';
+import Agriculteur from '../Agriculteurs/Agriculteur';
+import Recette from '../Recettes/Recette';
+
 
 
 
