@@ -44,7 +44,7 @@ Content-Type: application/json
 }
 
 ### Delete one article
-DELETE http://localhost:4000/articles/2
+DELETE http://localhost:4000/articles/4
 
 
 
@@ -83,3 +83,13 @@ Content-Type: application/json
 
 ### Delete one recipe
 DELETE http://localhost:4000/recettes/3
+
+
+### Login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email": "remy.bregeon@free.fr",
+    "password": "toto"
+}

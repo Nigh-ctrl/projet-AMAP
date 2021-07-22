@@ -5,6 +5,11 @@ const router = Router();
 const farmerController=require('./controllers/farmerController');
 const articleController=require('./controllers/articleController');
 const recipeController=require('./controllers/recipeController');
+const adminController=require('./controllers/adminController');
+
+
+//We call here the middelwares we need
+const checkAdminMiddleware = require('./middlewares/checkAdmin');
 
 /*******farmer********/
 
@@ -39,7 +44,7 @@ router.get('/agriculteurs/:id(\\d+)',farmerController.findOne);
  * @param {number} id.path.required The id of the farmer to delete
  * @returns {String} true or 500 - An error message
  */
-router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
+router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.delete);
 
 
 /*******article********/
@@ -76,7 +81,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
    * @returns {Article.model} 201 - The article just created
    * @returns {String} 500 - An error message
    */
-  router.post('/articles',articleController.addArticle);
+  router.post('/articles',checkAdminMiddleware,articleController.addArticle);
 
    /**
   * Update the corresponding article in the database
@@ -85,7 +90,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   * @param {number} id.path.required The id of the product
   * @returns {Article.model} 200 - An array of articles with a specific category
   */
-    router.patch('/articles/:id(\\d+)', articleController.updateArticle);
+  router.patch('/articles/:id(\\d+)',checkAdminMiddleware, articleController.updateArticle);
 
   /**
    * @route DELETE /articles/{id}
@@ -93,7 +98,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
    * @param {number} id.path.required The id of the article to delete
    * @returns {String} true or 500 - An error message
    */
-  router.delete('/articles/:id(\\d+)',articleController.delete);
+  router.delete('/articles/:id(\\d+)',checkAdminMiddleware,articleController.delete);
 
 
 /*******Recipe********/
@@ -130,7 +135,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
    * @returns {Recipe.model} 201 - The recipe just created
    * @returns {String} 500 - An error message
    */
-   router.post('/recettes',recipeController.addRecipe);
+   router.post('/recettes',checkAdminMiddleware,recipeController.addRecipe);
   
    /**
   * Update the corresponding article in the database
@@ -139,7 +144,7 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
   * @param {number} id.path.required The id of the product
   * @returns {Recipe.model} 200 - An array of articles with a specific category
   */
-    router.patch('/recettes/:id(\\d+)', recipeController.updateRecipe);
+  router.patch('/recettes/:id(\\d+)',checkAdminMiddleware,recipeController.updateRecipe);
 
    /**
    * @route DELETE /recettes/{id}
@@ -147,7 +152,12 @@ router.delete('/agriculteurs/:id(\\d+)',farmerController.delete);
    * @param {number} id.path.required The id of the recipe to delete
    * @returns {String} true or 500 - An error message
    */
-  router.delete('/recettes/:id(\\d+)',recipeController.delete);
+  router.delete('/recettes/:id(\\d+)',checkAdminMiddleware,recipeController.delete);
+
+
+  /*******admin********/
+  router.post('/login',adminController.loginSubmit);
+
 
   router.use((_,response)=>{
       response.status(404).json('Page non trouvée');
