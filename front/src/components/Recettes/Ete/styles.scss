@@ -27,7 +27,7 @@
   &-card {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 35%;
     height: 35%;
     margin: 1.5em auto;
     padding: 1em;
@@ -41,13 +41,20 @@
       background-color: rgb(194, 192, 192);
     }
   }
+  &-img {
+    max-width: 30em;
+    max-height: 25em;
+    margin: auto;
+  }
   &-title {
     font-size: 2em;
     margin: 1em 0;
-    margin: auto;
   }
-  &-text {
-    padding: 2em;
+  &-read-more {
+    margin-top: 1.5em;
+    text-align: right;
+    text-decoration: underline;
+    color: black;
   }
 }
 .page-title {
@@ -57,13 +64,13 @@
   }
   @media screen and (max-width: 1240px)
   {
-    .evenements-img {
+    .annonces-img {
       max-width: 100%;
     }
   }
   @media screen and (max-width: 1000px)
   {
-    .été {
+    .annonces {
       &-navBar {
         display: none;
       }
@@ -79,3 +86,4 @@
       }
     }
   }
+

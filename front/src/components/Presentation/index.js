@@ -1,4 +1,5 @@
 import React from 'react';
+import schema from '../../../public/Infographie/AMAP-schema.png';
 
 import './styles.scss'
 
@@ -13,8 +14,8 @@ const Presentation = () => (
         </p>
     </div>
     <div className="presentation-schema">
-      <h2>Schéma de présentation de l'Amap</h2>
-      <img src="" alt=""/>
+    <h2>Schéma de présentation de l'Amap</h2>
+      <img src={schema} alt=""/>
     </div>
   </section>
 );
