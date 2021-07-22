@@ -2,6 +2,7 @@
 import React from "react"
 import './style.scss';
 import logo from "../../../public/logos/round.png"
+import {Link} from "react-router-dom"
 
 const Header =  () =>{
 
@@ -14,8 +15,12 @@ const Header =  () =>{
             <span>Amap la Seyne sur Mer</span>
         </div>
         <div className="right">
-            <a>contact</a>
+          <Link to="/" > 
             <a>accueil</a>
+          </Link>
+          <Link to="/contact">
+            <a>contact</a>
+          </Link>
         </div>
         <div className="burger">
           <div className="bar-1"/>
