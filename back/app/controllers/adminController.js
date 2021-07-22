@@ -1,6 +1,7 @@
 //We call here the class we needed
 const Admin = require('../models/admin');
 const jwtToken=require('../utilities/jwt');
+const bcrypt = require('bcrypt');
 
 const adminController={
 
@@ -21,10 +22,11 @@ const adminController={
             }
             
             // si on arrive jusqu'ici c'est que l'utilisateur existe
-            //const isPasswordValid = bcrypt.compareSync(password, user.password);
-            const isPasswordValid = password;
+            const isPasswordValid = bcrypt.compareSync(password, user.password);
+            //const isPasswordValid = password;
+            console.log(isPasswordValid);
 
-            if(isPasswordValid===user.password) {
+            if(isPasswordValid) {
                 return response.status(200).json({
                     "adminId":user.id,
                     "token":jwtToken.generateTokenForAdmin(user)

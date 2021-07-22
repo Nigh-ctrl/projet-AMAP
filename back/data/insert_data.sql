@@ -1,8 +1,4 @@
 
-INSERT INTO "admin" ("email","password") VALUES
-('remy.bregeon@free.fr','toto');
-
-
 INSERT INTO "farmer" ("firstname","name","location","biography","basket","admin_id") VALUES
 ('Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
 Thierry Vallarino exploite depuis trois décennies deux hectares au cœur de l’AOP Bandol. Soucieux de la terre, de la qualité de ses produits il n’a de cesse de chercher à faire évoluer ses pratiques entre demande des amapiens et pragmatisme de leur mise en culture (rotation des cultures, jachères pour le repos des sols, culture sous serre ou de plein champs, temps d’occupation du sol par production…).

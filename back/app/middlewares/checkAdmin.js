@@ -13,6 +13,8 @@ const checkAdminMiddleware=(request, response,next)=>{
         if(err){
             response.status(403).json({"error":"Vous n'avez pas les droits"});
         }else{
+            console.log(user);
+            request.user=user;
             next();
         }
     })

@@ -59,6 +59,7 @@ GET http://localhost:4000/recettes/saison/2
 
 ### Add an recipe
 POST http://localhost:4000/recettes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjY5Njg1MDcsImV4cCI6MTYyNjk3MDMwN30.mha-dZusz_sQbKOA38niTjam-q6hz6ey2EEPnRMUIUU
 Content-Type: application/json
 
 {
@@ -91,5 +92,5 @@ Content-Type: application/json
 
 {
     "email": "remy.bregeon@free.fr",
-    "password": "toto"
+    "password": "rremymarc"
 }
