@@ -33,12 +33,13 @@ const Recette = () => (
       </form>
     </nav>
 
-    <article className="recette-article">
-        <h1 className="recette-title">Recette vue principale</h1>
-        <img className="recette-img" src="https://previews.123rf.com/images/lenyvavsha/lenyvavsha1602/lenyvavsha160200204/52%C3%A6326607-curry-citrouille-aux-poivrons-et-tomates-sur-un-gros-plan-de-plaque-sur-la-table-horizontal.jpg" alt=""/>
+    <div className="recette-article">
+      <article>
+        <h1 class="recette-title">Recette vue principale</h1>
+        <img className="recette-img" src="" alt=""/>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        
-      </article>
+        </article>
+      </div>
   </section>
 );
 

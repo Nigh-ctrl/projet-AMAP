@@ -21,6 +21,19 @@
 
 }
 
+.recette-article{
+
+  display: flex;
+  justify-content: center;
+
+
+  &-img{
+
+    width: 50%;
+  }
+}
+
+
 .recette-title {
     font-size: 2.5em;
     padding: 1em;
