@@ -1,8 +1,8 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import { Dropdown, Button, Input } from 'semantic-ui-react';
-
 import './styles.scss'
+import axios from 'axios'
 
 const Connexion = () => {
   const options = [
@@ -26,7 +26,7 @@ const Connexion = () => {
             <Input icon='lock' placeholder='****' />
           </div>
           <div className="admin-login-submit">
-            <Button>Se connecter</Button>
+              <Button type="submit">Se connecter</Button>
           </div>
         </form>
       </div>
