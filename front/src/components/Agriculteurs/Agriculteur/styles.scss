@@ -1,0 +1,39 @@
+.agriculteur {
+  flex: 1;
+  margin-top: 2em;
+
+  &-main {
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  &-presentation {
+    width: 50%;
+  }
+  &-images {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-images img {
+    width: 70%;
+    border-radius: 25px;
+  }
+  &-location {
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+h1 {
+  text-align: right;
+  font-size: 2em;
+  margin: 1.5em;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
