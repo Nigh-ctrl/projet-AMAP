@@ -1,12 +1,14 @@
+
 // import des variables sass 
 @import '../../styles/_vars.scss';
 header{
-  background-color: green;
   display: flex;
   height: 70px;
   width: 100%;
   justify-content: space-between;
   flex: 1 1 1;
+  background-color: green;
+
   div{
   display: flex;
   align-items: center;
@@ -29,7 +31,14 @@ header{
   }
 
   //responsive téléphone
-  @media(max-width: $bp-phone){
+
+  //responsive tablette
+}
+
+
+//responsive telephone
+header{
+    @media(max-width: $bp-phone){
     padding: 0;
     position: relative; 
 
@@ -69,10 +78,14 @@ header{
     }
   }
 
-  //responsive tablette
-  @media(max-width: $bp-tablet){
+}
+
+
+header{
+    @media(max-width: $bp-tablet){
     div.left{
       display: none;
     }
   }
+
 }

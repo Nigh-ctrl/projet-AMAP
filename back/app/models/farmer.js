@@ -68,7 +68,7 @@ class Farmer{
             console.log(error);
         }
     }
-
+    
     /**
      * Fetches all farmers with the given category id from database
      * @static
