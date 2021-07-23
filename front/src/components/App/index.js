@@ -14,6 +14,7 @@ import Recettes from '../Recettes';
 import Connexion from '../Connexion'
 import Presentation from '../Presentation'
 
+
 // == Composant
 const App = () => (
   <div className="app">
@@ -27,7 +28,6 @@ const App = () => (
       <Route path="/recettes" exact component={Recettes}/>
       <Route path="/login" exact component={Connexion}/>
       <Footer/>
-
     </BrowserRouter>
   </div>
 );
