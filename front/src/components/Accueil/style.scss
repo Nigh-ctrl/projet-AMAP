@@ -116,6 +116,12 @@
       .text{
         font-size: 1.7em;
       }
+      transition: width 0.7s, height 0.7s, transform 0.7s;
+    }
+
+    > div:hover{
+    width: 95%;
+    height: 95%;
     }
 
 
