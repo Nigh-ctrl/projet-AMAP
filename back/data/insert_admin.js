@@ -7,7 +7,7 @@ console.log(db);
 const admins = require('./admin.json');
 
 async function importData() {
-    //on commence par supprimer les éventuelles data présentes dans les 2 tables
+    
     try {
         
         await db.query('DELETE FROM admin');
@@ -21,7 +21,7 @@ async function importData() {
 
             await db.query('INSERT INTO admin(email,password) VALUES($1,$2) RETURNING id', [admin.email, encryptedPassword]);
         }
-
+        
         //on ferme la connexion au client pg
         db.end();
 
