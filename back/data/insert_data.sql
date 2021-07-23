@@ -1,5 +1,5 @@
 
-INSERT INTO "admin" ("email","mdp") VALUES
+INSERT INTO "admin" ("email","password") VALUES
 ('remy.bregeon@free.fr','toto');
 
 

@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import {Route, BrowserRouter, link} from 'react-router-dom'
 // == styles
 import './styles.scss'
 // == Import
@@ -10,20 +11,24 @@ import Footer from '../Footer'
 import Agriculteurs from '../Agriculteurs'
 import Articles from '../Articles'
 import Recettes from '../Recettes';
-import Annonces from '../Articles/Annonces';
-import Evenements from '../Articles/Evenements';
-import Automne from '../Recettes/Automne';
-import Ete from '../Recettes/Ete';
-import Presentation from '../Presentation';
-import Agriculteur from '../Agriculteurs/Agriculteur';
+import Connexion from '../Connexion'
+import Presentation from '../Presentation'
 
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Header/>
-    <Presentation />
-    <Footer/>
+    <BrowserRouter>
+      <Header/>
+      <Route path="/" exact component={Accueil}/>
+      <Route path="/presentation" exact component={Presentation} />
+      <Route path="/contact" exact component={Contact}/>
+      <Route path="/producteurs" exact component={Agriculteurs}/>
+      <Route path="/articles" exact component={Articles}/>
+      <Route path="/recettes" exact component={Recettes}/>
+      <Route path="/login" exact component={Connexion}/>
+      <Footer/>
+    </BrowserRouter>
   </div>
 );
 

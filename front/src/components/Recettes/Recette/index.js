@@ -1,67 +1,54 @@
-import React from 'react'; 
-import './styles.scss';
+import React from "react";
+// import PropTypes from 'prop-types';
+import "semantic-ui-css/semantic.min.css";
+import { Icon, Input } from "semantic-ui-react";
 
+import "./styles.scss";
 
-function Recette(){
+const Recette = () => (
+  <section className="recette">
+    <h1 className="page-title"></h1>
+    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
+    <nav className="recettes-navBar">
+      <a className="clicked" href="">
+        Accueil des Recettes
+      </a>
+      <a className="nav-link" href="">
+        Recette de printemps
+      </a>
+      <a className="nav-link" href="">
+        Recette d'été
+      </a>
+      <a className="nav-link" href="">
+        Recette d'automne
+      </a>
+      <a className="nav-link" href="">
+        Recette d'hiver
+      </a>
+      <form action="POST">
+        <Input
+          icon={<Icon name="search" inverted circular link />}
+          placeholder="Rechercher par produit..."
+        />
+      </form>
+    </nav>
 
-    return(
+    <div className="recette-article">
+      <article>
+        <h1 class="recette-title">Recette vue principale</h1>
+        <img className="recette-img" src="" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </article>
+      </div>
+  </section>
+);
 
-        
-        <div>
-            <div class="header"></div>
+// Content.propTypes = {
+//
+// };
 
-            <div class="titre">
-              <h1>Recettes</h1>
-              </div>
-
-              <div class="">
-              <nav class="nav-bar">
-
-                <ul class="nav__links">
-                  <li><a href="#">Printemps</a></li>
-                  <li><a href="#">Eté</a></li>
-                  <li><a href="#">Automne</a></li>
-                  <li><a href="#">Hiver</a></li>
-
-                </ul>
-              </nav>
-              
-              </div>
-
-
-            <div class="card-recette">
-                
-                <h1 class="titre-recette">Titre recette</h1>
-                <h2 class="description-recette">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nostrum doloribus culpa dicta. Ipsa quaerat maxime, cum debitis voluptatum natus explicabo, enim aut, quos similique eveniet doloremque nobis corporis aspernatur?</h2>
-            </div>
-
-            <div class="card-recette">
-                
-                <h1 class="titre-recette">Titre recette</h1>
-                <h2 class="description-recette">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ad, officiis voluptatum in ipsa quas, architecto corporis sapiente aperiam, recusandae enim harum et repellendus eveniet maxime earum laborum quisquam quibusdam!</h2>
-            </div>
-            <div class="card-recette"> 
-                
-                <h1 class="titre-recette">Titre recette</h1>
-                <h2 class="description-recette">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusantium aperiam quis quam fugiat placeat ducimus porro, magni ad quos. Ad natus sequi eaque provident id ea tempore dolore praesentium!</h2>
-            </div>
-            <div class="card-recette"> 
-                
-                <h1 class="titre-recette">Titre recette</h1>
-                <h2 class="description-recette">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores accusantium aperiam quis quam fugiat placeat ducimus porro, magni ad quos. Ad natus sequi eaque provident id ea tempore dolore praesentium!</h2>
-            </div>
-
-
-        </div>
-        
-
-    )
-
-
-
-}
-
-
-
+// Content.defaultProps = {
+//
+// };
 
 export default Recette;

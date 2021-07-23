@@ -3,7 +3,7 @@ const Article = require('../models/article');
 
 //The controller which contains all the method for the article class
 const articleController={
-
+    
     findAll:async(_,response)=>{
         try{
             const articles=await Article.findAll();
