@@ -16,10 +16,10 @@ const Header =  () =>{
         </div>
         <div className="right">
           <Link to="/" > 
-            <a>accueil</a>
+            <p>accueil</p>
           </Link>
           <Link to="/contact">
-            <a>contact</a>
+            <p>contact</p>
           </Link>
         </div>
         <div className="burger">
