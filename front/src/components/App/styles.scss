@@ -6,6 +6,10 @@
   flex-direction: column;
   font-family: $main-font;
 
+  a{
+    text-decoration: none;
+  }
+
   header{
     display: flex;
     flex-direction: row;
@@ -25,8 +29,8 @@
       color: white;
     }
   }
-}
 
+}
 
 
 .app Accueil {

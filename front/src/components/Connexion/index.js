@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import 'semantic-ui-css/semantic.min.css'
-import { Button, Input } from 'semantic-ui-react';
+import './styles.scss'
 import axios from 'axios'
 
 import './styles.scss'

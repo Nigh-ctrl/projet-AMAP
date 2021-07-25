@@ -1,7 +1,5 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import "semantic-ui-css/semantic.min.css";
-import { Icon, Input } from "semantic-ui-react";
 
 import "./styles.scss";
 

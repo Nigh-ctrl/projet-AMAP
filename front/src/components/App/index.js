@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import {Route, BrowserRouter, link} from 'react-router-dom'
+import {Route, BrowserRouter} from 'react-router-dom'
 // == styles
 import './styles.scss'
 // == Import
@@ -8,7 +8,7 @@ import Header from '../Header'
 import Contact from '../Contact'
 import Accueil from '../Accueil'
 import Footer from '../Footer'
-import Agriculteurs from '../Agriculteurs'
+import Producteurs from '../Producteurs'
 import Articles from '../Articles'
 import Recettes from '../Recettes';
 import Connexion from '../Connexion'
@@ -22,7 +22,7 @@ const App = () => (
       <Route path="/" exact component={Accueil}/>
       <Route path="/presentation" exact component={Presentation} />
       <Route path="/contact" exact component={Contact}/>
-      <Route path="/producteurs" exact component={Agriculteurs}/>
+      <Route path="/producteurs" exact component={Producteurs}/>
       <Route path="/articles" exact component={Articles}/>
       <Route path="/recettes" exact component={Recettes}/>
       <Route path="/login" exact component={Connexion}/>

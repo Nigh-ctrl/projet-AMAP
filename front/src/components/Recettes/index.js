@@ -1,7 +1,5 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import 'semantic-ui-css/semantic.min.css'
-import { Icon, Input } from 'semantic-ui-react';
 
 import './styles.scss';
 
@@ -16,7 +14,7 @@ const Recettes = () => (
       <a className="nav-link" href="">Recette d'automne</a>
       <a className="nav-link" href="">Recette d'hiver</a>
       <form action="POST">
-      <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher par produit...'/>
+      <input icon={<icon name='search' inverted circular link />}placeholder='Rechercher par produit...'/>
       </form>
     </nav>
     <div className="recettes-list">
