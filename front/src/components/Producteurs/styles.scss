@@ -1,10 +1,11 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
-wrapper{
+main{
   width: 100%;
   display: flex;
   justify-content: center;
+  flex: 1;
 }
 
 .page-title{
@@ -53,12 +54,20 @@ wrapper{
   
   //style pour une carte
   .producteur{
+    display: flex;
+    a{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 440px;
+      max-height: 600px;
+    }
     &-card {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 27%;
-      min-width: 22rem;
+      max-width: 440px;
       max-height: 600px;
       margin: 4em auto;
       padding: 1em;
