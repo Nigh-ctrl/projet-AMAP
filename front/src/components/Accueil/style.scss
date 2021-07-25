@@ -115,6 +115,7 @@
       background-attachment: fixed;
       .text{
         font-size: 1.7em;
+        text-decoration: none !important;
       }
       transition: width 0.7s, height 0.7s, transform 0.7s;
     }
@@ -133,6 +134,11 @@
       width: 95%;
       background-size: 90%;
       background-position: 220% 70% ;
+
+      &:hover{
+        width: 98%;
+        height: 98%;
+      }
       
     }
     .producteurs{

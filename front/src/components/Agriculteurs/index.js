@@ -1,7 +1,5 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import 'semantic-ui-css/semantic.min.css';
-import { Select } from 'semantic-ui-react';
 import image from '../../../public/producteurs/producteur 3/profil_1.jpg';
 
 import './styles.scss';
@@ -22,7 +20,7 @@ const Agriculteurs = () => {
       <h1 className="page-title">Nos agriculteurs</h1>
       <form action="get">
         <div className="agriculteurs-form">
-          <Select className="agriculteurs-form--select" placeholder='Selectionnez un produit' options={productOptions} /> 
+          <select className="agriculteurs-form--select" placeholder='Selectionnez un produit' options={productOptions} /> 
         </div>
       </form>
       <p className="agriculteurs-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
