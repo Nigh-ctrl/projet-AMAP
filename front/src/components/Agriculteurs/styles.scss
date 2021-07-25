@@ -1,10 +1,20 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
-.page-title {
+wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page-title{
     font-size: 2.5em;
-    margin: 3rem;
-    text-align: center;
+    background-color: $tertiary-color;
+    color: $last-color;
+    font-weight: 700;
+    border-radius: 2.5em;
+    margin: 3rem auto;
+    width: 70%;
 }
 .relative-card {
   position: relative;
@@ -13,8 +23,8 @@
   flex-direction: column;
   justify-content: center;
 }
-.agriculteurs {
-  width: 100%;
+.producteurs {
+  width: 90%;
 
   &-form {
     display: flex;
@@ -27,76 +37,100 @@
       margin-right: 4em;
     }
   }
+
   &-text {
     padding: 3rem;
     margin: auto;
     font-size: 1.3em;
   }
+  
   &-list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 2em;
+    margin-top: 50px;
   }
-  &-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 27%;
-    max-height: 600px;
-    margin: 4em auto;
-    padding: 1em;
-    background-color: rgba(194, 192, 192, 0.445);
-    border-radius: 2.5em;
-    position: static;
+  
+  //style pour une carte
+  .producteur{
+    &-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 27%;
+      min-width: 22rem;
+      max-height: 600px;
+      margin: 4em auto;
+      padding: 1em;
+      background-color: $tertiary-color;
+      border-radius: 2.5em;
+      position: static;
+      transition: width 0.7s, height 0.7s, transform 0.7s;
+      color: $last-color;
 
-    &:hover {
-      -webkit-transform: scale(1.1);
-	    transform: scale(1.1);
-      transition: .2s ease-in-out;
-      background-color: rgb(194, 192, 192);
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+
+    &-img {
+      z-index: 1;
+      max-width: 22em;
+      max-height: 22em;
+      border-radius: 2.5em;
+      border: 10px solid $last-color;
+      margin: auto;
+      margin-bottom: 2em;
+    }
+
+    &-name {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 1.2em;
+    }
+
+    &-card-text {
+      padding: 2em;
+      margin: auto;
+      font-size: 1.1em;
     }
   }
-  &-img {
-    max-width: 22em;
-    max-height: 22em;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 2em;
-  }
-  &-name {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 1.2em;
-  }
-  &-card-text {
-    padding: 2em;
-    margin: auto;
-    font-size: 1.1em;
-  }
-  &-tags {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-    p{
-      color: white;
-      background-color: rgb(0, 131, 0);
-      max-height: 1.5em;
-      border-radius: 0.5em;
-      margin: 0.7em 0;
-      padding: 0 0.3em;
+    .tags-container{
+      display: flex;
+      width: 100%;
+      padding: 0% 10%;
+      justify-content: space-around;
+
+      .tag{
+        background-color: $last-color;
+        border-radius: 2.5em;
+        transition: transform 0.7s;
+
+        &:hover{
+        -webkit-transform: scale(1.2);
+        cursor: pointer;
+      }
+
+        p{
+          color: white;
+          font-size: large;
+          margin: 5px 10px;
+      }
     }
-  }
+    }
 }
+
 a {
   text-align: right;
   text-decoration: underline;
   margin-right: 2.5em;
   color: black;
 }
+
+
 @media(max-width: $bp-tablet)
 {
   .agriculteurs-list {
@@ -107,7 +141,7 @@ a {
     max-width: 45%;
   }
 }
-@media(max-width: $bp-phone)
+@media(max-width: $bp-tablet)
 {
   .page-title {
     margin: auto;

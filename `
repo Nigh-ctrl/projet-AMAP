@@ -3,9 +3,8 @@ $main-font: 'montserrat';
 
 //colors
 $main-color: #008300;
-$secondary-color: #5bc148;
-$tertiary-color: #74b2df;
-$last-color: #004c73;
+$secondary-color: #00bfff;
+$tertiary-color: ;
 
 //point de bascule pour le entre desktop tablette et telephone
 $bp-phone: 520px;

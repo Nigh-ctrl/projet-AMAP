@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import {Route, BrowserRouter, link} from 'react-router-dom'
+import {Route, BrowserRouter} from 'react-router-dom'
 // == styles
 import './styles.scss'
 // == Import
