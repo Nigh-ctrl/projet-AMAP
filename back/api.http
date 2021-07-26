@@ -23,10 +23,11 @@ GET http://localhost:4000/articles/categorie/2
 
 ### Add an article
 POST http://localhost:4000/articles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczMTI0MTQsImV4cCI6MTYyNzMxNjAxNH0.wyczpXUVFupONxciyQ7kt60Gp6NyPmwVlg3Sx3yG_Bc
 Content-Type: application/json
 
 {
-    "title": "Ceci est un article",
+    "title": "titre de l'article",
     "content": "Content de l'article",
     "admin_id": 1,
     "category_id": 2
@@ -34,6 +35,7 @@ Content-Type: application/json
 
 ### Modify an article
 PATCH  http://localhost:4000/articles/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczMTI0MTQsImV4cCI6MTYyNzMxNjAxNH0.wyczpXUVFupONxciyQ7kt60Gp6NyPmwVlg3Sx3yG_Bc
 Content-Type: application/json
 
 {
@@ -52,18 +54,18 @@ DELETE http://localhost:4000/articles/4
 GET http://localhost:4000/recettes
 
 ### Get one recipe
-GET http://localhost:4000/recettes/2
+GET http://localhost:4000/recettes/1
 
 ### Get recipes by season
 GET http://localhost:4000/recettes/saison/2
 
 ### Add an recipe
 POST http://localhost:4000/recettes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjY5Njg1MDcsImV4cCI6MTYyNjk3MDMwN30.mha-dZusz_sQbKOA38niTjam-q6hz6ey2EEPnRMUIUU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczMTI0MTQsImV4cCI6MTYyNzMxNjAxNH0.wyczpXUVFupONxciyQ7kt60Gp6NyPmwVlg3Sx3yG_Bc
 Content-Type: application/json
 
 {
-    "title": "Ceci est une recette",
+    "title": "Titre de la recette",
     "ingredients": "Ingrédients de la recette",
     "description": "Description de la recette",
     "admin_id": 1,
@@ -72,6 +74,7 @@ Content-Type: application/json
 
 ### Modify a recipe
 PATCH  http://localhost:4000/recettes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczMDc3NDMsImV4cCI6MTYyNzMxMTM0M30.faPnkgr80FyOU7e3Z1qpGnyIROyKDkM8qGhAcwDigdk
 Content-Type: application/json
 
 {
@@ -92,5 +95,5 @@ Content-Type: application/json
 
 {
     "email": "remy.bregeon@free.fr",
-    "password": "rremymarc"
+    "password": "test"
 }
