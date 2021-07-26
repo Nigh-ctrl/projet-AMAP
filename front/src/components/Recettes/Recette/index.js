@@ -24,8 +24,8 @@ const Recette = () => (
         Recette d'hiver
       </a>
       <form action="POST">
-        <Input
-          icon={<Icon name="search" inverted circular link />}
+        <input
+          type='text'
           placeholder="Rechercher par produit..."
         />
       </form>
@@ -33,11 +33,11 @@ const Recette = () => (
 
     <div className="recette-article">
       <article>
-        <h1 class="recette-title">Recette vue principale</h1>
+        <h1 className="recette-title">Recette vue principale</h1>
         <img className="recette-img" src="" alt=""/>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        </article>
-      </div>
+      </article>
+    </div>
   </section>
 );
 

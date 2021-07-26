@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 import './styles.scss';
@@ -8,6 +9,7 @@ import './styles.scss';
 const Recettes = () => {
 
   const [recettes, setRecettes] = useState([]);
+  const [recetteId, setRecetteId] = useState(recettes.id); // si on remplace en dur les données on récupère les données de l'api
   
   const getRecipes = () => (
     //requete axios
@@ -19,8 +21,27 @@ const Recettes = () => {
       }
     })
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setRecettes(res.data);
+    })
+    .catch((e) => {
+      console.log("erreur lors du login", e);
+    })
+  )
+ 
+  const getOneRecipe = () => (
+    //requete axios
+    axios({
+      method: 'get',
+      url: `http://localhost:5000/recettes/${recetteId}`,
+      data: {
+        recetteId: recetteId
+      }
+    })
+    .then((res) => {
+      console.log(res.data);
+      setRecetteId(res.data);
+      console.log(recetteId);
     })
     .catch((e) => {
       console.log("erreur lors du login", e);
@@ -28,6 +49,7 @@ const Recettes = () => {
   )
 
   useEffect(getRecipes, []);
+  useEffect(getOneRecipe, []);
 
   return(
     <section className="recettes">
@@ -50,7 +72,9 @@ const Recettes = () => {
               <h3 className="recettes-title">{recette.title}</h3>
               <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
               <p>{recette.description}</p>
-              <a className="recettes-read-more" href="">En savoir plus</a>
+                <Link to={`/recette/${recette.id}`}>
+                <div className="recettes-read-more">En savoir plus</div>
+                </Link>
             </article>
           ))
         }
