@@ -1,60 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
+import axios from 'axios';
+
 
 import './styles.scss';
 
-const Recettes = () => (
-  <section className="recettes">
-    <h1 className="page-title">Recettes</h1>
-    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-    <nav className="recettes-navBar">
-    <a className="clicked" href="">Accueil des Recettes</a>
-      <a className="nav-link" href="">Recette de printemps</a>
-      <a className="nav-link" href="">Recette d'été</a>
-      <a className="nav-link" href="">Recette d'automne</a>
-      <a className="nav-link" href="">Recette d'hiver</a>
-      <form action="POST">
-      <input icon={<icon name='search' inverted circular link />}placeholder='Rechercher par produit...'/>
-      </form>
-    </nav>
-    <div className="recettes-list">
-      {/* Ici un map lors de la dynamisation */}
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 1 </h3>
-        
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      {/* fin du map */}
-      <article className="recettes-card">
-        <h3 className="recettes-title"> Recette 2</h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 3 </h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 4 </h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recettes 5</h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      
-      </article>
-    </div>
-  </section>
-);
+const Recettes = () => {
+
+  const [recettes, setRecettes] = useState([]);
+  
+  const getRecipes = () => (
+    //requete axios
+    axios({
+      method: 'get',
+      url: 'http://localhost:5000/recettes',
+      data: {
+        recettes: recettes
+      }
+    })
+    .then((res) => {
+      console.log(res.data);
+      setRecettes(res.data);
+    })
+    .catch((e) => {
+      console.log("erreur lors du login", e);
+    })
+  )
+
+  useEffect(getRecipes, []);
+
+  return(
+    <section className="recettes">
+      <h1 className="page-title">Recettes</h1>
+      {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
+      <nav className="recettes-navBar">
+      <a className="clicked" href="">Accueil des Recettes</a>
+        <a className="nav-link" href="">Recette de printemps</a>
+        <a className="nav-link" href="">Recette d'été</a>
+        <a className="nav-link" href="">Recette d'automne</a>
+        <a className="nav-link" href="">Recette d'hiver</a>
+        <form action="POST">
+        <input placeholder='Rechercher par produit...'/>
+        </form>
+      </nav>
+      <div className="recettes-list">
+        {
+          recettes.map((recette) => (
+            <article key={recette.id+recette.name} className="recettes-card">
+              <h3 className="recettes-title">{recette.title}</h3>
+              <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+              <p>{recette.description}</p>
+              <a className="recettes-read-more" href="">En savoir plus</a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  )
+};
 
 // Content.propTypes = {
 // 
