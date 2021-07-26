@@ -40,20 +40,20 @@ const Connexion = () => {
         <h1>Connexion</h1>
         <form className="admin-login-form" onSubmit={handleSubmit}>
           <div className="admin-login-email">
-            <Input
+            <input
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               labelPosition='right'
             />
           </div>
           <div className="admin-login-password">
-            <Input icon='lock'
+            <input icon='lock'
               value={password}
               onChange={(e)=> setPassword(e.target.value)}
                />
           </div>
           <div className="admin-login-submit">
-              <Button  type="submit">Se connecter</Button>
+              <button  type="submit">Se connecter</button>
           </div>
         </form>
       </div>
