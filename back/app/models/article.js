@@ -87,9 +87,9 @@ class Article{
      * @async
      */
     async save(){
-
-        if(this.id){
-            try{
+        try{
+            if(this.id){
+            
                 const preparedQuery={
                     text:`UPDATE article
                     SET title=$1, content=$2, admin_id=$3, category_id=$4
@@ -99,23 +99,19 @@ class Article{
                 
                 await client.query(preparedQuery);
 
-            }catch(error){
-                console.log(error);
-            }
-
-        }else{
-            try{
+            }else{
+                
                 const preparedQuery={
                     text:`INSERT INTO article(title, content, admin_id, category_id) 
                     VALUES($1, $2, $3, $4) RETURNING id`,
                     values:[this.title,this.content,this.admin_id,this.category_id]
                 }
     
-                await client.query(preparedQuery);
-    
-            }catch(error){
-                console.log(error);
+                await client.query(preparedQuery);   
             }
+            
+        }catch(error){
+            console.log(error);
         }
     }
 

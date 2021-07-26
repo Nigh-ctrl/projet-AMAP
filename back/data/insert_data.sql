@@ -1,3 +1,10 @@
+DELETE FROM "farmer";
+DELETE FROM "product";
+DELETE FROM "farmer_to_product";
+DELETE FROM "category";
+DELETE FROM "season";
+DELETE FROM "article";
+DELETE FROM "recipe";
 
 INSERT INTO "farmer" ("firstname","name","location","biography","basket","admin_id") VALUES
 ('Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.

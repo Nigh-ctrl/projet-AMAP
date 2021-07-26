@@ -10,6 +10,13 @@ const adminController=require('./controllers/adminController');
 
 //We call here the middelwares we need
 const checkAdminMiddleware = require('./middlewares/checkAdmin');
+const {validateBody}=require('./middlewares/validator');
+
+//We call here the schemas we need
+const articleSchema = require('./schemas/article');
+const recipeSchema = require('./schemas/recipe');
+const farmerSchema = require('./schemas/recipe');
+
 
 /*******farmer********/
 
@@ -73,7 +80,7 @@ router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.de
   * @returns {Array<Article>} 200 - An array of articles with a specific category
   */
   router.get('/articles/categorie/:id(\\d+)', articleController.findByCategory);
-
+  
   /**
    * Create a new article object and insert it in the database
    * @route POST /articles
@@ -81,7 +88,7 @@ router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.de
    * @returns {Article.model} 201 - The article just created
    * @returns {String} 500 - An error message
    */
-  router.post('/articles',checkAdminMiddleware,articleController.addArticle);
+  router.post('/articles',checkAdminMiddleware,validateBody(articleSchema),articleController.addArticle);
 
    /**
   * Update the corresponding article in the database
@@ -90,7 +97,7 @@ router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.de
   * @param {number} id.path.required The id of the product
   * @returns {Article.model} 200 - An array of articles with a specific category
   */
-  router.patch('/articles/:id(\\d+)',checkAdminMiddleware, articleController.updateArticle);
+  router.patch('/articles/:id(\\d+)',checkAdminMiddleware,validateBody(articleSchema),articleController.updateArticle);
 
   /**
    * @route DELETE /articles/{id}
@@ -135,7 +142,7 @@ router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.de
    * @returns {Recipe.model} 201 - The recipe just created
    * @returns {String} 500 - An error message
    */
-   router.post('/recettes',checkAdminMiddleware,recipeController.addRecipe);
+   router.post('/recettes',checkAdminMiddleware,validateBody(recipeSchema),recipeController.addRecipe);
   
    /**
   * Update the corresponding article in the database
@@ -144,7 +151,7 @@ router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.de
   * @param {number} id.path.required The id of the product
   * @returns {Recipe.model} 200 - An array of articles with a specific category
   */
-  router.patch('/recettes/:id(\\d+)',checkAdminMiddleware,recipeController.updateRecipe);
+  router.patch('/recettes/:id(\\d+)',checkAdminMiddleware,validateBody(recipeSchema),recipeController.updateRecipe);
 
    /**
    * @route DELETE /recettes/{id}

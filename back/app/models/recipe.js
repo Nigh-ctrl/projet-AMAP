@@ -88,8 +88,9 @@ class Recipe{
      */
      async save(){
 
-        if(this.id){
-            try{
+        try{
+            if(this.id){
+            
                 const preparedQuery={
                     text:`UPDATE recipe
                     SET title=$1, ingredients=$2, description=$3, admin_id=$4, season_id=$5
@@ -98,13 +99,9 @@ class Recipe{
                 }
                 
                 await client.query(preparedQuery);
-
-            }catch(error){
-                console.log(error);
-            }
-
-        }else{
-            try{
+    
+            }else{
+                
                 const preparedQuery={
                     text:`INSERT INTO recipe(title, ingredients, description, admin_id, season_id) 
                     VALUES($1, $2, $3, $4, $5) RETURNING id`,
@@ -112,12 +109,12 @@ class Recipe{
                 }
     
                 await client.query(preparedQuery);
-    
-            }catch(error){
-                console.log(error);
             }
-
+            
+        }catch(error){
+            console.log(error);
         }
+
     }
     
 
