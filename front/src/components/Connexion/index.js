@@ -1,14 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import './styles.scss'
 import axios from 'axios'
-
-import './styles.scss'
 import { Redirect } from 'react-router-dom';
+import {ConnexionContext} from '../../ConnexionContext'
 
 const Connexion = () => {
 
-  const [loggedIn, setLoggedIn] = useState(false)
-
+  const [token, setToken] = useContext(ConnexionContext) 
   const [email, setEmail ] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,16 +25,14 @@ const Connexion = () => {
         }
       }, { headers: {'Authorization': `Bearer ${token}`}} )
       .then((res) => {
-        console.log(res.data);
-        setLoggedIn(true)
-
+        setToken(res.data.token)
       })
       .catch((e) => {
         console.log("erreur lors du login", e);
       })
   }
 
-  if(loggedIn) return <Redirect to="/" />
+  if(token) return <Redirect to="/"  />
 
   return (
     <section className="connexion">
