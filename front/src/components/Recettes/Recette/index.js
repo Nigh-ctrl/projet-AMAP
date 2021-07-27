@@ -1,27 +1,25 @@
 import React, { useState, useEffect }from "react";
 // import PropTypes from 'prop-types';
-import { withRouter } from "react-router";
+// on a besoin d'importer useParams pour avoir accés au slug de l'url
+import { useParams } from "react-router";
 import axios from 'axios';
 
 import "./styles.scss";
 
-const Recette = ({ match, location, history }) => {
-
-  const [recetteId, setRecetteId] = useState(1);
+const Recette = () => {
+  // on destructure pour récupérer directement id et pas un objet
+  const { id } = useParams();
+  // on met comme valeur l'id récupéré via le useParams
+  const [recetteId, setRecetteId] = useState(id);
 
   const getOneRecipe = () => (
     //requete axios
     axios({
       method: 'get',
-      url: `http://localhost:5000/recettes/${recetteId}`,
-      // data: {
-      //   recetteId: recetteId
-      // }
+      url: `http://localhost:5000/recettes/${recetteId}`
     })
     .then((res) => {
-      console.log(res.data);
       setRecetteId(res.data);
-      console.log(recetteId);
     })
     .catch((e) => {
       console.log("erreur lors du login", e);
@@ -77,4 +75,4 @@ const Recette = ({ match, location, history }) => {
 //
 // };
 
-export default withRouter(Recette);
+export default Recette;
