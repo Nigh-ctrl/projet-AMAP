@@ -32,7 +32,7 @@ const Connexion = () => {
       })
   }
 
-  if(token) return <Redirect to="/" />
+  if(token) return <Redirect to="/"  />
 
   return (
     <section className="connexion">
