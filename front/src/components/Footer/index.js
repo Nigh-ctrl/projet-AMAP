@@ -11,6 +11,7 @@ function Footer () {
 
   function logout (){
     setToken(undefined)
+    alert("vous êtes déconnecté")
   }
 
 
