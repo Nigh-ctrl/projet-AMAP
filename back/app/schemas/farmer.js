@@ -7,7 +7,8 @@ const farmerSchema = Joi.object({
     location: Joi.string().required(),
     biography: Joi.string().required(),
     basket: Joi.string().required(),
-    admin_id: Joi.number().integer().required()
+    admin_id: Joi.number().integer().required(),
+    product_ids: Joi.array().items(Joi.number()).min(1).unique().required()
 });
 
 module.exports = farmerSchema;

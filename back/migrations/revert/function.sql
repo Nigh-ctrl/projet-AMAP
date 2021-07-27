@@ -2,6 +2,7 @@
 
 BEGIN;
 
--- DROP FUNCTION add_farmer(json,integer ARRAY);
+DROP FUNCTION add_farmer(json,integer ARRAY);
+DROP FUNCTION update_farmer(json,integer ARRAY);
 
 COMMIT;
