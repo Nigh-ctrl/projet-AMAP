@@ -3,10 +3,11 @@ import './styles.scss'
 import axios from 'axios'
 
 import './styles.scss'
+import { Redirect } from 'react-router-dom';
 
 const Connexion = () => {
 
-  const [logged, setLogged] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(false)
 
   const [email, setEmail ] = useState("");
   const [password, setPassword] = useState("");
@@ -27,15 +28,15 @@ const Connexion = () => {
       }, { headers: {'Authorization': `Bearer ${token}`}} )
       .then((res) => {
         console.log(res.data);
-        setLogged = true
-        return(
-          <Redirect to="/" />
-        )
+        setLoggedIn(true)
+
       })
       .catch((e) => {
         console.log("erreur lors du login", e);
       })
   }
+
+  if(loggedIn) return <Redirect to="/" />
 
   return (
     <section className="connexion">
