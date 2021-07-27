@@ -21,7 +21,7 @@ class Farmer{
     static async findAll(){
         try{
             const preparedQuery ={
-                text:`SELECT farmer.*,STRING_AGG(product.id::text,',') AS products_id ,STRING_AGG(product.label,',') AS products_label
+                text:`SELECT farmer.*,STRING_AGG(product.id::text,',') AS products_id
                 FROM farmer 
                 JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id 
                 JOIN product ON product.id=farmer_to_product.product_id 
@@ -48,7 +48,7 @@ class Farmer{
     static async findOne(id){
         try{
             const preparedQuery={
-                text:`SELECT farmer.*,STRING_AGG(product.id::text,',') AS products_id ,STRING_AGG(product.label,',') AS products
+                text:`SELECT farmer.*,STRING_AGG(product.id::text,',') AS products_id
                 FROM farmer
                 JOIN farmer_to_product ON farmer_to_product.farmer_id=farmer.id
                 JOIN product ON product.id=farmer_to_product.product_id
@@ -98,17 +98,18 @@ class Farmer{
     }
 
     /**
-     * Add or update an article in the database
+     * Add or update a farmer in the database
      * @async
+     * @param {number} productIds An array of all id of the product related to the farmer
      */
-     async save(){
+     async save(productIds){
 
         try{
             if(this.id){
-            
+                
                 const preparedQuery={
                     text:`SELECT update_farmer($1,$2)`,
-                    values:[this]//TODO implémenter le tableau d'id product
+                    values:[this,productIds]
                 }
                 
                 await client.query(preparedQuery);
@@ -117,11 +118,10 @@ class Farmer{
             
                 const preparedQuery={
                     text:`SELECT add_farmer($1,$2)`,
-                    values:[this]//TODO implémenter le tableau d'id product
+                    values:[this,productIds]
                 }
     
                 await client.query(preparedQuery);
-    
             
             }
         }catch(error){
@@ -152,27 +152,6 @@ class Farmer{
         }
         
     }
-
-    /**
-     * Add or update the association table between farmer and product
-     * @async
-     */
-     static async updateAssociationTable(farmerId,productId){
-
-        try{
-            const preparedQuery={
-                text:`INSERT INTO farmer_to_product(farmer_id, product_id) 
-                VALUES($1, $2)`,
-                values:[farmerId,productId]
-            }
-            
-            await client.query(preparedQuery);
-
-        }catch(error){
-            console.log(error);
-        }
-
-     }
 
 
 };

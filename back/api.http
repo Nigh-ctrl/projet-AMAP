@@ -2,13 +2,44 @@
 GET http://localhost:4000/agriculteurs
 
 ### Get one farmer
-GET http://localhost:4000/agriculteurs/2
+GET http://localhost:4000/agriculteurs/10
 
 ### Get farmers by product
-GET http://localhost:4000/agriculteurs/produits/11
+GET http://localhost:4000/agriculteurs/produits/8
+
+
+### Add a farmer
+POST http://localhost:4000/agriculteurs
+Content-Type: application/json
+
+{
+    "firstname": "prénom de l'agriculteur",
+    "name": "nom de l'agriculteur",
+    "location": "location de l'agriculteur",
+    "biography": "biographie de l'agriculteur",
+    "basket": "panier de l'agriculteur",
+    "admin_id": 1,
+    "product_ids": [7,8]
+}
+
+### Update a farmer
+PATCH http://localhost:4000/agriculteurs/100
+Content-Type: application/json
+
+{
+    "firstname": "prénom de l'agriculteur",
+    "name": "nom de l'agriculteur",
+    "location": "location de l'agriculteur",
+    "biography": "biographie de l'agriculteur",
+    "basket": "panier de l'agriculteur",
+    "admin_id": 1,
+    "product_ids": [3,10]
+}
 
 ### Delete one farmer
-DELETE http://localhost:4000/agriculteurs/1
+
+DELETE http://localhost:4000/agriculteurs/13
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczOTY1NTMsImV4cCI6MTYyNzQwMDE1M30.0m7tUzsMfhRMBn3eE9dxskW0QBBtfawMX9oFW75T_Lw
 
 
 
@@ -50,6 +81,7 @@ DELETE http://localhost:4000/articles/4
 
 
 
+
 ### Get all recipes
 GET http://localhost:4000/recettes
 
@@ -74,7 +106,7 @@ Content-Type: application/json
 
 ### Modify a recipe
 PATCH  http://localhost:4000/recettes/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczMDc3NDMsImV4cCI6MTYyNzMxMTM0M30.faPnkgr80FyOU7e3Z1qpGnyIROyKDkM8qGhAcwDigdk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2MjczOTIwMjAsImV4cCI6MTYyNzM5NTYyMH0.bqmY0LbuC90oScNtlEOuO5Ozd4V3ZtgSRYYmVYW_7U8
 Content-Type: application/json
 
 {
@@ -82,11 +114,12 @@ Content-Type: application/json
     "ingredients": "Ingrédients de la recette modifiés",
     "description": "Description de la recette modifié",
     "admin_id": 1,
-    "season_id": 2
+    "season_id": 3
 }
 
 ### Delete one recipe
 DELETE http://localhost:4000/recettes/3
+
 
 
 ### Login
