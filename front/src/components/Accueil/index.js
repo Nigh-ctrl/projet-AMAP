@@ -1,10 +1,14 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link} from 'react-router-dom'
+import {ConnexionContext} from '../../ConnexionContext'
 
 import './style.scss'
 
-const Accueil = () => (
+function Accueil () {
+  const [token] = useContext(ConnexionContext)
+  console.log(token)
+return (
   <div className="accueil">
     <div  className="presentation">
     <Link to="/presentation">
@@ -38,4 +42,5 @@ const Accueil = () => (
   </div>
 )
 
+} 
 export default Accueil

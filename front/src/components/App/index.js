@@ -1,6 +1,8 @@
 // == Import npm
 import React from 'react';
 import {Route, BrowserRouter} from 'react-router-dom'
+// == import store
+import {ConnexionProvider} from '../../ConnexionContext'
 // == styles
 import './styles.scss'
 // == Import
@@ -19,6 +21,7 @@ import Recette from '../Recettes/Recette'
 const App = () => (
   <div className="app">
     <BrowserRouter>
+    <ConnexionProvider>
       <Header/>
       <Route path="/" exact component={Accueil}/>
       <Route path="/presentation" exact component={Presentation} />
@@ -29,7 +32,7 @@ const App = () => (
       <Route path="/login" exact component={Connexion}/>
       <Route path="/recette/:nom-recette" exact component={Recette}/>
       <Footer/>
-
+    </ConnexionProvider>
     </BrowserRouter>
   </div>
 );
