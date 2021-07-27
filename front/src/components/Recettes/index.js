@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Recette from './Recette';
 
 
 import './styles.scss';
@@ -9,7 +10,6 @@ import './styles.scss';
 const Recettes = () => {
 
   const [recettes, setRecettes] = useState([]);
-  const [recetteId, setRecetteId] = useState(recettes.id); // si on remplace en dur les données on récupère les données de l'api
   
   const getRecipes = () => (
     //requete axios
@@ -29,27 +29,7 @@ const Recettes = () => {
     })
   )
  
-  const getOneRecipe = () => (
-    //requete axios
-    axios({
-      method: 'get',
-      url: `http://localhost:5000/recettes/${recetteId}`,
-      data: {
-        recetteId: recetteId
-      }
-    })
-    .then((res) => {
-      console.log(res.data);
-      setRecetteId(res.data);
-      console.log(recetteId);
-    })
-    .catch((e) => {
-      console.log("erreur lors du login", e);
-    })
-  )
-
   useEffect(getRecipes, []);
-  useEffect(getOneRecipe, []);
 
   return(
     <section className="recettes">
@@ -68,14 +48,14 @@ const Recettes = () => {
       <div className="recettes-list">
         {
           recettes.map((recette) => (
-            <article key={recette.id+recette.name} className="recettes-card">
-              <h3 className="recettes-title">{recette.title}</h3>
-              <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-              <p>{recette.description}</p>
-                <Link to={`/recette/${recette.id}`}>
-                <div className="recettes-read-more">En savoir plus</div>
-                </Link>
-            </article>
+            <Link key={recette.id+recette.name} to={`/recette/${recette.id}`}>
+              <article  className="recettes-card">
+                <h3 className="recettes-title">{recette.title}</h3>
+                <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
+                <p>{recette.description}</p>
+                <p className="recettes-read-more">En savoir plus</p>
+              </article>
+            </Link>
           ))
         }
       </div>
@@ -83,6 +63,7 @@ const Recettes = () => {
   )
 };
 
+{/* <Route path="/recette/:nom-recette" exact component={Recette}/> */}
 // Content.propTypes = {
 // 
 // };
