@@ -28,6 +28,9 @@ const Connexion = () => {
       .then((res) => {
         console.log(res.data);
         setLogged = true
+        return(
+          <Redirect to="/" />
+        )
       })
       .catch((e) => {
         console.log("erreur lors du login", e);
@@ -41,13 +44,16 @@ const Connexion = () => {
         <form className="admin-login-form" onSubmit={handleSubmit}>
           <div className="admin-login-email">
             <input
+              type="text"
+              autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              labelPosition='right'
             />
           </div>
           <div className="admin-login-password">
             <input icon='lock'
+              type="password"
+              autoComplete="current_password"
               value={password}
               onChange={(e)=> setPassword(e.target.value)}
                />
