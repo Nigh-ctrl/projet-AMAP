@@ -41,39 +41,30 @@ const farmerController={
     addFarmer: async (request, response) => {
         try{
 
-            
             //Creation of a temporary object to stock the needed information
-            const temp={};
-            const {firstname,name,location,biography,basket}=request.body;
+            const {product_ids}=request.body;
 
-            //Here we attribute the object value
-            temp.firstname=firstname;
-            temp.name=name;
-            temp.location=location;
-            temp.biography=biography;
-            temp.basket=basket;
+            const farmer = new Farmer(request.body);
 
-            const farmer = new Farmer(temp);
-            await farmer.save();
-
+            await farmer.save(product_ids);
 
             response.status(201).json(farmer);
 
         }catch(error){
             response.status(500).json(error.message);
         }
-
+        
     },
-
+    
     updateFarmer: async (request, response) => {
 
         const id = parseInt(request.params.id, 10);
 
         try{
 
-            const farmer = await Farmer.findOne(id);
+            var farmer = await Farmer.findOne(id);
 
-            const {firstname,name,location,biography,basket}=request.body;
+            const {firstname,name,location,biography,basket,admin_id,product_ids}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
@@ -97,9 +88,15 @@ const farmerController={
                 farmer.basket = basket;
             }
 
-            await farmer.save();
+            if(admin_id){
+                farmer.admin_id = admin_id;
+            }
 
-            response.status(201).json(article);
+            await farmer.save(product_ids);
+
+            farmer = await Farmer.findOne(id);
+
+            response.status(201).json(farmer);
 
         }catch(error){
             response.status(500).json(error.message);
