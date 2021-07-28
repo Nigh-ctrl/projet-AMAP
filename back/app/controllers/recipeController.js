@@ -62,10 +62,14 @@ const recipeController={
 
             const recipe = await Recipe.findOne(id);
 
-            const {title,ingredients,description,admin_id,season_id}=request.body;
+            const {slug,title,ingredients,description,admin_id,season_id}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
+            if(slug){
+                recipe.slug = slug;
+            }
+
             if(recipe){
                 recipe.title = title;
             }

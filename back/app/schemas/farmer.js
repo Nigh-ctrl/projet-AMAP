@@ -2,6 +2,7 @@ const Joi = require('joi');
 
 const farmerSchema = Joi.object({
     id: Joi.number().integer().optional(),
+    slug: Joi.string().required(),
     firstname: Joi.string().required(),
     name: Joi.string().required(),
     location: Joi.string().required(),
