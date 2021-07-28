@@ -109,7 +109,7 @@ Content-Type: application/json
 
 ### Modify a recipe
 PATCH  http://localhost:4000/recettes/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0NjE2ODcsImV4cCI6MTYyNzQ2NTI4N30.WgpXhb2g1FXpICPcx7aGT_g7jEuGezN4VmhR4WxYyO0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0Njc2MjYsImV4cCI6MTYyNzQ3MTIyNn0.AqmHCx7_8IRciL4pUpwxTAQJL01j91vqC7uy9WagifY
 Content-Type: application/json
 
 {
