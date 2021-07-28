@@ -11,6 +11,7 @@ const Recette = () => {
   const { id } = useParams();
   // on met comme valeur l'id récupéré via le useParams
   const [recetteId, setRecetteId] = useState(id);
+  const [recette, setRecette] = useState([]);
 
   const getOneRecipe = () => (
     //requete axios
@@ -19,7 +20,8 @@ const Recette = () => {
       url: `http://localhost:5000/recettes/${recetteId}`
     })
     .then((res) => {
-      setRecetteId(res.data);
+      setRecette(res.data);
+      console.log(res.data);
     })
     .catch((e) => {
       console.log("erreur lors du login", e);
@@ -58,9 +60,11 @@ const Recette = () => {
 
       <div className="recette-article">
         <article>
-          <h1 className="recette-title">Recette vue principale</h1>
+          <h1 className="recette-title">{recette.title}</h1>
           <img className="recette-img" src="" alt=""/>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          //// besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string
+          <p>{recette.ingredients}</p>
+          <p>{recette.description}</p>
         </article>
       </div>
     </section>
