@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import './styles.scss'
 import axios from 'axios'
-
-import './styles.scss'
+import { Redirect } from 'react-router-dom';
+import {ConnexionContext} from '../../ConnexionContext'
 
 const Connexion = () => {
 
-  const [logged, setLogged] = useState(false)
-
+  const [token, setToken] = useContext(ConnexionContext) 
   const [email, setEmail ] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,13 +25,14 @@ const Connexion = () => {
         }
       }, { headers: {'Authorization': `Bearer ${token}`}} )
       .then((res) => {
-        console.log(res.data);
-        setLogged = true
+        setToken(res.data.token)
       })
       .catch((e) => {
         console.log("erreur lors du login", e);
       })
   }
+
+  if(token) return <Redirect to="/"  />
 
   return (
     <section className="connexion">
@@ -41,13 +41,16 @@ const Connexion = () => {
         <form className="admin-login-form" onSubmit={handleSubmit}>
           <div className="admin-login-email">
             <input
+              type="text"
+              autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              labelPosition='right'
             />
           </div>
           <div className="admin-login-password">
             <input icon='lock'
+              type="password"
+              autoComplete="current_password"
               value={password}
               onChange={(e)=> setPassword(e.target.value)}
                />

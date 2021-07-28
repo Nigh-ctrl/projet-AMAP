@@ -1,6 +1,8 @@
 // == Import npm
 import React from 'react';
 import {Route, BrowserRouter} from 'react-router-dom'
+// == import store
+import {ConnexionProvider} from '../../ConnexionContext'
 // == styles
 import './styles.scss'
 // == Import
@@ -20,6 +22,7 @@ import Evenements from '../Articles/Evenements'
 const App = () => (
   <div className="app">
     <BrowserRouter>
+    <ConnexionProvider>
       <Header/>
       <Route path="/" exact component={Accueil}/>
       <Route path="/presentation" exact component={Presentation} />
@@ -31,6 +34,7 @@ const App = () => (
       <Route path="/recette/:id" exact component={Recette}/>
       <Route path="/login" exact component={Connexion}/>
       <Footer/>
+    </ConnexionProvider>
     </BrowserRouter>
   </div>
 );
