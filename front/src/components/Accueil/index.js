@@ -24,7 +24,7 @@ const Accueil = () => (
       </Link> 
     </div>
     <div className="actu">
-      <Link to="/actu">
+      <Link to="/articles">
 
       <div className="text">Actu de l'amap</div>
       </Link> 

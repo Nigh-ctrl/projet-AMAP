@@ -2,11 +2,10 @@ import React, { useState, useEffect }from "react";
 import NavBarre from '../NavBarre'
 import { useParams } from "react-router";
 import axios from 'axios';
-// import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const Evenements = () => {
+const Article = () => {
   // on destructure pour récupérer directement id et pas un objet
   const { id } = useParams();
   // on met comme valeur l'id récupéré via le useParams
@@ -30,28 +29,17 @@ const Evenements = () => {
   useEffect(getOneArticle, []);
 
   return (
-    <section className="evenements">
+    <section className="article">
       <h1 className="page-title">{article.title}</h1>
       <NavBarre />
-      <div className="evenements-list">
-        <article className="evenements-card">
-          <h3 className="evenements-title"></h3>
-          <p className="evenements-text">
+        <article className="article-card">
+          <p className="article-text">
           {article.content}
           </p>
-        </article>
-      </div>
+          <img className="article-img" src="https://cdn.pixabay.com/photo/2014/07/18/19/08/fruit-basket-396622_1280.jpg" alt=""/>
+      </article>
     </section>
   )
 };
 
-
-// Content.propTypes = {
-// 
-// };
-
-// Content.defaultProps = {
-//   
-// };
-
-export default Evenements;
+export default Article;

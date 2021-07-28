@@ -1,18 +1,18 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-
+import { NavLink, useParams } from 'react-router-dom';
 
 import './styles.scss';
 
 const Nutrition = () => (
   <div>
-    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
     <nav className="navBar">
-      <a className="nav-link" href="">Paniers de produits</a>
-      <a className="nav-link" href="">Evenements</a>
-      <a className="nav-link" href="">Annonces</a>
-      <a className="clicked" href="">Nutrition</a>
-      <form action="POST">
+      <NavLink activeClassName="clicked" className="nav-link" exact to="/articles">Accueil</NavLink>
+      <NavLink activeClassName="clicked" className="nav-link" exact to="/articles/paniers">Paniers de produits</NavLink>
+      <NavLink activeClassName="clicked" className="nav-link" exact to="/articles/evenements">Evenements</NavLink>
+      <NavLink activeClassName="clicked" className="nav-link" exact to="/articles/annonces">Annonces</NavLink>
+      <NavLink activeClassName="clicked" className="nav-link" exact to="/articles/nutrition">Nutrition</NavLink>
+      <form action="post">
       <input type='text' placeholder='Rechercher...'/>
       </form>
     </nav>
