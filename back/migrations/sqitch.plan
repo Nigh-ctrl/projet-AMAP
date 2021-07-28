@@ -2,3 +2,5 @@
 %project=amap
 
 initialization 2021-07-15T14:16:05Z Remy <remy.bregeon@free.fr> # database creation
+regex 2021-07-23T07:42:12Z Remy <remy.bregeon@free.fr> # Regex for email
+function 2021-07-26T12:03:08Z Remy <remy.bregeon@free.fr> # Add farmer function

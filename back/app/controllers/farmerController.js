@@ -38,6 +38,72 @@ const farmerController={
         }
     },
 
+    addFarmer: async (request, response) => {
+        try{
+
+            //Creation of a temporary object to stock the needed information
+            const {product_ids}=request.body;
+
+            const farmer = new Farmer(request.body);
+
+            await farmer.save(product_ids);
+
+            response.status(201).json(farmer);
+
+        }catch(error){
+            response.status(500).json(error.message);
+        }
+        
+    },
+    
+    updateFarmer: async (request, response) => {
+
+        const id = parseInt(request.params.id, 10);
+
+        try{
+
+            var farmer = await Farmer.findOne(id);
+
+            const {firstname,name,location,biography,basket,admin_id,product_ids}=request.body;
+
+            //We do the test for each property of the object
+            //We modify the property only if it exists
+            if(firstname){
+                farmer.firstname = firstname;
+            }
+
+            if(name){
+                farmer.name = name;
+            }
+
+            if(location){
+                farmer.location = location;
+            }
+            
+            if(biography){
+                farmer.biography = biography;
+            }
+
+            if(basket){
+                farmer.basket = basket;
+            }
+
+            if(admin_id){
+                farmer.admin_id = admin_id;
+            }
+
+            await farmer.save(product_ids);
+
+            farmer = await Farmer.findOne(id);
+
+            response.status(201).json(farmer);
+
+        }catch(error){
+            response.status(500).json(error.message);
+        }
+
+    },
+
     delete: async (request, response) => {
         
         const id = parseInt(request.params.id, 10);

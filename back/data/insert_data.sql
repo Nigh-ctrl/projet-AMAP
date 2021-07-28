@@ -1,3 +1,10 @@
+DELETE FROM "farmer";
+DELETE FROM "product";
+DELETE FROM "farmer_to_product";
+DELETE FROM "category";
+DELETE FROM "season";
+DELETE FROM "article";
+DELETE FROM "recipe";
 
 INSERT INTO "farmer" ("firstname","name","location","biography","basket","admin_id") VALUES
 ('Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
@@ -137,12 +144,14 @@ INSERT INTO "article" ("title","content","admin_id","category_id") VALUES
 
 INSERT INTO "recipe" ("title","ingredients","description","admin_id","season_id") VALUES
 ('Salade fraîcheur au fenouil, pomelo et noix','Ingrédients 4 personnes
-1 fenouil
-1 pomelo
-1 échalote
-1 poignée de raisins secs
-1 poignée de cerneaux de noix
-4 c.s d’huile d’olive
-2 c.s de vinaigre de cidre
-1 c.s de miel
-Sel, poivre','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,3);
+1 fenouil,
+1 pomelo,
+1 échalote,
+1 poignée de raisins secs,
+1 poignée de cerneaux de noix,
+4 c.s d’huile d’olive,
+2 c.s de vinaigre de cidre,
+1 c.s de miel,
+Sel, 
+poivre',
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,3);

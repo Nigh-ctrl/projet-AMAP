@@ -9,7 +9,7 @@ const token={
         },
         process.env.JWT_SIGN_SECRET,
         {
-            expiresIn:'1800s'
+            expiresIn:'1h'
         })
 
     }

@@ -13,7 +13,7 @@ const Nutrition = () => (
       <a className="nav-link" href="">Annonces</a>
       <a className="clicked" href="">Nutrition</a>
       <form action="POST">
-      <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher...'/>
+      <input type='text' placeholder='Rechercher...'/>
       </form>
     </nav>
   </div>
