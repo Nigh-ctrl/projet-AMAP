@@ -1,4 +1,62 @@
+const NavBar = () => {
+
+ const [saisonsId, setSaisonsId] = useState(1);
+  
+  const getSaisons = () => (
+    //requete axios
+    axios({
+      method: 'get',
+      url: `http://localhost:4000/recettes/saison/${saisonsId}`
+    })
+    .then((res) => {
+      console.log(res.data);
+      setsetSaisonsId(res.data);
+    })
+    .catch((e) => {
+      console.log("erreur lors du login", e);
+    })
+  )
+ 
+  useEffect(getSaisons, []);
+
+
+  .clicked {
+  background-color:  rgb(0, 131, 0);
+  color: white;
+  padding: 0.3em 1em 0 1em;
+  border-radius: 0.3em 0.3em 0 0;
+}
+.nav-link {
+  padding: 0.3em 1em 0 1em;
+  color: black;
+}
+section .recette {
+  flex: 1;
+
+  &-article {
+    width: 70%;
+    margin: auto;
+    display: flex;
+  }
+  &-container {
+    &-ingredient{
+      margin: auto;
+      padding: 1em;
+    }    
+    &-description{
+      margin: auto;
+      padding: 1em;
+    }
+  }
+  &-img{
+    width: 50%;
+    margin: auto;
+  }
+  
+}
+
 import React, { useState, useEffect }from "react";
+// import PropTypes from 'prop-types';
 // on a besoin d'importer useParams pour avoir accés au slug de l'url
 import { useParams } from "react-router";
 import axios from 'axios';
@@ -33,10 +91,10 @@ const Recette = () => {
   return(
     <section className="recette">
       <h1 className="page-title">{recette.title}</h1>
-      <NavBar />
-        <article className="recette-article">
-          <div className="recette-container">
+      <NavBar/>
+      <article className="recette-article">
           {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
+          <div className="recette-container">
             <p className="recette-container-ingredient">{recette.ingredients}</p>
             <p className="recette-container-description">{recette.description}</p>
           </div>
@@ -46,5 +104,12 @@ const Recette = () => {
   )
 };
 
+// Content.propTypes = {
+//
+// };
+
+// Content.defaultProps = {
+//
+// };
 
 export default Recette;

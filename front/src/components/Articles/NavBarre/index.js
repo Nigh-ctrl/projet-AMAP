@@ -1,10 +1,10 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
-const Nutrition = () => (
+const NavBarre = () => (
   <div>
     <nav className="navBar">
       <NavLink activeClassName="clicked" className="nav-link" exact to="/articles">Accueil</NavLink>
@@ -19,4 +19,4 @@ const Nutrition = () => (
   </div>
 );
 
-export default Nutrition;
+export default NavBarre;
