@@ -12,26 +12,26 @@ Thierry Vallarino exploite depuis trois décennies deux hectares au cœur de l�
 En toute saison il fournit des légumes dont la qualité gustative et la fraicheur ravissent nos papilles. Quelques fraises peuvent venir compléter le panier à la belle saison.','Composition type de paniers:
 
 Contrat été (de mai à octobre)
-Tomates longues, rondes, jaunes rouges…
-Courgettes longues, rondes, jaune ou vertes
-Aubergines (blanches ou violettes)
-Poivrons
-Melons
-Pomme de terre
-Celeri rave
-Salade
-Basilic
+Tomates longues, rondes, jaunes rouges…,
+Courgettes longues, rondes, jaune ou vertes,
+Aubergines (blanches ou violettes),
+Poivrons,
+Melons,
+Pomme de terre,
+Celeri rave,
+Salade,
+Basilic,
 
 Contrat hiver (novembre à Avril)
-Carottes fanes
-pomme de terre
-poireaux
-brocolis
-navet
-choux variés
-courge
-épinard ou blette
-salade
+Carottes fanes,
+pomme de terre,
+poireaux,
+brocolis,
+navet,
+choux variés,
+courge,
+épinard ou blette,
+salade,
 persil',1),
 
 ('Théodore','Planas-Rastoin','Meyreuil','Ce jeune paysan-boulanger de 30 ans a plus d’une corde à son arc ; il cultive ses propres céréales, pétrit manuellement un pain bio à base de blés de variétés anciennes.
@@ -139,11 +139,12 @@ INSERT INTO "season" ("label") VALUES
 ('Automne');
 
 INSERT INTO "article" ("title","content","admin_id","category_id") VALUES
-('Mon 1 article','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,2);
+('Mon panier de produit','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,2);
 
 
 INSERT INTO "recipe" ("title","ingredients","description","admin_id","season_id") VALUES
-('Salade fraîcheur au fenouil, pomelo et noix','Ingrédients 4 personnes
+('Salade fraîcheur au fenouil, pomelo et noix',
+'Ingrédients 4 personnes
 1 fenouil,
 1 pomelo,
 1 échalote,
@@ -154,4 +155,59 @@ INSERT INTO "recipe" ("title","ingredients","description","admin_id","season_id"
 1 c.s de miel,
 Sel, 
 poivre',
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,3);
+'1 : À l’aide d’une mandoline ou d’un couteau, coupez finement le bulbe du fenouil. Réservez les plumets pour le dressage de votre assiette.
+2 : Pelez le pomelo et retirez la partie blanche. Coupez-le en tranches puis recoupez les tranches en 4.
+3 : Pour l’assaisonnement, mélangez dans un bol l’échalote préalablement ciselée, l’huile d’olive, le vinaigre, le miel et les raisins secs. Salez et poivrez.
+4 : Dans un saladier, mélangez le fenouil, le pomelo et l’assaisonnement. Laissez mariner la salade au réfrigérateur.
+5 : Dans une assiette, dressez la salade en la parsemant de cerneaux de noix et posez quelques plumets de fenouil.',1,1),
+
+('Potofu de légumes : le pot-au-feu revisité',
+'Ingrédients 5 personnes
+2 carottes,
+3 petits navets,
+4 petites pommes de terre,
+3 petits oignons,
+1 poireau,
+4 feuilles de chou vert,
+250g de tofu nature ou fumé,
+1 bouquet garni,
+1 c.c de gros sel, 
+50g de pâte de miso blanc* ou un cube de légumes',
+'1 : Dans une grande casserole, faites chauffer environ 2 litres d’eau. Pendant ce temps, lavez tous les légumes. Épluchez l’oignon, les navets, les pommes de terre et les carottes si elles ne sont pas biologiques. Retirez la partie blanche et dure du chou vert. Coupez les légumes grossièrement (en 2 ou en 4).
+2 : Dans un petit bol, diluez la pâte miso ou le cube de légumes avec un peu d’eau chaude.
+3 : Lorsque l’eau bout, ajoutez tous les légumes, le bouquet garni et le sel. Recouvrez la casserole avec un couvercle et laissez cuire à feu doux pendant environ 1 heure.
+4 : Pendant ce temps, coupez le tofu en cubes. Au bout de 30 minutes de cuisson, rajoutez-le dans la casserole de légumes et continuez la cuisson.
+5 : Vérifiez la cuisson des légumes avec la pointe d’un couteau, ils doivent être tendres. Terminez en rajoutant la pâte mise diluée. Vous pouvez servir ce plat avec le bouillon versés sur les légumes ou bien à part.',1,3),
+
+('Poivrons farcis au quinoa, légumes et feta',
+'Ingrédients 4 personnes
+4 poivrons,
+180g de quinoa cru,
+1 aubergine,
+2 tomates,
+200g de feta,
+1 oignon,
+2 gousses d’ail,
+4 c.s d’huile d’olive,
+1 noix de beurre, 
+Herbes de Provence, sel, poivre',
+'1 : Préchauffez le four à 180°C et lavez les légumes. Épluchez l’aubergine, et coupez-la en petits cubes. Coupez l’oignon en tranches et hachez finement les gousses d’ail. Dans une poêle, ajoutez 4 cuillères à soupe d’huile d’olive et faites revenir l’aubergine, l’oignon et l’ail. Remuez régulièrement et si ça commence à accrocher, arrosez avec un peu d’eau.
+2 : Pendant ce temps, faîtes cuire le quinoa dans de l’eau portée à ébullition, pendant 10 minutes. Une fois que le quinoa est cuit, égouttez-le et arrêtez la cuisson des légumes.
+3 : Coupez la feta et les tomates en petits cubes.
+4 : Pour préparer la farce, mélangez dans un bol : le quinoa, l’aubergine, l’oignon, l’ail, la feta et les tomates. Salez et poivrez.
+5 : Coupez les poivrons dans la longueur, retirez les graines et les parties blanches. Dans le fond d’un plat allant au four, ajoutez une noix de beurre, et un peu d’eau (environ 2cm). Déposez les poivrons coupés.
+6 : Il ne reste plus qu’à garnir généreusement les poivrons avec la farce à base de quinoa. Salez, poivrez, et saupoudrez d’herbes de Provence (ou avec une autre épice de votre choix).
+7 : Enfournez les poivrons pendant environ 40 minutes. Le poivron doit se tenir, mais être fondant.',1,2),
+
+('Velouté de carottes au lait de coco',
+'Ingrédients 3 bols
+5 carottes bio,
+1 bouillon cube de légumes,
+1L d’eau,
+3 c.s de lait de coco,
+Épices : sel, poivre, ail semoule, cumin,
+Optionnel :  lentilles corails, graines germées',
+'1 : Coupez les carottes grossièrement. (Si vos carottes ne sont pas bio, épluchez-les avant).
+2 : Dans une casserole, faites bouillir 1 litre d’eau avec un cube de légumes. Faites cuire les carottes pendant une vingtaine de minutes. Optionnel : pour un velouté plus rassasiant, faites cuire 4 c.s de lentilles corails en même temps que les carottes.
+3 : Une fois les carottes cuites, mixez-les avec 50cl d’eau de cuisson afin d’obtenir un velouté. Ajoutez les épices. Si vous avez fait cuire des lentilles corails, mixez le tout avec 75cl d’eau.
+4 : Versez le velouté dans des bols et ajoutez le lait de coco (et les graines germées si vous en avez).',1,4);
