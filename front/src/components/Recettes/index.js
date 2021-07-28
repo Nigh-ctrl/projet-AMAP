@@ -50,7 +50,7 @@ const Recettes = () => {
               <article  className="recettes-card">
                 <h3 className="recettes-title">{recette.title}</h3>
                 <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-                <p>{recette.description}</p>
+                <p className="recettes-p">{recette.description}</p>
                 <p className="recettes-read-more">En savoir plus</p>
               </article>
             </Link>
