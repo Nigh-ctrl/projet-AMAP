@@ -42,11 +42,11 @@ const farmerController={
         try{
 
             //Creation of a temporary object to stock the needed information
-            const {product_ids}=request.body;
+            const {products_id}=request.body;
 
             const farmer = new Farmer(request.body);
 
-            await farmer.save(product_ids);
+            await farmer.save(products_id);
 
             response.status(201).json(farmer);
 
@@ -64,7 +64,7 @@ const farmerController={
 
             var farmer = await Farmer.findOne(id);
 
-            const {firstname,name,location,biography,basket,admin_id,product_ids}=request.body;
+            const {firstname,name,location,biography,basket,admin_id,products_id}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
@@ -92,7 +92,7 @@ const farmerController={
                 farmer.admin_id = admin_id;
             }
 
-            await farmer.save(product_ids);
+            await farmer.save(products_id);
 
             farmer = await Farmer.findOne(id);
 

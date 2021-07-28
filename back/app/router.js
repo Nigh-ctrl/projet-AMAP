@@ -52,7 +52,7 @@ router.get('/agriculteurs/produits/:id(\\d+)', farmerController.findByProduct);
  * @returns {Array<product_ids>} 201 - An array of products id related to the farmer
  * @returns {String} 500 - An error message
  */
-router.post('/agriculteurs',validateBody(farmerSchema),farmerController.addFarmer);
+router.post('/agriculteurs',checkAdminMiddleware,validateBody(farmerSchema),farmerController.addFarmer);
 
 /**
 * Update the corresponding famer in the database
@@ -63,7 +63,7 @@ router.post('/agriculteurs',validateBody(farmerSchema),farmerController.addFarme
 * @returns {String} 200 - The string of products id related to the farmer
 * @returns {String} 500 - An error message
 */
-router.patch('/agriculteurs/:id(\\d+)',validateBody(farmerSchema),farmerController.updateFarmer);
+router.patch('/agriculteurs/:id(\\d+)',checkAdminMiddleware,validateBody(farmerSchema),farmerController.updateFarmer);
 
 
 /**
