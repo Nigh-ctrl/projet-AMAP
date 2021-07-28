@@ -1,13 +1,14 @@
 DELETE FROM "farmer";
+DELETE FROM "article";
+DELETE FROM "recipe";
 DELETE FROM "product";
 DELETE FROM "farmer_to_product";
 DELETE FROM "category";
 DELETE FROM "season";
-DELETE FROM "article";
-DELETE FROM "recipe";
 
-INSERT INTO "farmer" ("firstname","name","location","biography","basket","admin_id") VALUES
-('Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
+
+INSERT INTO "farmer" ("slug","firstname","name","location","biography","basket","admin_id") VALUES
+('Thierry_Vallarino','Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
 Thierry Vallarino exploite depuis trois décennies deux hectares au cœur de l’AOP Bandol. Soucieux de la terre, de la qualité de ses produits il n’a de cesse de chercher à faire évoluer ses pratiques entre demande des amapiens et pragmatisme de leur mise en culture (rotation des cultures, jachères pour le repos des sols, culture sous serre ou de plein champs, temps d’occupation du sol par production…).
 En toute saison il fournit des légumes dont la qualité gustative et la fraicheur ravissent nos papilles. Quelques fraises peuvent venir compléter le panier à la belle saison.','Composition type de paniers:
 
@@ -34,7 +35,7 @@ courge,
 salade,
 persil',1),
 
-('Théodore','Planas-Rastoin','Meyreuil','Ce jeune paysan-boulanger de 30 ans a plus d’une corde à son arc ; il cultive ses propres céréales, pétrit manuellement un pain bio à base de blés de variétés anciennes.
+('Theodore_Planas-Rastoin','Théodore','Planas-Rastoin','Meyreuil','Ce jeune paysan-boulanger de 30 ans a plus d’une corde à son arc ; il cultive ses propres céréales, pétrit manuellement un pain bio à base de blés de variétés anciennes.
 Passionné d’authenticité et respectueux de biodynamie, Théodore fait revivre les terres familiales,  y plante des céréales et installe un vignoble qu’il travaille à la main dans le plus strict respect des règles Bio et laboure avec un cheval.
 Les céréales sont transformés en farine  soit chez Philippe Monteau au Moulin de Grans soit chez Bertrand Allais Paysan-Boulanger dans le var (le producteur de farine de notre AMAP). C''est donc à partir de ses céréales cultivées sur le domaine que Théodore confectionne chaque semaine ses pains. Il  fabrique  plusieurs fournées de 70 kilos de pain. 
 Après une assez longue préparation des ingrédients, il pétrit à la main à plusieurs reprises pendant une heure, et laisse lever la pâte. En parallèle, il prépare le four à bois. Plus de deux brouettes de bois sont nécessaires pour alimenter le feu et obtenir l’inertie suffisante afin de bien cuire le pain. La pâte une fois levée, c’est le *boulage* et le *façonnage* sur les toiles de lin au tissage très serré, 6 ou 7 planches de pains de 500g ou un kilo. Humidification du four, positionnement des braises, enfournement des pains deux par deux … tout un art, beaucoup d’énergie et de concentration pour réussir la fournée ! 
@@ -44,7 +45,7 @@ On parle d''eux
 https://www.pressreader.com/france/la-revue-du-vin-de-france/20150213/283948881028213
 https://domaine-rochefontaine.com/actualite/','',1),
 
-('Sylvain','Apostolo','Le Jas du Vignal','La ferme du Jas du Vignal se situe à Sillans-la-cascade, petit village du haut-var entre Draguignan et Brignoles. 
+('Sylvain_Apostolo','Sylvain','Apostolo','Le Jas du Vignal','La ferme du Jas du Vignal se situe à Sillans-la-cascade, petit village du haut-var entre Draguignan et Brignoles. 
 « Les 200 brebis de race Lacaune pâturent dans les collines et les prés toute l’année suivant les conditions climatiques et nous offrent un lait onctueux, aromatique et délicat.
 Le lait récolté est transformé par nos soins en fromages fermiers certifiés en agriculture biologique.
 Les brebis sont traites tous les matins de septembre à juin avant d’aller se dégourdir les pattes et se remplir la panse dans nos prairies. 
@@ -52,7 +53,7 @@ Durant la période estivale, c’est repos pour tout le monde! Les brebis chaume
 Et nous, paysans du Jas du Vignal, nous accordons un peu de repos entre les récoltes de foin, qui serviront à l’alimentation du troupeau l’année suivante ! » S Apostolo
 ','',1),
 
-('John','Doe','Chevrier à La Roquebrussane EARL Les Vallons','Élevage extensif de chèvres en système sylvopastoral : les animaux pâturent dans les collines du massif de la Sainte Baume. Le troupeau profite ainsi des ressources fourragères et participe à la prévention des incendies en entretenant les sous-bois. Cette pratique donne un lait parfumé et riche.
+('John_Doe','John','Doe','Chevrier à La Roquebrussane EARL Les Vallons','Élevage extensif de chèvres en système sylvopastoral : les animaux pâturent dans les collines du massif de la Sainte Baume. Le troupeau profite ainsi des ressources fourragères et participe à la prévention des incendies en entretenant les sous-bois. Cette pratique donne un lait parfumé et riche.
 Leurs animaux sont de races rustiques (chèvres du Rove et alpines chamoisées) ce qui leur permet de rester à l’extérieur toute l’année. Les Carel produisent des fromages fermiers : les matières premières sont exclusivement issues de l’exploitation et transformées sur place dans une fromagerie qui répond aux normes européennes.
 Des fromages de chèvre.','Des fromages de chèvre. Leurs spécialités sont :
 •Le pèbre d’aï : un crottin de chèvre de 100 gr On peut le consommer frais, à partir de 5 jours, ou affiné, de 10 à 30 jours. Il est aromatisé d’un brin de sarriette (pèbre d’aï)
@@ -61,7 +62,7 @@ Des fromages de chèvre.','Des fromages de chèvre. Leurs spécialités sont :
 
 •La tomme de la Sainte Baume : une pâte pressée, type tomme de Savoie. Elle est affinée au minimum un mois',1),
 
-('Brice','Hermieux','La campagne du Gapeau, Hyères','EN 2017, délaissant la blouse blanche et les laboratoires de microbiologie, Brice reprend l’exploitation familiale sur Hyères succédant ainsi à son grand-père métayer et son père horticulteur.
+('Brice_Hermieux','Brice','Hermieux','La campagne du Gapeau, Hyères','EN 2017, délaissant la blouse blanche et les laboratoires de microbiologie, Brice reprend l’exploitation familiale sur Hyères succédant ainsi à son grand-père métayer et son père horticulteur.
 
 Un retour sur les bancs du lycée agricole permet d’acquérir les connaissances nécessaires en maraichage et en élevage avicole.
 
@@ -72,10 +73,10 @@ On parle d’eux :
 Brice Hermieux, var matin février 2018 [https://www.pressreader.com/france/var-matin-frejus-saint- raphael/20180222/282132111925157]
 ','',1),
 
-('Bertrand','Allais','Adresse non renseignée','Entre Bras et Châteauvert se trouve le domaine de la Rouvière plane où Bertrand Allais cultive céréales et légumineuses depuis 1977. Converti à l’agriculture biologique depuis l’an 2000, sur les 70 hectares de son exploitation, il en cultive 60, en laisse 10 en jachères. L’irrigation se fait par le canal de l’Argens. 
+('Bertrand_Allais','Bertrand','Allais','Adresse non renseignée','Entre Bras et Châteauvert se trouve le domaine de la Rouvière plane où Bertrand Allais cultive céréales et légumineuses depuis 1977. Converti à l’agriculture biologique depuis l’an 2000, sur les 70 hectares de son exploitation, il en cultive 60, en laisse 10 en jachères. L’irrigation se fait par le canal de l’Argens. 
 Le compost à base de fumier récupéré chez des éleveurs biologiques et de temps à autre un engrais azoté viennent nourrir ses terres déjà enrichies en azote par la culture de légumineuses telles que luzerne et sainfoin.','Il choisit de cultiver d’anciennes variétés de céréales plus adaptées au climat, plus goûteuses mais forcément moins productives : blé tendre, blé des Pharaons dit Kamut, petit épeautre, seigle… à partir desquelles il fabrique ses farines. Il produit également des pois chiches et des lentilles vertes.',1),
 
-('Philippe','Bilocq','Domaine de Saint André, La Saulce','L’exploitation familiale, le Domaine St André, a été créée de toute pièce en 1992 dans les Hautes-Alpes. Elle se situe à 15km au sud de Gap, à 600m d''altitude au pied du massif de Céüse sur les coteaux ensoleillés dominant la Durance. Depuis plus de 15 ans, pommiers et poiriers sont cultivés ainsi que de la vigne selon les méthodes de l''Agriculture Biologique. 23 variétés de fruits (poires,coings…), dont 17 de pommes sont produites.
+('Philippe_Bilocq','Philippe','Bilocq','Domaine de Saint André, La Saulce','L’exploitation familiale, le Domaine St André, a été créée de toute pièce en 1992 dans les Hautes-Alpes. Elle se situe à 15km au sud de Gap, à 600m d''altitude au pied du massif de Céüse sur les coteaux ensoleillés dominant la Durance. Depuis plus de 15 ans, pommiers et poiriers sont cultivés ainsi que de la vigne selon les méthodes de l''Agriculture Biologique. 23 variétés de fruits (poires,coings…), dont 17 de pommes sont produites.
 
 Ceci entraine un étalement de la récolte entre le 15 août au 30 octobre.
 
@@ -83,7 +84,7 @@ Les fruits sont ramassés à la main. Un premier tri est effectué dans le champ
 
 Tous les produits de l’exploitation sont certifiés AB par Ecocert.','',1),
 
-('Vincent','Mélé','Les Sagnes, Saint Julien du Gua, Ardèche','Producteur de châtaignes, de farine de châtaignes, de confitures… Vincent Mélé est installé à Saint Julien du Gua, Ardèche, depuis 2015. 
+('Vincent_Mele','Vincent','Mélé','Les Sagnes, Saint Julien du Gua, Ardèche','Producteur de châtaignes, de farine de châtaignes, de confitures… Vincent Mélé est installé à Saint Julien du Gua, Ardèche, depuis 2015. 
 Par la localisation de l’exploitation dans le Parc Régional des Monts d''Ardèche, ses châtaignes bénéficient de l''Appellation d''origine protégée (AOP).
 Cette AOP est réservée aux châtaignes de variétés locales anciennes ardéchoises, cultivées en vergers de type traditionnels. Depuis 2016, tous ses châtaigniers sont en reconversion en l''agriculture biologique.
 
@@ -138,12 +139,35 @@ INSERT INTO "season" ("label") VALUES
 ('Hiver'),
 ('Automne');
 
-INSERT INTO "article" ("title","content","admin_id","category_id") VALUES
-('Mon panier de produit','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',1,2);
+INSERT INTO "article" ("slug","title","content","admin_id","category_id") VALUES
+('Grand_panier_legumes_fruits','Grand panier de légumes et fruits',
+'Myrtilles Bleuet : ~0,125kg,
+Haricots verts : ~0,5kg,
+Nectarines (jaunes et/ou blanches en fonction de la récolte) : ~0,7kg,
+Tomates (variétés anciennes) : ~0,8kg,
+Pêches (jaunes et/ou blanches en fonction de la récolte) : ~0,7kg,
+Pommes de terre nouvelles Délicatesse : ~0,6kg,
+Botte d''oignons nouveaux blancs : 1 pièce',1,1),
+
+('Miel_aliment_miracle?','Le miel, un aliment miracle ?',
+'La fabrication du miel par les abeilles est l’un des grands miracles de la nature : pour produire 500 g de miel, les abeilles doivent butiner 8 millions de fleurs. Ces dernières années, la consommation de miel a explosé et cet aliment est devenu un argument marketing à la mode. Mais mérite-t-il vraiment sa réputation ? Le nutritionniste Anthony Berthou nous a aidés à répondre à cette question.
+
+Une bonne alternative au sucre de table
+Au cours de sa fabrication, le sucre subit un processus de raffinage qui détruit tous ses nutriments. À l’inverse, le miel est une substance pure, produite par les abeilles à partir du nectar des fleurs. Pour réaliser le miel, les abeilles se transmettent le nectar : celui-ci est peu à peu « digéré » et enrichi par les enzymes que chacune d’entre elles sécrète. Grâce à ce processus, les abeilles enrichissent naturellement le miel en minéraux (magnésium, calcium, potassium, fer) et en vitamines (B et C), même si les quantités restent faibles.',1,4),
+
+('Creation_AMAP_Pins-Justaret','Pins-Justaret. Nouvelle AMAP',
+'L’AMAP de Pins-Justaret a été créée à l’initiative de 2 habitantes, Noémie et Pauline, avec le soutien de l’équipe municipale et du réseau AMAP de Midi-Pyrénées. Elles précisent : "Nous tenons à remercier la Municipalité sans laquelle nous n’aurions pas pu faire connaître le projet, et qui nous mets à disposition un local adapté à la distribution. Ils ont soutenu le projet à chaque étape. Cela ne s’est pas fait d’un claquement de doigts. Nous avons eu beaucoup d’échanges, et une réunion importante avec le Vice-président du réseau des AMAP de Midi-Pyrénées Cyril Martinie, et des "essaimeuses" Julie et Patrica, qui habitent elles-mêmes sur Pins-Justaret et sont au COPIL de l’AMAP de la Muscadelle à Pinsaguel."',1,2),
+
+('Comment_cuire_sans_detruire?','Comment cuire sans détruire ?',
+'Cuire les aliments présente des avantages. Cela permet notamment de faciliter la digestion des fibres et de favoriser l’assimilation de certains nutriments.
+
+Mais la cuisson a aussi des inconvénients : elle dégrade la qualité nutritionnelle des aliments. Ainsi, elle contribue à la destruction de certaines vitamines et minéraux. En effet, de nombreuses vitamines, notamment les vitamines C, B1 et B9 sont par exemple sensibles à la chaleur et peuvent perdre aisément 50% de leur teneur initiale avec la cuisson.
+
+Mais toutes les cuissons ne se valent pas : certaines préservent davantage la qualité nutritionnelle. Plus la cuisson est longue et la température élevée, plus la teneur nutritive de l’aliment s’appauvrit. Avec le nutritionniste Anthony Berthou, nous avons fait un tour d’horizon des différents modes de cuisson.',1,3);
 
 
-INSERT INTO "recipe" ("title","ingredients","description","admin_id","season_id") VALUES
-('Salade fraîcheur au fenouil, pomelo et noix',
+INSERT INTO "recipe" ("slug","title","ingredients","description","admin_id","season_id") VALUES
+('Salade_fraîcheur_au_fenouil','Salade fraîcheur au fenouil, pomelo et noix',
 'Ingrédients 4 personnes
 1 fenouil,
 1 pomelo,
@@ -161,7 +185,7 @@ poivre',
 4 : Dans un saladier, mélangez le fenouil, le pomelo et l’assaisonnement. Laissez mariner la salade au réfrigérateur.
 5 : Dans une assiette, dressez la salade en la parsemant de cerneaux de noix et posez quelques plumets de fenouil.',1,1),
 
-('Potofu de légumes : le pot-au-feu revisité',
+('Potofu_de_legumes','Potofu de légumes : le pot-au-feu revisité',
 'Ingrédients 5 personnes
 2 carottes,
 3 petits navets,
@@ -179,7 +203,7 @@ poivre',
 4 : Pendant ce temps, coupez le tofu en cubes. Au bout de 30 minutes de cuisson, rajoutez-le dans la casserole de légumes et continuez la cuisson.
 5 : Vérifiez la cuisson des légumes avec la pointe d’un couteau, ils doivent être tendres. Terminez en rajoutant la pâte mise diluée. Vous pouvez servir ce plat avec le bouillon versés sur les légumes ou bien à part.',1,3),
 
-('Poivrons farcis au quinoa, légumes et feta',
+('Poivrons_farcis_au_quinoa','Poivrons farcis au quinoa, légumes et feta',
 'Ingrédients 4 personnes
 4 poivrons,
 180g de quinoa cru,
@@ -199,7 +223,7 @@ Herbes de Provence, sel, poivre',
 6 : Il ne reste plus qu’à garnir généreusement les poivrons avec la farce à base de quinoa. Salez, poivrez, et saupoudrez d’herbes de Provence (ou avec une autre épice de votre choix).
 7 : Enfournez les poivrons pendant environ 40 minutes. Le poivron doit se tenir, mais être fondant.',1,2),
 
-('Velouté de carottes au lait de coco',
+('Veloute_de_carottes','Velouté de carottes au lait de coco',
 'Ingrédients 3 bols
 5 carottes bio,
 1 bouillon cube de légumes,

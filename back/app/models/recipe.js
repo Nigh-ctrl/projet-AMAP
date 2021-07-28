@@ -93,9 +93,9 @@ class Recipe{
             
                 const preparedQuery={
                     text:`UPDATE recipe
-                    SET title=$1, ingredients=$2, description=$3, admin_id=$4, season_id=$5
-                    WHERE id=$6`,
-                    values:[this.title,this.ingredients,this.description,this.admin_id,this.season_id,this.id]
+                    SET slug=$1, title=$2, ingredients=$3, description=$4, admin_id=$5, season_id=$6
+                    WHERE id=$7`,
+                    values:[this.slug,this.title,this.ingredients,this.description,this.admin_id,this.season_id,this.id]
                 }
                 
                 await client.query(preparedQuery);
@@ -103,9 +103,9 @@ class Recipe{
             }else{
                 
                 const preparedQuery={
-                    text:`INSERT INTO recipe(title, ingredients, description, admin_id, season_id) 
-                    VALUES($1, $2, $3, $4, $5) RETURNING id`,
-                    values:[this.title,this.ingredients, this.description,this.admin_id,this.season_id]
+                    text:`INSERT INTO recipe(slug, title, ingredients, description, admin_id, season_id) 
+                    VALUES($1, $2, $3, $4, $5, $6) RETURNING id`,
+                    values:[this.slug,this.title,this.ingredients,this.description,this.admin_id,this.season_id]
                 }
     
                 await client.query(preparedQuery);

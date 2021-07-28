@@ -2,6 +2,7 @@ const Joi = require('joi');
 
 const recipeSchema = Joi.object({
     id: Joi.number().integer().optional(),
+    slug: Joi.string().required(),
     title: Joi.string().required(),
     ingredients: Joi.string().required(),
     description: Joi.string().required(),

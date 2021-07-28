@@ -64,10 +64,14 @@ const farmerController={
 
             var farmer = await Farmer.findOne(id);
 
-            const {firstname,name,location,biography,basket,admin_id,products_id}=request.body;
+            const {slug,firstname,name,location,biography,basket,admin_id,products_id}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
+            if(slug){
+                farmer.slug = slug;
+            }
+
             if(firstname){
                 farmer.firstname = firstname;
             }

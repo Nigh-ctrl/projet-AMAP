@@ -61,10 +61,14 @@ const articleController={
 
             const article = await Article.findOne(id);
 
-            const {title,content,admin_id,category_id}=request.body;
+            const {slug,title,content,admin_id,category_id}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
+            if(slug){
+                article.slug = slug;
+            }
+
             if(title){
                 article.title = title;
             }

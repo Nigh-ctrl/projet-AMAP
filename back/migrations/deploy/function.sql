@@ -6,7 +6,8 @@ CREATE FUNCTION add_farmer(farmer json,product int ARRAY) RETURNS int AS $$
 	WITH productids AS(
 		SELECT unnest(product) AS id
 	), thefarmer AS (
-		INSERT INTO farmer (firstname, name, location, biography, basket, admin_id) VALUES(
+		INSERT INTO farmer (slug,firstname, name, location, biography, basket, admin_id) VALUES(
+			$1->>'slug',
 			$1->>'firstname',
 			$1->>'name',
 			$1->>'location',
@@ -26,6 +27,7 @@ CREATE FUNCTION update_farmer(farmer json,product int ARRAY) RETURNS int AS $$
 		SELECT unnest(product) AS id
 	), thefarmer AS (
 		UPDATE farmer SET
+			slug=$1->>'slug',
 			firstname=$1->>'firstname',
 			name=$1->>'name',
 			location=$1->>'location',

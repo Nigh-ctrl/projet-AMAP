@@ -92,9 +92,9 @@ class Article{
             
                 const preparedQuery={
                     text:`UPDATE article
-                    SET title=$1, content=$2, admin_id=$3, category_id=$4
-                    WHERE id=$5`,
-                    values:[this.title,this.content,this.admin_id,this.category_id,this.id]
+                    SET slug=$1, title=$2, content=$3, admin_id=$4, category_id=$5
+                    WHERE id=$6`,
+                    values:[this.slug,this.title,this.content,this.admin_id,this.category_id,this.id]
                 }
                 
                 await client.query(preparedQuery);
@@ -102,9 +102,9 @@ class Article{
             }else{
                 
                 const preparedQuery={
-                    text:`INSERT INTO article(title, content, admin_id, category_id) 
-                    VALUES($1, $2, $3, $4) RETURNING id`,
-                    values:[this.title,this.content,this.admin_id,this.category_id]
+                    text:`INSERT INTO article(slug, title, content, admin_id, category_id) 
+                    VALUES($1, $2, $3, $4, $5) RETURNING id`,
+                    values:[this.slug,this.title,this.content,this.admin_id,this.category_id]
                 }
     
                 await client.query(preparedQuery);   
