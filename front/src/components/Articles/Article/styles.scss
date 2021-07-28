@@ -1,40 +1,28 @@
 // import des variables sass 
 @import '../../../styles/_vars.scss'; 
 
-.evenements {
+section .article {
   width: 100%;
   flex: 1;
 
-  &-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 2em 0;
-  }
   &-card {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     width: 60%;
     height: 35%;
     margin: 1.5em auto;
     padding: 1em;
-    background-color: rgba(194, 192, 192, 0.445);
+    background-color: $tertiary-color;
     border-radius: 2.5em;
-
-    &:hover {
-      -webkit-transform: scale(1.1);
-	    transform: scale(1.1);
-      transition: .2s ease-in-out;
-      background-color: rgb(194, 192, 192);
-    }
-  }
-  &-title {
-    font-size: 2em;
-    margin: 1em 0;
-    margin: auto;
   }
   &-text {
     padding: 2em;
+    width: 45%;
+  }
+  &-img {
+    width: 45%;
+    border-radius: 2.5em;
+    border: solid 10px $last-color;
   }
 }
 .page-title {

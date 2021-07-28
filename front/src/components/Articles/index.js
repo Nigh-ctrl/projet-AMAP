@@ -32,7 +32,7 @@ const Articles = () => {
 
   return(
     <section className="articles">
-      <h1 className="page-title">Articles</h1>
+      <h1 className="page-title">Actu de l'amap</h1>
       <NavBarre />
       <div className="articles-list">
         {/* Ici un map lors de la dynamisation */}
