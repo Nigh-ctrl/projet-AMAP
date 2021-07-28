@@ -49,11 +49,18 @@
     max-width: 21em;
     max-height: 15em;
     margin: auto;
+    border-radius: 2.5em;
+    border: 10px solid $last-color;
   }
   &-title {
     font-size: 1em;
     margin: 1em 0;
   }
+
+  &-p {
+  padding-top: 2em;
+  }
+
   &-read-more {
     margin-top: 1em;
     text-align: right;
