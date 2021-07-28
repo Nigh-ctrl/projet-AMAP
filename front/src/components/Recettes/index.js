@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 import './styles.scss';
 
@@ -33,16 +34,7 @@ const Recettes = () => {
     <section className="recettes">
       <h1 className="page-title">Recettes</h1>
       {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-      <nav className="recettes-navBar">
-      <a className="clicked" href="">Accueil des Recettes</a>
-        <a className="nav-link" href="">Recette de printemps</a>
-        <a className="nav-link" href="">Recette d'été</a>
-        <a className="nav-link" href="">Recette d'automne</a>
-        <a className="nav-link" href="">Recette d'hiver</a>
-        <form action="POST">
-        <input placeholder='Rechercher par produit...'/>
-        </form>
-      </nav>
+      <NavBar />
       <div className="recettes-list">
         {
           recettes.map((recette) => (
