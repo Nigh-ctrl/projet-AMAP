@@ -18,7 +18,7 @@ const Connexion = () => {
       //requete axios
       axios({
         method: 'post',
-        url: 'http://localhost:5000/login',
+        url: `${axios.default.baseURL}/login`,
         data: {
           email: email,
           password: password

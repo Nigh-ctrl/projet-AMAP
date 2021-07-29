@@ -16,7 +16,7 @@ const Article = () => {
     //requete axios
     axios({
       method: 'get',
-      url: `http://localhost:5000/articles/${articleId}`
+      url: `${axios.default.baseURL}/articles/${articleId}`
     })
     .then((res) => {
       setArticle(res.data);

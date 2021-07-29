@@ -17,7 +17,7 @@ const Recette = () => {
     //requete axios
     axios({
       method: 'get',
-      url: `http://localhost:5000/recettes/${recetteId}`
+      url: `${axios.default.baseURL}/recettes/${recetteId}`
     })
     .then((res) => {
       setRecette(res.data);

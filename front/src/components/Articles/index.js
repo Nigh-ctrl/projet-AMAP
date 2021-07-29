@@ -15,7 +15,7 @@ const Articles = () => {
     //requete axios
     axios({
       method: 'get',
-      url: 'http://localhost:5000/articles'
+      url: `${axios.default.baseURL}/articles`
     })
     .then((res) => {
       if(category === undefined){
