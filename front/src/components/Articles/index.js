@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 // import PropTypes from 'prop-types';
-import NavBarre from './NavBarre';
+import NavBar from './NavBar';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import './styles.scss';
 
 const Articles = () => {
+
+  const { category } = useParams();
 
   const [articles, setArticles] = useState([]);
   
@@ -14,10 +16,7 @@ const Articles = () => {
     //requete axios
     axios({
       method: 'get',
-      url: 'http://localhost:5000/articles',
-      data: {
-        articles: articles
-      }
+      url: 'http://localhost:5000/articles'
     })
     .then((res) => {
       console.log(res.data);
@@ -33,7 +32,7 @@ const Articles = () => {
   return(
     <section className="articles">
       <h1 className="page-title">Actu de l'amap</h1>
-      <NavBarre />
+      <NavBar />
       <div className="articles-list">
         {/* Ici un map lors de la dynamisation */}
         {
