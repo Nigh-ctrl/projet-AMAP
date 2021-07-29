@@ -4,6 +4,7 @@ const Article = require('../models/article');
 //The controller which contains all the method for the article class
 const articleController={
     
+    //This method catch all articles from the database and send them in a JSON object
     findAll:async(_,response)=>{
         try{
             const articles=await Article.findAll();
@@ -13,6 +14,7 @@ const articleController={
         }
     },
 
+    //This method catch one article from the database and send it in a JSON object
     findOne:async(request,response,next)=>{
         const id=parseInt(request.params.id,10);
 
@@ -28,6 +30,7 @@ const articleController={
         }
     },
 
+    //This method catch all articles of a specific category from the database and send them in a JSON object
     findByCategory: async (request, response) => {
         const categoryId = parseInt(request.params.id, 10);
 
@@ -39,6 +42,7 @@ const articleController={
         }
     },
     
+    //This method recieve JSON object and add an article in the database 
     addArticle: async (request, response) => {
         try{
 
@@ -53,6 +57,7 @@ const articleController={
 
     },
 
+    //This method recieve JSON object and update an article in the database 
     updateArticle: async (request, response) => {
 
         const id = parseInt(request.params.id, 10);
@@ -95,6 +100,7 @@ const articleController={
 
     },
 
+    //This method delete an article in the database
     delete: async (request, response) => {
         const id = parseInt(request.params.id, 10);
 

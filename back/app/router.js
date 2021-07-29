@@ -48,6 +48,7 @@ router.get('/agriculteurs/produits/:id(\\d+)', farmerController.findByProduct);
  * Create a new farmer object and insert it in the database
  * @route POST /agriculteurs
  * @group Farmers
+ * @param {ReqPostJson.model} object.body.required JSON Post object to add in database
  * @returns {Article.model} 201 - The article just created
  * @returns {Array<product_ids>} 201 - An array of products id related to the farmer
  * @returns {String} 500 - An error message
@@ -59,12 +60,12 @@ router.post('/agriculteurs',checkAdminMiddleware,validateBody(farmerSchema),farm
 * @route PATCH /agriculteurs/{id}
 * @group Farmers
 * @param {number} id.path.required The id of the product
+* @param {ReqPostJson.model} object.body.required JSON Post object to add in database
 * @returns {Article.model} 200 - An array of articles with a specific category
-* @returns {String} 200 - The string of products id related to the farmer
+* @returns {String} 201 - The string of products id related to the farmer
 * @returns {String} 500 - An error message
 */
 router.patch('/agriculteurs/:id(\\d+)',checkAdminMiddleware,validateBody(farmerSchema),farmerController.updateFarmer);
-
 
 /**
  * @route DELETE /agriculteurs/{id}
@@ -106,6 +107,7 @@ router.get('/articles/categorie/:id(\\d+)', articleController.findByCategory);
  * Create a new article object and insert it in the database
  * @route POST /articles
  * @group Articles
+ * @param {ReqPostJson.model} object.body.required JSON Post object to add in database
  * @returns {Article.model} 201 - The article just created
  * @returns {String} 500 - An error message
  */
@@ -116,13 +118,15 @@ router.post('/articles',checkAdminMiddleware,validateBody(articleSchema),article
 * @route PATCH /articles/{id}
 * @group Articles
 * @param {number} id.path.required The id of the product
-* @returns {Article.model} 200 - An array of articles with a specific category
+* @param {ReqPostJson.model} object.body.required JSON Post object to add in database
+* @returns {Article.model} 201 - An array of articles with a specific category
+* @returns {String} 500 - An error message
 */
 router.patch('/articles/:id(\\d+)',checkAdminMiddleware,validateBody(articleSchema),articleController.updateArticle);
 
 /**
  * @route DELETE /articles/{id}
- * @group Farmers
+ * @group Articles
  * @param {number} id.path.required The id of the article to delete
  * @returns {String} true or 500 - An error message
  */
@@ -160,6 +164,7 @@ router.get('/recettes/saison/:id(\\d+)', recipeController.findBySeason);
 * Create a new recipe object and insert it in the database
 * @route POST /recettes
 * @group Recipes
+* @param {ReqPostJson.model} object.body.required JSON Post object to add in database
 * @returns {Recipe.model} 201 - The recipe just created
 * @returns {String} 500 - An error message
 */
@@ -167,10 +172,12 @@ router.post('/recettes',checkAdminMiddleware,validateBody(recipeSchema),recipeCo
 
 /**
 * Update the corresponding article in the database
-* @route PATCH /articles/{id}
-* @group Articles
-* @param {number} id.path.required The id of the product
-* @returns {Recipe.model} 200 - An array of articles with a specific category
+* @route PATCH /recettes/{id}
+* @group Recipes
+* @param {number} id.path.required The id of the recipe
+* @param {ReqPostJson.model} object.body.required JSON Post object to add in database
+* @returns {Recipe.model} 201 - An array of recipes with a specific category
+* @returns {String} 500 - An error message
 */
 router.patch('/recettes/:id(\\d+)',checkAdminMiddleware,validateBody(recipeSchema),recipeController.updateRecipe);
 
@@ -189,6 +196,7 @@ router.delete('/recettes/:id(\\d+)',checkAdminMiddleware,recipeController.delete
 * Create a new JWT token if the user is correctly logged
 * @route POST /login
 * @group Admins
+* @param {ReqPostJson.model} object.body.required JSON Post object to add in database
 * @returns {Object} 201 - Create an object with the id of the admin and the validat JWT Token inside
 * @returns {String} 403 - Unauthorized connection
 * @returns {String} 500 - An error message
