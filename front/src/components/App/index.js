@@ -30,6 +30,7 @@ const App = () => (
       <Route path="/producteurs" exact component={Producteurs}/>
       <Route path="/articles" exact component={Articles}/>
       <Route path="/article/:id" exact component={Article}/>
+        <Route path="/article/:id/edit" exact component{Edit}/>
       <Route path="/articles/:category" exact component={Articles}/>
       <Route path="/recettes" exact component={Recettes}/>
       <Route path="/recette/:id" exact component={Recette}/>

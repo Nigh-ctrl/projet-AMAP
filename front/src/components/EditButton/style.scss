@@ -1,0 +1,17 @@
+.edit{
+  position: absolute;
+  left: 75%;
+  bottom: 59%; 
+  &-container{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2.5em;
+    width: 100px;
+    height: 30px;
+    color: blue;
+    font-size: large;
+  }
+}

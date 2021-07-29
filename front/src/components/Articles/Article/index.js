@@ -2,7 +2,6 @@ import React, { useState, useEffect }from "react";
 import NavBar from '../NavBar'
 import { useParams } from "react-router";
 import axios from 'axios';
-
 import './styles.scss';
 
 const Article = () => {
