@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from "react";
-import NavBarre from '../NavBarre'
+import NavBar from '../NavBar'
 import { useParams } from "react-router";
 import axios from 'axios';
 
@@ -31,7 +31,7 @@ const Article = () => {
   return (
     <section className="article">
       <h1 className="page-title">{article.title}</h1>
-      <NavBarre />
+      <NavBar />
         <article className="article-card">
           <p className="article-text">
           {article.content}
