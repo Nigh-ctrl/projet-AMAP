@@ -102,7 +102,7 @@ const farmerController={
             }
 
             await farmer.save(products_id);
-
+            
             farmer = await Farmer.findOne(id);
 
             response.status(201).json(farmer);
