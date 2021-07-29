@@ -37,16 +37,27 @@ const Recettes = () => {
       <NavBar />
       <div className="recettes-list">
         {
-          recettes.map((recette) => (
-            <Link key={recette.id+recette.name} to={`/recette/${recette.id}`}>
+          recettes.map((recette) => {
+            let ingredient = recette.ingredients.split(',')
+            // console.log(ingredient)
+            return (
+            <Link key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
               <article  className="recettes-card">
                 <h3 className="recettes-title">{recette.title}</h3>
                 <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-                <p className="recettes-p">{recette.description}</p>
+                <p className="recettes-description">{recette.description}</p>
+                <ul className="recettes-igredients">
+                  {
+                    ingredient.map(row => (
+                      <li key={row}>{row}</li>
+                    ))
+                  }
+                </ul>
                 <p className="recettes-read-more">En savoir plus</p>
               </article>
             </Link>
-          ))
+            )
+          })
         }
       </div>
     </section>
