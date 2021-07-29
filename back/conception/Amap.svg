@@ -1,0 +1,191 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="771" height="347" view_box="0 0 771 347"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Thu, 29 Jul 2021 03:19:48</desc>
+
+<rect id="frame" x="0" y="0" width="771" height="347" fill="#f7f7f7" stroke="none" stroke-width="0"/>
+
+<!-- Association EDITER LA RECETTE -->
+<line x1="211" y1="195" x2="394" y2="195" stroke="#de77ae" stroke-width="2"/>
+<text x="255" y="212.0" fill="#4d9221" font-family="Verdana" font-size="12">1,1</text>
+<line x1="556" y1="195" x2="394" y2="195" stroke="#de77ae" stroke-width="2"/>
+<text x="502" y="212.0" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-EDITER LA RECETTE">
+	<path d="M 449 170 a 14 14 90 0 1 14 14 V 195 h -138 V 184 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 463 195.0 v 11 a 14 14 90 0 1 -14 14 H 339 a 14 14 90 0 1 -14 -14 V 195.0 H 138" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="325" y="170" width="138" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="325" y1="195" x2="463" y2="195" stroke="#de77ae" stroke-width="1"/>
+	<text x="332" y="187.7" fill="#000000" font-family="Verdana" font-size="12">EDITER LA RECETTE</text>
+</g>
+
+<!-- Association DE SAISON -->
+<line x1="211" y1="195" x2="211" y2="296" stroke="#de77ae" stroke-width="2"/>
+<text x="216.0" y="263" fill="#4d9221" font-family="Verdana" font-size="12">1,1</text>
+<line x1="43" y1="296" x2="211" y2="296" stroke="#de77ae" stroke-width="2"/>
+<text x="78" y="313.0" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-DE SAISON">
+	<path d="M 239 271 a 14 14 90 0 1 14 14 V 296 h -84 V 285 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 253 296.0 v 11 a 14 14 90 0 1 -14 14 H 183 a 14 14 90 0 1 -14 -14 V 296.0 H 84" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="169" y="271" width="84" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="169" y1="296" x2="253" y2="296" stroke="#de77ae" stroke-width="1"/>
+	<text x="176" y="288.7" fill="#000000" font-family="Verdana" font-size="12">DE SAISON</text>
+</g>
+
+<!-- Association APPARTIENT A L'AGRICULTEUR -->
+<line x1="43" y1="77" x2="211" y2="77" stroke="#de77ae" stroke-width="2"/>
+<text x="82" y="94.0" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<line x1="394" y1="77" x2="211" y2="77" stroke="#de77ae" stroke-width="2"/>
+<text x="318" y="94.0" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-APPARTIENT A L'AGRICULTEUR">
+	<path d="M 299 52 a 14 14 90 0 1 14 14 V 77 h -204 V 66 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 313 77.0 v 11 a 14 14 90 0 1 -14 14 H 123 a 14 14 90 0 1 -14 -14 V 77.0 H 204" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="109" y="52" width="204" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="109" y1="77" x2="313" y2="77" stroke="#de77ae" stroke-width="1"/>
+	<text x="116" y="69.7" fill="#000000" font-family="Verdana" font-size="12">APPARTIENT A L'AGRICULTEUR</text>
+</g>
+
+<!-- Association EDITER L'ARTICLE -->
+<line x1="710" y1="296" x2="556" y2="296" stroke="#de77ae" stroke-width="2"/>
+<text x="652" y="313.0" fill="#4d9221" font-family="Verdana" font-size="12">1,1</text>
+<line x1="556" y1="195" x2="556" y2="296" stroke="#de77ae" stroke-width="2"/>
+<text x="561.0" y="254" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-EDITER L'ARTICLE">
+	<path d="M 605 271 a 14 14 90 0 1 14 14 V 296 h -126 V 285 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 619 296.0 v 11 a 14 14 90 0 1 -14 14 H 507 a 14 14 90 0 1 -14 -14 V 296.0 H 126" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="493" y="271" width="126" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="493" y1="296" x2="619" y2="296" stroke="#de77ae" stroke-width="1"/>
+	<text x="500" y="288.7" fill="#000000" font-family="Verdana" font-size="12">EDITER L'ARTICLE</text>
+</g>
+
+<!-- Association FAIT PARTI DE -->
+<line x1="710" y1="296" x2="710" y2="195" stroke="#de77ae" stroke-width="2"/>
+<text x="715.0" y="246" fill="#4d9221" font-family="Verdana" font-size="12">1,1</text>
+<line x1="710" y1="77" x2="710" y2="195" stroke="#de77ae" stroke-width="2"/>
+<text x="715.0" y="119" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-FAIT PARTI DE">
+	<path d="M 748 170 a 14 14 90 0 1 14 14 V 195 h -104 V 184 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 762 195.0 v 11 a 14 14 90 0 1 -14 14 H 672 a 14 14 90 0 1 -14 -14 V 195.0 H 104" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="658" y="170" width="104" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="658" y1="195" x2="762" y2="195" stroke="#de77ae" stroke-width="1"/>
+	<text x="665" y="187.7" fill="#000000" font-family="Verdana" font-size="12">FAIT PARTI DE</text>
+</g>
+
+<!-- Association EDITER L'AGRICULTEUR -->
+<line x1="394" y1="77" x2="556" y2="77" stroke="#de77ae" stroke-width="2"/>
+<text x="448" y="94.0" fill="#4d9221" font-family="Verdana" font-size="12">1,1</text>
+<line x1="556" y1="195" x2="556" y2="77" stroke="#de77ae" stroke-width="2"/>
+<text x="561.0" y="145" fill="#4d9221" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-EDITER L'AGRICULTEUR">
+	<path d="M 623 52 a 14 14 90 0 1 14 14 V 77 h -162 V 66 a 14 14 90 0 1 14 -14" fill="#f1b6da" stroke="#f1b6da" stroke-width="0"/>
+	<path d="M 637 77.0 v 11 a 14 14 90 0 1 -14 14 H 489 a 14 14 90 0 1 -14 -14 V 77.0 H 162" fill="#fde0ef" stroke="#fde0ef" stroke-width="0"/>
+	<rect x="475" y="52" width="162" height="50" fill="none" rx="14" stroke="#de77ae" stroke-width="2"/>
+	<line x1="475" y1="77" x2="637" y2="77" stroke="#de77ae" stroke-width="1"/>
+	<text x="482" y="69.7" fill="#000000" font-family="Verdana" font-size="12">EDITER L'AGRICULTEUR</text>
+</g>
+
+<!-- Entity PRODUIT -->
+<g id="entity-PRODUIT">
+	<g id="frame-PRODUIT">
+		<rect x="9" y="52" width="68" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="9" y="77.0" width="68" height="25" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="9" y="52" width="68" height="50" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="9" y1="77" x2="77" y2="77" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="14" y="69.7" fill="#000000" font-family="Verdana" font-size="12">PRODUIT</text>
+	<text x="14" y="94.8" fill="#000000" font-family="Verdana" font-size="12">libellé</text>
+	<line x1="14" y1="97" x2="50" y2="97" stroke="#000000" stroke-width="1"/>
+</g>
+
+<!-- Entity RECETTE -->
+<g id="entity-RECETTE">
+	<g id="frame-RECETTE">
+		<rect x="172" y="144" width="78" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="172" y="169.0" width="78" height="77" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="172" y="144" width="78" height="102" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="172" y1="169" x2="250" y2="169" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="183" y="161.7" fill="#000000" font-family="Verdana" font-size="12">RECETTE</text>
+	<text x="177" y="186.7" fill="#000000" font-family="Verdana" font-size="12">slug</text>
+	<line x1="177" y1="189" x2="203" y2="189" stroke="#000000" stroke-width="1"/>
+	<text x="177" y="203.8" fill="#000000" font-family="Verdana" font-size="12">titre</text>
+	<text x="177" y="220.8" fill="#000000" font-family="Verdana" font-size="12">ingrédients</text>
+	<text x="177" y="237.8" fill="#000000" font-family="Verdana" font-size="12">contenu</text>
+</g>
+
+<!-- Entity CATEGORIE -->
+<g id="entity-CATEGORIE">
+	<g id="frame-CATEGORIE">
+		<rect x="669" y="52" width="82" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="669" y="77.0" width="82" height="25" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="669" y="52" width="82" height="50" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="669" y1="77" x2="751" y2="77" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="674" y="69.7" fill="#000000" font-family="Verdana" font-size="12">CATEGORIE</text>
+	<text x="674" y="94.8" fill="#000000" font-family="Verdana" font-size="12">libellé</text>
+	<line x1="674" y1="97" x2="710" y2="97" stroke="#000000" stroke-width="1"/>
+</g>
+
+<!-- Entity ADMIN -->
+<g id="entity-ADMIN">
+	<g id="frame-ADMIN">
+		<rect x="529" y="153" width="54" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="529" y="178.0" width="54" height="59" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="529" y="153" width="54" height="84" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="529" y1="178" x2="583" y2="178" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="534" y="170.7" fill="#000000" font-family="Verdana" font-size="12">ADMIN</text>
+	<text x="534" y="195.8" fill="#000000" font-family="Verdana" font-size="12">nom</text>
+	<line x1="534" y1="198" x2="562" y2="198" stroke="#000000" stroke-width="1"/>
+	<text x="534" y="212.8" fill="#000000" font-family="Verdana" font-size="12">email</text>
+	<text x="534" y="229.8" fill="#000000" font-family="Verdana" font-size="12">mdp</text>
+</g>
+
+<!-- Entity AGRICULTEUR -->
+<g id="entity-AGRICULTEUR">
+	<g id="frame-AGRICULTEUR">
+		<rect x="345" y="9" width="98" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="345" y="34.0" width="98" height="111" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="345" y="9" width="98" height="136" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="345" y1="34" x2="443" y2="34" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="350" y="26.7" fill="#000000" font-family="Verdana" font-size="12">AGRICULTEUR</text>
+	<text x="350" y="51.7" fill="#000000" font-family="Verdana" font-size="12">slug</text>
+	<line x1="350" y1="54" x2="376" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="350" y="68.7" fill="#000000" font-family="Verdana" font-size="12">prénom</text>
+	<text x="350" y="85.8" fill="#000000" font-family="Verdana" font-size="12">nom</text>
+	<text x="350" y="102.8" fill="#000000" font-family="Verdana" font-size="12">localisation</text>
+	<text x="350" y="119.8" fill="#000000" font-family="Verdana" font-size="12">biographie</text>
+	<text x="350" y="136.8" fill="#000000" font-family="Verdana" font-size="12">panier</text>
+</g>
+
+<!-- Entity SAISON -->
+<g id="entity-SAISON">
+	<g id="frame-SAISON">
+		<rect x="13" y="271" width="60" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="13" y="296.0" width="60" height="25" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="13" y="271" width="60" height="50" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="13" y1="296" x2="73" y2="296" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="18" y="288.7" fill="#000000" font-family="Verdana" font-size="12">SAISON</text>
+	<text x="18" y="313.8" fill="#000000" font-family="Verdana" font-size="12">libellé</text>
+	<line x1="18" y1="316" x2="54" y2="316" stroke="#000000" stroke-width="1"/>
+</g>
+
+<!-- Entity ARTICLE -->
+<g id="entity-ARTICLE">
+	<g id="frame-ARTICLE">
+		<rect x="678" y="254" width="64" height="25" fill="#b8e186" stroke="#b8e186" stroke-width="0"/>
+		<rect x="678" y="279.0" width="64" height="59" fill="#e6f5d0" stroke="#e6f5d0" stroke-width="0"/>
+		<rect x="678" y="254" width="64" height="84" fill="none" stroke="#7fbc41" stroke-width="2"/>
+		<line x1="678" y1="279" x2="742" y2="279" stroke="#7fbc41" stroke-width="1"/>
+	</g>
+	<text x="683" y="271.7" fill="#000000" font-family="Verdana" font-size="12">ARTICLE</text>
+	<text x="683" y="296.8" fill="#000000" font-family="Verdana" font-size="12">slug</text>
+	<line x1="683" y1="299" x2="709" y2="299" stroke="#000000" stroke-width="1"/>
+	<text x="683" y="313.8" fill="#000000" font-family="Verdana" font-size="12">titre</text>
+	<text x="683" y="330.8" fill="#000000" font-family="Verdana" font-size="12">contenu</text>
+</g>
+</svg>

@@ -4,6 +4,7 @@ const Farmer = require('../models/farmer');
 //The controller which contains all the method for the farmer class
 const farmerController={
 
+    //This function catch all farmers from the database and send them in a JSON object
     findAll:async(_,response)=>{
         try{
             const farmers=await Farmer.findAll();
@@ -13,6 +14,7 @@ const farmerController={
         }
     },
     
+    //This method catch one farmer from the database and send it in a JSON object
     findOne:async(request,response,next)=>{
         const id=parseInt(request.params.id,10);
 
@@ -28,6 +30,7 @@ const farmerController={
         }
     },
 
+    //This method catch all farmers of a specific product from the database and send them in a JSON object
     findByProduct: async (request, response) => {
         const productId = parseInt(request.params.id, 10);
         try{
@@ -38,6 +41,7 @@ const farmerController={
         }
     },
 
+    //This method recieve JSON object and add a farmer in the database 
     addFarmer: async (request, response) => {
         try{
 
@@ -56,6 +60,7 @@ const farmerController={
         
     },
     
+    //This method recieve JSON object and update a farmer in the database 
     updateFarmer: async (request, response) => {
 
         const id = parseInt(request.params.id, 10);
@@ -108,6 +113,7 @@ const farmerController={
 
     },
 
+    //This method delete a farmer in the database
     delete: async (request, response) => {
         
         const id = parseInt(request.params.id, 10);

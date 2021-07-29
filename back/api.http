@@ -5,12 +5,12 @@ GET http://localhost:4000/agriculteurs
 GET http://localhost:4000/agriculteurs/9
 
 ### Get farmers by product
-GET http://localhost:4000/agriculteurs/produits/5
+GET http://localhost:4000/agriculteurs/produits/4
 
 
 ### Add a farmer
 POST http://localhost:4000/agriculteurs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NTI2NTYsImV4cCI6MTYyNzU1NjI1Nn0.ZSeEMbG9Blj8wYN6Qf12kAkkuaaIvUTWKNbMWv6NZB0
 Content-Type: application/json
 
 {
@@ -25,8 +25,8 @@ Content-Type: application/json
 }
 
 ### Update a farmer
-PATCH http://localhost:4000/agriculteurs/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+PATCH http://localhost:4000/agriculteurs/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NTI2NTYsImV4cCI6MTYyNzU1NjI1Nn0.ZSeEMbG9Blj8wYN6Qf12kAkkuaaIvUTWKNbMWv6NZB0
 Content-Type: application/json
 
 {
@@ -37,13 +37,12 @@ Content-Type: application/json
     "biography": "biographie de l'agriculteur",
     "basket": "panier de l'agriculteur",
     "admin_id": 1,
-    "products_id": [3,11]
+    "products_id": [3,8]
 }
 
 ### Delete one farmer
-
 DELETE http://localhost:4000/agriculteurs/9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0NjE2ODcsImV4cCI6MTYyNzQ2NTI4N30.WgpXhb2g1FXpICPcx7aGT_g7jEuGezN4VmhR4WxYyO0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 
 
 
@@ -51,14 +50,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpY
 GET http://localhost:4000/articles
 
 ### Get one article
-GET http://localhost:4000/articles/2
+GET http://localhost:4000/articles/4
 
 ### Get articles by category
-GET http://localhost:4000/articles/categorie/2
+GET http://localhost:4000/articles/categorie/4
 
 ### Add an article
 POST http://localhost:4000/articles
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 Content-Type: application/json
 
 {
@@ -70,8 +69,8 @@ Content-Type: application/json
 }
 
 ### Modify an article
-PATCH  http://localhost:4000/articles/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+PATCH  http://localhost:4000/articles/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 Content-Type: application/json
 
 {
@@ -84,7 +83,7 @@ Content-Type: application/json
 
 ### Delete one article
 DELETE http://localhost:4000/articles/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 
 
 
@@ -93,14 +92,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpY
 GET http://localhost:4000/recettes
 
 ### Get one recipe
-GET http://localhost:4000/recettes/7
+GET http://localhost:4000/recettes/2
 
 ### Get recipes by season
-GET http://localhost:4000/recettes/saison/4
+GET http://localhost:4000/recettes/saison/3
 
 ### Add an recipe
 POST http://localhost:4000/recettes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0ODE0NjMsImV4cCI6MTYyNzQ4NTA2M30.HIzKjiWbPTT4GsMHtIXI5sjJirCWOlbAh1IuUJuV3LA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 Content-Type: application/json
 
 {
@@ -113,8 +112,8 @@ Content-Type: application/json
 }
 
 ### Modify a recipe
-PATCH  http://localhost:4000/recettes/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0Njc2MjYsImV4cCI6MTYyNzQ3MTIyNn0.AqmHCx7_8IRciL4pUpwxTAQJL01j91vqC7uy9WagifY
+PATCH  http://localhost:4000/recettes/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 Content-Type: application/json
 
 {
@@ -127,9 +126,8 @@ Content-Type: application/json
 }
 
 ### Delete one recipe
-DELETE http://localhost:4000/recettes/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc0NjE2ODcsImV4cCI6MTYyNzQ2NTI4N30.WgpXhb2g1FXpICPcx7aGT_g7jEuGezN4VmhR4WxYyO0
-
+DELETE http://localhost:4000/recettes/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
 
 
 

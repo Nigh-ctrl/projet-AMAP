@@ -133,7 +133,6 @@ class Farmer{
     /**
      * Delete the farmer from the database
      * @async
-     * @returns {true}
      */
      async delete(){
 
@@ -150,10 +149,8 @@ class Farmer{
         }catch(error){
             console.log(error);
         }
-        
     }
-
-
+    
 };
 
 module.exports=Farmer;

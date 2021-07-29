@@ -1,3 +1,4 @@
+//This middleware allows to control each data transferred to the API
 const validator = {
     
     validateBody: (schema) => (request, response, next) => {

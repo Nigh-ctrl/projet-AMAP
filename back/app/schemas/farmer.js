@@ -1,5 +1,6 @@
 const Joi = require('joi');
 
+//Schema validator of farmer object
 const farmerSchema = Joi.object({
     id: Joi.number().integer().optional(),
     slug: Joi.string().required(),
