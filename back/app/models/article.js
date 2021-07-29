@@ -118,7 +118,6 @@ class Article{
     /**
      * Delete the article from the database
      * @async
-     * @returns {true}
      */
     async delete(){
 
@@ -134,10 +133,8 @@ class Article{
 
         }catch(error){
             console.log(error);
-        }
-        
+        } 
     }
-    
 };
 
 module.exports=Article;

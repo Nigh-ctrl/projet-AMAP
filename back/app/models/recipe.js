@@ -116,12 +116,10 @@ class Recipe{
         }
 
     }
-    
 
     /**
      * Delete the recipe from the database
      * @async
-     * @returns {true}
      */
      async delete(){
 

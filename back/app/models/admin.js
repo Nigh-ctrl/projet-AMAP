@@ -16,7 +16,7 @@ class Admin{
      * Fetches a single admin from the database
      * @static
      * @async
-     * @param {id} id 
+     * @param {emailAdresse} emailAdresse admin email adresse
      * @returns {Admin|null}
      */
      static async findOne(emailAdresse){

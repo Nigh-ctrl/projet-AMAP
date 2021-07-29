@@ -1,5 +1,6 @@
 const Joi = require('joi');
 
+//Schema validator of article object
 const articleSchema = Joi.object({
     id: Joi.number().integer().optional(),
     slug: Joi.string().required(),
