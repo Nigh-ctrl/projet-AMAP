@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import NavBar from './NavBar';
 
 import './styles.scss';
 
 const Recettes = () => {
+  const { saison } = useParams();
 
   const [recettes, setRecettes] = useState([]);
   
@@ -14,32 +14,31 @@ const Recettes = () => {
     //requete axios
     axios({
       method: 'get',
-      url: 'http://localhost:5000/recettes',
-      data: {
-        recettes: recettes
-      }
+      url: 'http://localhost:5000/recettes'
     })
     .then((res) => {
-      // console.log(res.data);
-      setRecettes(res.data);
+      if(saison === undefined){
+        setRecettes(res.data);
+        return
+      }
+      const saisonFiltre = res.data.filter(recette => (recette.season_id == saison));
+      setRecettes(saisonFiltre);
     })
     .catch((e) => {
       console.log("erreur lors du login", e);
     })
   )
  
-  useEffect(getRecipes, []);
+  useEffect(getRecipes, [saison]);
 
   return(
     <section className="recettes">
       <h1 className="page-title">Recettes</h1>
-      {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
       <NavBar />
       <div className="recettes-list">
         {
           recettes.map((recette) => {
             let ingredient = recette.ingredients.split(',')
-            // console.log(ingredient)
             return (
             <Link key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
               <article  className="recettes-card">
@@ -63,14 +62,5 @@ const Recettes = () => {
     </section>
   )
 };
-
-{/* <Route path="/recette/:nom-recette" exact component={Recette}/> */}
-// Content.propTypes = {
-// 
-// };
-
-// Content.defaultProps = {
-//   
-// };
 
 export default Recettes;
