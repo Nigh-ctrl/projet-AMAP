@@ -17,6 +17,7 @@ import Connexion from '../Connexion'
 import Presentation from '../Presentation'
 import Recette from '../Recettes/Recette'
 import Article from '../Articles/Article'
+import Edit from '../Edit'
 
 // == Composant
 const App = () => (
@@ -30,10 +31,10 @@ const App = () => (
       <Route path="/producteurs" exact component={Producteurs}/>
       <Route path="/articles" exact component={Articles}/>
       <Route path="/article/:id" exact component={Article}/>
-        <Route path="/article/:id/edit" exact component{Edit}/>
       <Route path="/articles/:category" exact component={Articles}/>
       <Route path="/recettes" exact component={Recettes}/>
       <Route path="/recette/:id" exact component={Recette}/>
+      <Route path="/recette/:id/edit" exact component={Edit}/>
       <Route path="/recettes/saison/:saison" exact component={Recettes}/>
       <Route path="/login" exact component={Connexion}/>
       <Footer/>
