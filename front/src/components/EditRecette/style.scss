@@ -19,8 +19,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 90%;
+
+    label{
+      color: green;
+      }
 
     textarea{
       resize: none;
@@ -35,6 +39,14 @@
 
     }
     }
-    
+   button{
+     margin-bottom: 10px;
+     border: none;
+     background-color: green;
+     color: white;
+     padding: 5px;
+     border-radius:2.5em
+     
+    } 
   }
 }

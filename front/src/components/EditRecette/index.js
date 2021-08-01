@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useContext}from "react";
+import {Redirect} from 'react-router-dom'
 import { useParams } from "react-router";
 import axios from 'axios';
 import './style.scss'
@@ -10,6 +11,7 @@ const EditRecette = () => {
   const { id } = useParams();
   const [recetteId, setRecetteId] = useState(id);
   const [recette, setRecette] = useState([]);
+  const [redirect, setRedirect] = useState()
 
   const getOneRecipe = () => (
     //requete axios
@@ -19,8 +21,6 @@ const EditRecette = () => {
     })
     .then((res) => {
       setRecette(res.data);
-      console.log(res.data)
-      console.log(`le token = ${token}`)
     })
     .catch((e) => {
       console.log("erreur lors du login", e);
@@ -34,7 +34,8 @@ const EditRecette = () => {
       data: recette,
       headers: {'Authorization': `Bearer ${token}`},
     }).then((res) => {
-    console.log(res)
+    alert('modifications enregistrées')
+    setRedirect(true)
       })
       .catch((e)=>{
       console.log(`erreur ultime`)
@@ -50,6 +51,8 @@ const EditRecette = () => {
 
   useEffect(getOneRecipe, [])
 
+  if(redirect) return <Redirect to="/"  />
+
  if(recette){
   return(
     <div className="editRecette">
@@ -63,7 +66,7 @@ const EditRecette = () => {
             <textarea id="ingredients" name="ingredients" value={recette.ingredients} rows="20" cols="50" className="ingredient" onChange={(e) => setRecette({...recette, ingredients: e.target.value})} />
         </div>
         <div className="description">
-          <label> descriptions</label>
+          <label> description</label>
             <textarea className="description" id="description" name="description" value={recette.description} rows="40" onChange={(e) => setRecette({...recette, description: e.target.value})}/>
         </div>
         <button type="submit" >enregistrer les modifications</button>
