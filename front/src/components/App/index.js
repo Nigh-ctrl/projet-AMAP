@@ -17,7 +17,7 @@ import Connexion from '../Connexion'
 import Presentation from '../Presentation'
 import Recette from '../Recettes/Recette'
 import Article from '../Articles/Article'
-import Edit from '../Edit'
+import EditRecette from '../EditRecette'
 
 // == Composant
 const App = () => (
@@ -34,7 +34,7 @@ const App = () => (
       <Route path="/articles/:category" exact component={Articles}/>
       <Route path="/recettes" exact component={Recettes}/>
       <Route path="/recette/:id" exact component={Recette}/>
-      <Route path="/recette/:id/edit" exact component={Edit}/>
+      <Route path="/recette/:id/edit" exact component={EditRecette}/>
       <Route path="/recettes/saison/:saison" exact component={Recettes}/>
       <Route path="/login" exact component={Connexion}/>
       <Footer/>

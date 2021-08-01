@@ -23,6 +23,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    //cette ligne est pour contraindre le composant EditButton a rester dans recette-container.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/position
+    // voir la section "fixed" pour comprendre la relation entre display:fixed et perspective
+    perspective: 1em;
     
     &-ingredient{
       margin-bottom: 1em;

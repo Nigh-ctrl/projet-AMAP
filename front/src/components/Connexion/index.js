@@ -25,7 +25,9 @@ const Connexion = () => {
         }
       }, { headers: {'Authorization': `Bearer ${token}`}} )
       .then((res) => {
+        console.log(res.data)
         setToken(res.data.token)
+        localStorage.setItem('tokenStored', res.data.token)
       })
       .catch((e) => {
         console.log("erreur lors du login", e);

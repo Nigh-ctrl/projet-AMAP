@@ -1,7 +1,5 @@
 .edit{
-  position: absolute;
-  left: 75%;
-  bottom: 59%; 
+  position: fixed;
   &-container{
     display: flex;
     flex-direction: row;
