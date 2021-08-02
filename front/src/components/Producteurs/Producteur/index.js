@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import profil from '../../../../public/producteurs/producteur 1/profil_1.jpg';
 import { useParams } from "react-router";
 import axios from 'axios';
+import EditButton from '../../EditButton'
 
 import './styles.scss'
 
@@ -17,7 +18,7 @@ const Producteur = () => {
     axios({
       method: 'get',
       // on met comme valeur l'id récupéré via le useParams
-      url: `http://localhost:5000/agriculteurs/${id_producteur}`
+      url: `http://localhost:4000/agriculteurs/${id_producteur}`
     })
     .then((res) => {
       setProduits(res.data.basket.split(' ,'));
@@ -35,6 +36,7 @@ const Producteur = () => {
   return (
     <section className="agriculteur">
       <div className="agriculteur-main">
+        <EditButton />
         <div className="agriculteur-images">
           <img src={profil} alt=""/>
           <div className="agriculteur-location">
