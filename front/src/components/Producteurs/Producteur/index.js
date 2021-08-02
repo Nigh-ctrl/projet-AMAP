@@ -5,11 +5,12 @@ import axios from 'axios';
 
 import './styles.scss'
 
-const Agriculteur = () => {
+const Producteur = () => {
   // on destructure pour récupérer directement id et pas un objet
   const { id_producteur } = useParams();
 
   const [producteur, setProducteur] = useState([]);
+  const [produits, setProduits] = useState([]);
   
   const getOneProducteur = () => (
     //requete axios
@@ -19,6 +20,7 @@ const Agriculteur = () => {
       url: `http://localhost:5000/agriculteurs/${id_producteur}`
     })
     .then((res) => {
+      setProduits(res.data.basket.split(' ,'));
       setProducteur(res.data);
     })
     .catch((e) => {
@@ -28,10 +30,7 @@ const Agriculteur = () => {
 
   useEffect(getOneProducteur, []);
 
-  
-  const products = producteur.basket;
-  // products.split();
-  console.log(products);
+  let id = 0;
 
   return (
     <section className="agriculteur">
@@ -53,7 +52,11 @@ const Agriculteur = () => {
               <ul>
                 {/* Ici un map pour la liste des produits */}
                 {
-                  <li>{producteur.basket}</li>
+                  produits.map(produit => {
+                    return(
+                    <li key={++id}>{produit}</li>
+                  )}
+                  )                  
                 }
               </ul>
             </div>
@@ -63,4 +66,4 @@ const Agriculteur = () => {
   )
 };
 
-export default Agriculteur;
+export default Producteur;
