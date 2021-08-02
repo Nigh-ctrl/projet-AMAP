@@ -36,8 +36,8 @@ const Recette = () => {
       <h1 className="page-title">{recette.title}</h1>
       <NavBar />
         <article className="recette-article">
-          <div className="recette-container">
       <EditButton />
+          <div className="recette-container">
           {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
             <p className="recette-container-ingredient">{recette.ingredients}</p>
             <p className="recette-container-description">{recette.description}</p>
