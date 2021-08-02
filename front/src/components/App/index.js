@@ -11,6 +11,7 @@ import Contact from '../Contact'
 import Accueil from '../Accueil'
 import Footer from '../Footer'
 import Producteurs from '../Producteurs'
+import Producteur from '../Producteurs/Producteur'
 import Articles from '../Articles'
 import Recettes from '../Recettes';
 import Connexion from '../Connexion'
@@ -30,6 +31,8 @@ const App = () => (
       <Route path="/presentation" exact component={Presentation} />
       <Route path="/contact" exact component={Contact}/>
       <Route path="/producteurs" exact component={Producteurs}/>
+      <Route path="/producteur/:id_producteur" exact component={Producteur}/>
+      <Route path="/producteurs/:produits" exact component={Producteurs}/>
       <Route path="/articles" exact component={Articles}/>
       <Route path="/article/:id" exact component={Article}/>
       <Route path="/article/:id/edit" exact component={EditArticle} />

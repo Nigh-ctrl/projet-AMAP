@@ -2,7 +2,7 @@
 GET http://localhost:4000/agriculteurs
 
 ### Get one farmer
-GET http://localhost:4000/agriculteurs/9
+GET http://localhost:4000/agriculteurs/7
 
 ### Get farmers by product
 GET http://localhost:4000/agriculteurs/produits/4
@@ -10,7 +10,7 @@ GET http://localhost:4000/agriculteurs/produits/4
 
 ### Add a farmer
 POST http://localhost:4000/agriculteurs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NTI2NTYsImV4cCI6MTYyNzU1NjI1Nn0.ZSeEMbG9Blj8wYN6Qf12kAkkuaaIvUTWKNbMWv6NZB0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 
 ### Update a farmer
 PATCH http://localhost:4000/agriculteurs/9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NTI2NTYsImV4cCI6MTYyNzU1NjI1Nn0.ZSeEMbG9Blj8wYN6Qf12kAkkuaaIvUTWKNbMWv6NZB0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 ### Delete one farmer
 DELETE http://localhost:4000/agriculteurs/9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 
 
 
@@ -57,7 +57,7 @@ GET http://localhost:4000/articles/categorie/4
 
 ### Add an article
 POST http://localhost:4000/articles
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ### Modify an article
 PATCH  http://localhost:4000/articles/5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {
@@ -83,7 +83,7 @@ Content-Type: application/json
 
 ### Delete one article
 DELETE http://localhost:4000/articles/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 
 
 
@@ -99,7 +99,7 @@ GET http://localhost:4000/recettes/saison/3
 
 ### Add an recipe
 POST http://localhost:4000/recettes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {
@@ -113,7 +113,7 @@ Content-Type: application/json
 
 ### Modify a recipe
 PATCH  http://localhost:4000/recettes/6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc1NDU0NzUsImV4cCI6MTYyNzU0OTA3NX0.j3biN2ROYCTdwSiB6IRNYI8ONl_il_XBKXYapuwH4Js
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJpYXQiOjE2Mjc2NDQxMTMsImV4cCI6MTYyNzY0NzcxM30.NhNMlYESVRQaUC_jRoz4QJTG8K1fae3iWiXkua5udO0
 Content-Type: application/json
 
 {

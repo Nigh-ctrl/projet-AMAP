@@ -1,3 +1,4 @@
+
 DELETE FROM "farmer";
 DELETE FROM "article";
 DELETE FROM "recipe";
@@ -5,7 +6,6 @@ DELETE FROM "product";
 DELETE FROM "farmer_to_product";
 DELETE FROM "category";
 DELETE FROM "season";
-
 
 INSERT INTO "farmer" ("slug","firstname","name","location","biography","basket","admin_id") VALUES
 ('Thierry_Vallarino','Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
@@ -163,12 +163,46 @@ Au cours de sa fabrication, le sucre subit un processus de raffinage qui détrui
 
 Mais la cuisson a aussi des inconvénients : elle dégrade la qualité nutritionnelle des aliments. Ainsi, elle contribue à la destruction de certaines vitamines et minéraux. En effet, de nombreuses vitamines, notamment les vitamines C, B1 et B9 sont par exemple sensibles à la chaleur et peuvent perdre aisément 50% de leur teneur initiale avec la cuisson.
 
-Mais toutes les cuissons ne se valent pas : certaines préservent davantage la qualité nutritionnelle. Plus la cuisson est longue et la température élevée, plus la teneur nutritive de l’aliment s’appauvrit. Avec le nutritionniste Anthony Berthou, nous avons fait un tour d’horizon des différents modes de cuisson.',1,3);
+Mais toutes les cuissons ne se valent pas : certaines préservent davantage la qualité nutritionnelle. Plus la cuisson est longue et la température élevée, plus la teneur nutritive de l’aliment s’appauvrit. Avec le nutritionniste Anthony Berthou, nous avons fait un tour d’horizon des différents modes de cuisson.',1,4),
+
+
+('Le_bénévole_une_espèce_en_voie_de_disparition?','Le bénévole, une espèce en voie de disparition?',
+'Une espèce animale ou de plante disparaît toutes les 20 minutes, soit 26 280 espèces disparues chaque année. Près d''un quart des espèces animales et végétales pourrait disparaître d''ici le milieu du siècle !
+
+Partant de ce constat alarmant, notre curiosité naturelle a été attirée par une espèce animale bien particulière, la race des bénévoles.
+
+Cette espèce est-elle en voie de disparition, ou au contraire est-elle en train de se développer, voire de proliferer ?
+
+A partir de l’observation scrupuleuse d’une communauté représentative nichée à Caromb, au cœur de la Provence, nous avons enquêté, fouillé, investigué pour tenter de répondre à cette question essentielle.
+
+Nous  avons observé cette espèce afin de savoir comment elle  évolue dans son milieu naturel, et surtout si les conditions climatiques, économiques, et environnementales menacent sa reproduction.
+
+Nous vous livrons ici le résultat de notre étude approfondie',1,3),
+
+('paniers_du_9_et_10_juillet','paniers du 9 et 10 juillet',
+'aubergine,
+courgettes ou carottes,
+concombre (10 et 13),
+salade ou radis,
+tomates cerise (paniers à 10),
+tomates (paniers à 13 et 16),
+betteraves rouges nouvelles (paniers à 13 et16),
+haricotes vert (paniers à 16),
+pomme de terre nouvelles ou fèves (paniers à 16),
+Distribution des poulets ',1,1),
+
+
+('Est-il_bon_de_jeûner?','Est-il bon de jeûner ?',
+'Notre corps est aujourd’hui habitué à être nourri de manière régulière. Pourtant, ça n’a pas toujours été le cas. Le jeûne existe depuis des milliers d’années et est souvent pratiqué par nécessité, quand la nourriture vient à manquer.
+
+Il fait aujourd’hui de plus en plus d’adeptes auprès de personnes désireuses d’optimiser leur bien-être. Mais est-il vraiment bénéfique de jeûner ? Comment bien jeûner et quels sont les risques potentiels de cette pratique ?
+
+Voici notre éclairage sur le sujet, rédigé avec le nutritionniste Anthony Berthou.',1,4);
 
 
 INSERT INTO "recipe" ("slug","title","ingredients","description","admin_id","season_id") VALUES
 ('Salade_fraîcheur_au_fenouil','Salade fraîcheur au fenouil, pomelo et noix',
-'Ingrédients 4 personnes
+'Ingrédients 4 personnes,
 1 fenouil,
 1 pomelo,
 1 échalote,
@@ -186,7 +220,7 @@ poivre',
 5 : Dans une assiette, dressez la salade en la parsemant de cerneaux de noix et posez quelques plumets de fenouil.',1,1),
 
 ('Potofu_de_legumes','Potofu de légumes : le pot-au-feu revisité',
-'Ingrédients 5 personnes
+'Ingrédients 5 personnes,
 2 carottes,
 3 petits navets,
 4 petites pommes de terre,
@@ -204,7 +238,7 @@ poivre',
 5 : Vérifiez la cuisson des légumes avec la pointe d’un couteau, ils doivent être tendres. Terminez en rajoutant la pâte mise diluée. Vous pouvez servir ce plat avec le bouillon versés sur les légumes ou bien à part.',1,3),
 
 ('Poivrons_farcis_au_quinoa','Poivrons farcis au quinoa, légumes et feta',
-'Ingrédients 4 personnes
+'Ingrédients 4 personnes,
 4 poivrons,
 180g de quinoa cru,
 1 aubergine,
@@ -224,7 +258,7 @@ Herbes de Provence, sel, poivre',
 7 : Enfournez les poivrons pendant environ 40 minutes. Le poivron doit se tenir, mais être fondant.',1,2),
 
 ('Veloute_de_carottes','Velouté de carottes au lait de coco',
-'Ingrédients 3 bols
+'Ingrédients 3 bols,
 5 carottes bio,
 1 bouillon cube de légumes,
 1L d’eau,
@@ -234,4 +268,19 @@ Optionnel :  lentilles corails, graines germées',
 '1 : Coupez les carottes grossièrement. (Si vos carottes ne sont pas bio, épluchez-les avant).
 2 : Dans une casserole, faites bouillir 1 litre d’eau avec un cube de légumes. Faites cuire les carottes pendant une vingtaine de minutes. Optionnel : pour un velouté plus rassasiant, faites cuire 4 c.s de lentilles corails en même temps que les carottes.
 3 : Une fois les carottes cuites, mixez-les avec 50cl d’eau de cuisson afin d’obtenir un velouté. Ajoutez les épices. Si vous avez fait cuire des lentilles corails, mixez le tout avec 75cl d’eau.
-4 : Versez le velouté dans des bols et ajoutez le lait de coco (et les graines germées si vous en avez).',1,4);
+4 : Versez le velouté dans des bols et ajoutez le lait de coco (et les graines germées si vous en avez).',1,4),
+
+('Gaufres_salées_patate_douce','Gaufres salées à la patate douce',
+'Ingrédients 15 petites gaufres,
+2 œufs,
+400g de patates douces (environ 2 patates),
+300g de farine de petit épeautre,
+1/2 sachet de levure chimique,
+2 c.s d’huile d’olive,
+Sel, poivres, ail semoule, herbes de Provence, cumin',
+'1 : Épluchez les patates douces, coupez-les en cubes et faites-les cuire dans de l’eau bouillante pendant 20 minutes.
+2 : Pendant ce temps dans un saladier, mélangez la farine, la levure et les œufs.
+3 : Une fois les patates cuites, écrasez-les avec une fourchette ou un écrase purée.
+4 : Ajoutez les patates à la préparation avec l’huile d’olive et les épices.
+5 : Mélangez le tout jusqu’à obtenir une pâte, puis formez de petites boules de pâte et faites cuire au gaufrier.
+6 : Vous pouvez accompagner vos gaufres avec de l’avocat, de la feta, ou encore du saumon.',1,4);
