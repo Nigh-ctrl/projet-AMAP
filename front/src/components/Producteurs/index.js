@@ -3,7 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 // import de toutes les photos des producteurs. Trouver une autre solution
-import image from '../../../public/producteurs/producteur 4/profil_1.jpg';
+import one from '../../../public/producteurs/producteur 1/profil_1.jpg';
+import three from '../../../public/producteurs/producteur 3/profil_1.jpg';
+import four from '../../../public/producteurs/producteur 4/profil_1.jpg';
+import six from '../../../public/producteurs/producteur 6/profil_1.jpg';
+import height from '../../../public/producteurs/producteur 8/profil_1.jpg';
 
 
 import './styles.scss';
@@ -26,6 +30,9 @@ const Agriculteurs = () => {
         console.log("sur le tri", produits, res.data);
         return
       }
+      // je filtre les agriculteur en fonction de leur products_id,
+      //le split me permet de récupérer les valeur une part une
+      // et le include de ne retenir ce celles qui correspondent
       const productsFiltre = res.data.filter(products => {
         const productsId = products.products_id.split(',');
         return(productsId.includes(produits))
@@ -54,6 +61,8 @@ const Agriculteurs = () => {
     10 : "Miel",
     11 : "Pain"
   };
+  // initialisation de la variable qui me sert a stocker le chemin de la photo
+  let imagePath;
 
   return (
     <main>
@@ -121,11 +130,39 @@ const Agriculteurs = () => {
           producteurs.map(producteur => {
             // je récupère les products_id de chaque producteurs dans un tableau (les elements sont unitaires)
             const product = producteur.products_id.split(',');
+            // dans chaque cas on affiche envoie un chemin différent en fonction de l'id du producteur
+            switch (producteur.id){
+              case 1:
+                imagePath = one;
+              break;
+              case 2:
+                imagePath = '';
+              break;
+              case 3:
+                imagePath = three;
+              break;
+              case 4:
+                imagePath = four;
+              break;
+              case 5:
+                imagePath = '';
+              break;
+              case 6:
+                imagePath = six;
+              break;
+              case 7:
+                imagePath = '';
+              break;
+              case 8:
+                imagePath = height;
+              break;
+            }
+
             return (
             <div key={producteur.id} className="producteur-card">
             <Link to={`/producteur/${producteur.id}`}>
               <div className="relative-card">
-                <img className="producteur-img" src={image} alt=""/>
+                <img className="producteur-img" src={imagePath} alt=""/>
                 <h3 className="producteur-name">{`${producteur.firstname} ${producteur.name}`}</h3>
                 <div className="tags-container">
                 {
@@ -138,7 +175,6 @@ const Agriculteurs = () => {
                     )
                   })
                 }
-                  
                 </div>
                 {/* Avec slice on réduit le text au 300 premiers caractères */}
                 <p className="producteur-card-text">{`${producteur.biography.slice(0, 300)} [...]`}</p>
