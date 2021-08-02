@@ -30,6 +30,8 @@ const Producteur = () => {
 
   useEffect(getOneProducteur, []);
 
+  let id = 0;
+
   return (
     <section className="agriculteur">
       <div className="agriculteur-main">
@@ -51,10 +53,10 @@ const Producteur = () => {
                 {/* Ici un map pour la liste des produits */}
                 {
                   produits.map(produit => {
-                    
                     return(
-                    <li key={produit}>{produit}</li>
-                  )})
+                    <li key={++id}>{produit}</li>
+                  )}
+                  )                  
                 }
               </ul>
             </div>
