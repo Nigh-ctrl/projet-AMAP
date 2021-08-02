@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import profil from '../../../../public/producteurs/producteur 1/profil_1.jpg';
 import { useParams } from "react-router";
 import axios from 'axios';
+
+// import de toutes les photos des producteurs. Trouver une autre solution
+import one from '../../../../public/producteurs/producteur 1/profil_1.jpg';
+import three from '../../../../public/producteurs/producteur 3/profil_1.jpg';
+import four from '../../../../public/producteurs/producteur 4/profil_1.jpg';
+import six from '../../../../public/producteurs/producteur 6/profil_1.jpg';
+import height from '../../../../public/producteurs/producteur 8/profil_1.jpg';
+
 
 import './styles.scss'
 
@@ -30,13 +37,43 @@ const Producteur = () => {
 
   useEffect(getOneProducteur, []);
 
+  // creation d'un id pour gestion de la key
   let id = 0;
+
+  // initialisation de la variable qui me sert a stocker le chemin de la photo
+  let imagePath;
+  switch (producteur.id){
+    case 1:
+      imagePath = one;
+    break;
+    case 2:
+      imagePath = '';
+    break;
+    case 3:
+      imagePath = three;
+    break;
+    case 4:
+      imagePath = four;
+    break;
+    case 5:
+      imagePath = '';
+    break;
+    case 6:
+      imagePath = six;
+    break;
+    case 7:
+      imagePath = '';
+    break;
+    case 8:
+      imagePath = height;
+    break;
+  }
 
   return (
     <section className="agriculteur">
       <div className="agriculteur-main">
         <div className="agriculteur-images">
-          <img src={profil} alt=""/>
+          <img src={imagePath} alt=""/>
           <div className="agriculteur-location">
             <img src="https://www.journaldugeek.com/content/uploads/2017/02/google-maps-640x360.jpg" alt=""/>
           </div>
