@@ -19,7 +19,7 @@ function Footer () {
   if(token){
     return(
    <footer>
-     <Link to="/mentions">
+     <Link to="/mentions-legales">
        <div className='center'>mentions légales</div>
      </Link>
      <Link to="/">
@@ -32,7 +32,7 @@ function Footer () {
 
   return (
    <footer>
-     <Link to="/mentions">
+     <Link to="/mentions-legales">
        <div className='center'>mentions légales</div>
      </Link>
      <Link to="/login">

@@ -8,6 +8,7 @@ import './styles.scss'
 // == Import
 import Header from '../Header'
 import Contact from '../Contact'
+import MentionsLegales from '../MentionsLegales'
 import Accueil from '../Accueil'
 import Footer from '../Footer'
 import Producteurs from '../Producteurs'
@@ -28,6 +29,7 @@ const App = () => (
       <Route path="/" exact component={Accueil}/>
       <Route path="/presentation" exact component={Presentation} />
       <Route path="/contact" exact component={Contact}/>
+      <Route path="/mentions-legales" exact component={MentionsLegales}/>
       <Route path="/producteurs" exact component={Producteurs}/>
       <Route path="/producteur/:id_producteur" exact component={Producteur}/>
       <Route path="/producteurs/:produits" exact component={Producteurs}/>
