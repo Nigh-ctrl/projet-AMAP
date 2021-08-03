@@ -11,6 +11,7 @@ function Footer () {
 
   function logout (){
     setToken(undefined)
+    localStorage.clear('tokenStored')
     alert("vous êtes déconnecté")
   }
 
