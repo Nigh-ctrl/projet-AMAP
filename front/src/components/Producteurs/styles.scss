@@ -134,22 +134,13 @@ a {
 }
 
 
-@media(max-width: $bp-tablet)
-{
-  .agriculteurs-list {
-    flex-wrap: wrap;
-  }
-  .agriculteurs-card {
-    flex-direction: column;
-    max-width: 45%;
-  }
-}
+
 @media(max-width: $bp-tablet)
 {
   .page-title {
-    margin: auto;
+    margin: 2em auto;
   }
-  .agriculteurs{
+  .producteurs{
     &-card {
     flex-direction: column;
     max-width: 60%;
