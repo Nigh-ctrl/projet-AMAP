@@ -2,8 +2,8 @@ import React, { useState, useEffect }from "react";
 import NavBar from '../NavBar'
 import { useParams } from "react-router";
 import axios from 'axios';
-
 import './styles.scss';
+import EditButton from '../../EditButton'
 
 const Article = () => {
   // on destructure pour récupérer directement id et pas un objet
@@ -16,7 +16,7 @@ const Article = () => {
     //requete axios
     axios({
       method: 'get',
-      url: `http://localhost:5000/articles/${articleId}`
+      url: `${axios.default.baseURL}/articles/${articleId}`
     })
     .then((res) => {
       setArticle(res.data);
@@ -33,6 +33,7 @@ const Article = () => {
       <h1 className="page-title">{article.title}</h1>
       <NavBar />
         <article className="article-card">
+          <EditButton />
           <p className="article-text">
           {article.content}
           </p>

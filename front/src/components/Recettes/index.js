@@ -14,7 +14,7 @@ const Recettes = () => {
     //requete axios
     axios({
       method: 'get',
-      url: 'http://localhost:5000/recettes'
+      url: `${axios.default.baseURL}/recettes`
     })
     .then((res) => {
       if(saison === undefined){

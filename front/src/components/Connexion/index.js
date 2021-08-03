@@ -18,14 +18,16 @@ const Connexion = () => {
       //requete axios
       axios({
         method: 'post',
-        url: 'http://localhost:5000/login',
+        url: `${axios.default.baseURL}/login`,
         data: {
           email: email,
           password: password
         }
       }, { headers: {'Authorization': `Bearer ${token}`}} )
       .then((res) => {
+        console.log(res.data)
         setToken(res.data.token)
+        localStorage.setItem('tokenStored', res.data.token)
       })
       .catch((e) => {
         console.log("erreur lors du login", e);
