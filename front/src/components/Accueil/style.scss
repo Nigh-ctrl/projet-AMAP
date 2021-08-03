@@ -22,7 +22,8 @@
     margin-bottom: auto;
     box-sizing: border-box;
     border-radius: 25px;
-    background-size: 100%;
+    background-size: cover;
+    
 
     //text a l'interieur des enfants direct
     .text{
@@ -91,7 +92,6 @@
       background-position: 0 -150px;
     }
     .recettes{
-      background-size: 120%;
       background-position: -50px -270px;
     }
   }
@@ -112,18 +112,20 @@
     > a {
       width: 90%;
       height: 90%;
-      background-size: 50%;
-      background-attachment: fixed;
+      background-color: black;
       .text{
         font-size: 1.7em;
         text-decoration: none !important;
       }
-      transition: width 0.7s, height 0.7s, transform 0.7s;
+      transition: width 0.7s, height 0.7s, transform 0.7s ease-in-out;
     }
 
     > a:hover{
     width: 95%;
     height: 95%;
+    transition: 0.7s ;
+    background-blend-mode:lighten;
+    opacity: 0.5;
     }
 
 
@@ -133,7 +135,6 @@
       order: -1;
       height: 93%;
       width: 95%;
-      background-size: 90%;
       background-position: 220% 70% ;
 
       &:hover{
@@ -155,17 +156,16 @@
 
     .actu{
       background-position:-10% 20%;
-      background-size: 40%;
     }
 
     .recettes{
-      background-size: 40%;
-      background-position: -30% -200%;
+      background-position: 50% 40%;
+      background-size: 110%;
     }
 
     .presentation:hover{
+
       size: 100%;
-      transition: ease-in-out(1s);
     }
 
 
