@@ -9,7 +9,8 @@
   justify-content: space-between;
 
   //selectionne seulement les enfants direct de acceuil
-  > div {
+  > a {
+  margin: 0 auto;
     display: flex;
     //alignement
     justify-content: center;
@@ -75,7 +76,7 @@
 @media(min-width: $bp-phone){
   .accueil{
     min-height: 800px;
-    >div{
+    >a{
       .text{
         height: 7rem;
       }
@@ -108,7 +109,7 @@
     align-items: center;
     justify-items: center;
 
-    > div {
+    > a {
       width: 90%;
       height: 90%;
       background-size: 50%;
@@ -120,7 +121,7 @@
       transition: width 0.7s, height 0.7s, transform 0.7s;
     }
 
-    > div:hover{
+    > a:hover{
     width: 95%;
     height: 95%;
     }
