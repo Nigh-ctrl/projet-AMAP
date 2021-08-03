@@ -25,7 +25,7 @@ const Producteur = () => {
     axios({
       method: 'get',
       // on met comme valeur l'id récupéré via le useParams
-      url: `http://localhost:4000/agriculteurs/${id_producteur}`
+      url: `${axios.default.baseURL}/agriculteurs/${id_producteur}`
     })
     .then((res) => {
       setProduits(res.data.basket.split(' ,'));
