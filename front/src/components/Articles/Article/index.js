@@ -5,6 +5,15 @@ import axios from 'axios';
 import './styles.scss';
 import EditButton from '../../EditButton'
 
+// import des photos des recettes
+import benevole from '../../../../public/articles/benevole.jpeg';
+import cuire from '../../../../public/articles/cuire.jpeg';
+import miel from '../../../../public/articles/miel2.jpeg';
+import amap from '../../../../public/articles/nouvelle-amap.jpeg';
+import jeune from '../../../../public/articles/jeune.jpeg';
+import panier from '../../../../public/articles/panier.jpeg';
+import panier2 from '../../../../public/articles/panier2.jpeg';
+
 const Article = () => {
   // on destructure pour récupérer directement id et pas un objet
   const { id } = useParams();
@@ -28,6 +37,31 @@ const Article = () => {
 
   useEffect(getOneArticle, []);
 
+  let imagePath;
+  switch (article.id){
+    case 1:
+      imagePath = panier;
+    break;
+    case 2:
+      imagePath = miel;
+    break;
+    case 3:
+      imagePath = amap;
+    break;
+    case 4:
+      imagePath = cuire;
+    break;
+    case 5:
+      imagePath = benevole;
+    break;
+    case 6:
+      imagePath = panier2;
+    break;
+    case 7:
+      imagePath = jeune;
+    break;
+  }
+
   return (
     <section className="article">
       <h1 className="page-title">{article.title}</h1>
@@ -37,7 +71,7 @@ const Article = () => {
           <p className="article-text">
           {article.content}
           </p>
-          <img className="article-img" src="https://cdn.pixabay.com/photo/2014/07/18/19/08/fruit-basket-396622_1280.jpg" alt=""/>
+          <img className="article-img" src={imagePath} alt=""/>
       </article>
     </section>
   )

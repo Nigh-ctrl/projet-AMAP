@@ -3,6 +3,15 @@ import NavBar from './NavBar';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
+// import des photos des recettes
+import benevole from '../../../public/articles/benevole.jpeg';
+import cuire from '../../../public/articles/cuire.jpeg';
+import miel from '../../../public/articles/miel2.jpeg';
+import amap from '../../../public/articles/nouvelle-amap.jpeg';
+import jeune from '../../../public/articles/jeune.jpeg';
+import panier from '../../../public/articles/panier.jpeg';
+import panier2 from '../../../public/articles/panier2.jpeg';
+
 import './styles.scss';
 
 const Articles = () => {
@@ -32,23 +41,48 @@ const Articles = () => {
 
   useEffect(getArticles, [category]);
 
+    let imagePath;
+
   return(
     <section className="articles">
       <h1 className="page-title">Actu de l'amap</h1>
       <NavBar />
       <div className="articles-list">
         {
-          // on ne garde que le component Evenements qui devra etre renommé en Article
-          articles.map((article) => (
-            <Link key={article.id+article.title} to={`/article/${article.id}`}>
+          articles.map((article) => {
+            switch (article.id){
+              case 1:
+                imagePath = panier;
+              break;
+              case 2:
+                imagePath = miel;
+              break;
+              case 3:
+                imagePath = amap;
+              break;
+              case 4:
+                imagePath = cuire;
+              break;
+              case 5:
+                imagePath = benevole;
+              break;
+              case 6:
+                imagePath = panier2;
+              break;
+              case 7:
+                imagePath = jeune;
+              break;
+            }
+            return(
+            <Link className="articles-a" key={article.id+article.title} to={`/article/${article.id}`}>
               <article className="articles-card">
                 <h3 className="articles-title">{article.title}</h3>
-                <img className="articles-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-                <p className="articles-content">{article.content}</p>
+                <img className="articles-img" src={imagePath} alt=""/>
+                <p className="articles-content">{`${article.content.slice(0, 300)} [...]`}</p>
                 <p className="articles-read-more">En savoir plus</p>
               </article>
             </Link>
-          ))
+          )})
         }
       </div>
     </section>
