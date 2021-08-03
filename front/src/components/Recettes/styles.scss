@@ -1,27 +1,10 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
-.clicked {
-  background-color:  rgb(0, 131, 0);
-  color: white;
-  padding: 0.3em 1em 0 1em;
-  border-radius: 0.3em 0.3em 0 0;
-}
-.nav-link {
-  padding: 0.3em 1em 0 1em;
-  color: black;
-}
-.recettes {
+section .recettes {
   width: 100%;
   flex: 1;
 
-  &-navBar {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: black 1px solid;
-  }
   &-list {
     width: 80%;
     display: flex;
@@ -29,22 +12,7 @@
     justify-content: space-around;
     margin: 2em auto;
   }
-  &-card {
-    display: flex;
-    flex-direction: column;
-    max-width: 30%;
-    margin: 1.5em 2em;
-    padding: 1em;
-    background-color: $tertiary-color;
-    border-radius: 2.5em;
-
-    &:hover {
-      -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-      transition: .2s ease-in-out;
-      background-color: rgb(194, 192, 192);
-    }
-  }
+  
   &-img {
     max-width: 21em;
     max-height: 15em;
@@ -53,14 +21,12 @@
     border: 10px solid $last-color;
   }
   &-title {
-    font-size: 1em;
+    font-size: 2em;
     margin: 1em 0;
   }
-
   &-p {
   padding-top: 2em;
   }
-
   &-read-more {
     margin-top: 1em;
     text-align: right;
@@ -68,32 +34,52 @@
     color: black;
   }
 }
+a {
+  margin-right: 0;
+  
+  article .recettes-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 1.5em 2em;
+  padding: 5em;
+  background-color: $tertiary-color;
+  border-radius: 2.5em;
+  }
+  
+  &:hover {
+    -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    transition: .2s ease-in-out;
+    background-color: rgb(194, 192, 192);
+  }
+}
 .page-title {
     font-size: 2.5em;
     padding: 1em;
     text-align: center;
   }
-  @media screen and (max-width: 1240px)
-  {
-    .recettes-img {
-      max-width: 100%;
-    }
-  }
-  @media screen and (max-width: 900px)
-  {
-    .recettes {
-      &-navBar {
-        display: none;
-      }
-      &-card {
-        max-width: 45%;
-      }
-      &-list {
-        flex-wrap: wrap;
-      }
-      &-img {
-        max-width: 100%;
-      }
-    }
-  }
+  // @media screen and (max-width: 1240px)
+  // {
+  //   .recettes-img {
+  //     max-width: 100%;
+  //   }
+  // }
+  // @media screen and (max-width: 900px)
+  // {
+  //   .recettes {
+  //     &-navBar {
+  //       display: none;
+  //     }
+  //     &-card {
+  //       max-width: 45%;
+  //     }
+  //     &-list {
+  //       flex-wrap: wrap;
+  //     }
+  //     &-img {
+  //       max-width: 100%;
+  //     }
+  //   }
+  // }
 
