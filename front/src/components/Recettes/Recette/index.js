@@ -1,9 +1,10 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect, useContext }from "react";
 // on a besoin d'importer useParams pour avoir accés au slug de l'url
 import { useParams } from "react-router";
 import axios from 'axios';
 import NavBar from '../NavBar';
 import EditButton from '../../EditButton';
+import {ConnexionContext} from '../../../ConnexionContext'
 
 // import des photos des recettes
 import potofu from '../../../../public/recettes/potofu.jpeg';
@@ -15,6 +16,7 @@ import gaufres from '../../../../public/recettes/gaufres.jpeg';
 import "./styles.scss";
 
 const Recette = () => {
+  const token = useContext(ConnexionContext)
   // on destructure pour récupérer directement id et pas un objet
   const { id } = useParams();
   // on met comme valeur l'id récupéré via le useParams
@@ -58,12 +60,35 @@ const Recette = () => {
     break;
   }
 
-  return(
+  if(token[0]){
+    return(
     <section className="recette">
       <h1 className="page-title">{recette.title}</h1>
       <NavBar />
         <article className="recette-article">
       <EditButton />
+          <div className="recette-container">
+          {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
+            <ul className="recette-container-ingredient">
+              {
+                recetteIngredients.map(row => (
+                  <li key={row}>{row}</li>
+                ))
+              }
+            </ul>
+            <p className="recette-container-description">{recette.description}</p>
+          </div>
+          <img className="recette-img" src={imagePath} alt=""/>
+        </article>
+    </section>
+    )
+  }
+
+  return(
+    <section className="recette">
+      <h1 className="page-title">{recette.title}</h1>
+      <NavBar />
+        <article className="recette-article">
           <div className="recette-container">
           {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
             <ul className="recette-container-ingredient">
