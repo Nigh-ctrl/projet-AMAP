@@ -21,10 +21,10 @@ function Footer () {
     return(
    <footer>
      <Link to="/mentions-legales">
-       <div className='center'>mentions légales</div>
+       <div className='center'>Mentions légales</div>
      </Link>
      <Link to="/">
-       <div className='right' onClick={logout} >deconnexion</div>
+       <div className='right' onClick={logout} >Deconnexion</div>
      </Link>
    </footer>
     )
@@ -34,10 +34,10 @@ function Footer () {
   return (
    <footer>
      <Link to="/mentions-legales">
-       <div className='center'>mentions légales</div>
+       <div className='center'>Mentions légales</div>
      </Link>
      <Link to="/login">
-       <div className='right'>connexion</div>
+       <div className='right'>Connexion</div>
      </Link>
    </footer>
   );
