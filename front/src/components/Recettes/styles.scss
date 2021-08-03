@@ -1,59 +1,61 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
-section .recettes {
-  width: 100%;
-  flex: 1;
-
-  &-list {
-    width: 80%;
+section {
+  .recettes {
+    width: 100%;
+    flex: 1;
+  
+    &-list {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 2em auto;
+    }
+    
+    &-img {
+      max-width: 21em;
+      max-height: 15em;
+      margin: auto;
+      border-radius: 2.5em;
+      border: 10px solid $last-color;
+    }
+    &-title {
+      font-size: 2em;
+      margin: 1em 0;
+    }
+    &-p {
+    padding-top: 2em;
+    }
+    &-read-more {
+      margin-top: 1em;
+      text-align: right;
+      text-decoration: underline;
+      color: black;
+    }
+    a {
+    margin-right: 0;
+    
+    article .recettes-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 2em auto;
-  }
-  
-  &-img {
-    max-width: 21em;
-    max-height: 15em;
-    margin: auto;
+    flex-direction: column;
+    width: 30%;
+    margin: 1.5em 2em;
+    padding: 5em;
+    background-color: $tertiary-color;
     border-radius: 2.5em;
-    border: 10px solid $last-color;
-  }
-  &-title {
-    font-size: 2em;
-    margin: 1em 0;
-  }
-  &-p {
-  padding-top: 2em;
-  }
-  &-read-more {
-    margin-top: 1em;
-    text-align: right;
-    text-decoration: underline;
-    color: black;
+    }
+    
+    &:hover {
+      -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      transition: .2s ease-in-out;
+    }
   }
 }
-a {
-  margin-right: 0;
-  
-  article .recettes-card {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  margin: 1.5em 2em;
-  padding: 5em;
-  background-color: $tertiary-color;
-  border-radius: 2.5em;
-  }
-  
-  &:hover {
-    -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    transition: .2s ease-in-out;
-    background-color: rgb(194, 192, 192);
-  }
 }
+
 .page-title {
     font-size: 2.5em;
     padding: 1em;
