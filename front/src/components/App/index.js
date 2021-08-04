@@ -24,6 +24,7 @@ import EditArticle from '../EditArticle'
 import EditProducteur from '../EditProducteur'
 import AddRecette from '../AddRecette'
 import AddArticle from '../AddArticle' 
+import AddProducteur from '../AddProducteur'
 
 // == Composant
 const App = () => (
@@ -37,6 +38,7 @@ const App = () => (
         <Route path="/contact" exact component={Contact}/>
         <Route path="/mentions-legales" exact component={MentionsLegales}/>
         <Route path="/producteurs" exact component={Producteurs}/>
+        <Route path="/producteurs/add" exact component={AddProducteur} />
         <Route path="/producteurs/:id_producteur" exact component={Producteur}/>
         <Route path="/producteurs/:id_producteur/edit" exact component={EditProducteur} />
         <Route path="/producteurs/:produits" exact component={Producteurs}/>
