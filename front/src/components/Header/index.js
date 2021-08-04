@@ -1,11 +1,12 @@
 
-import React from "react"
+import React, { useState } from "react"
 import './style.scss';
 import logo from "../../../public/logos/round.png"
 import {Link} from "react-router-dom"
 
 const Header =  () =>{
-
+  const [isActive, toggleBurger] = useState(true)
+  console.log(isActive)
   return(
     <header>
         <div className="left">
@@ -22,7 +23,7 @@ const Header =  () =>{
             <p>contact</p>
           </Link>
         </div>
-        <div className="burger">
+        <div onClick={() => toggleBurger(!isActive)} className={isActive ? "burger active" : "burger"} >
           <div className="bar-1"/>
           <div className="bar-2"/>
           <div className="bar-3"/>
