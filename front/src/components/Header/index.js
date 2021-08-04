@@ -23,10 +23,10 @@ const Header =  () =>{
             <p>contact</p>
           </Link>
         </div>
-        <div onClick={() => toggleBurger(!isActive)} className={isActive ? "burger active" : "burger"} >
-          <div className="bar-1"/>
-          <div className="bar-2"/>
-          <div className="bar-3"/>
+        <div onTouchEnd={() => toggleBurger(!isActive)} className={isActive ? "burger active" : "burger"} >
+          <span className="bar-1"/>
+          <span className="bar-2"/>
+          <span className="bar-3"/>
         </div> 
     </header>
   );
