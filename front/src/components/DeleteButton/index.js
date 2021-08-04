@@ -19,6 +19,9 @@ const DeleteButton = () => {
     console.log(res.data)
     setRedirect(true) 
       })
+    .catch((e)=>{
+    alert("une erreur est servenue")
+      })
   }
   if(redirect){
     return(
