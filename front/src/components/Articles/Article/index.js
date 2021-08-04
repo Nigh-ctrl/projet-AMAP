@@ -75,7 +75,7 @@ const Article = () => {
           {article.content}
           </p>
           <img className="article-img" src={imagePath} alt=""/>
-      </article>
+        </article>
     </section>
     ) 
   }

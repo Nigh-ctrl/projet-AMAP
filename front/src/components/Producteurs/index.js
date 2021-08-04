@@ -68,60 +68,60 @@ const Agriculteurs = () => {
     <main>
     <article className="producteurs">
       <h1 className="page-title">Nos producteurs</h1>
-            <div className="tags-container">
+      <div className="tags-container">
             <Link to={`/producteurs/1`}>
               <div className="tag">
-                  <p>Légumes</p>
+                  <p className="tag p">Légumes</p>
               </div>
             </Link>
             <Link to={`/producteurs/2`}>
               <div className="tag">
-                  <p>Fruits</p>
+                  <p className="tag p">Fruits</p>
               </div>
             </Link>
             <Link to={`/producteurs/3`}>
               <div className="tag">
-                  <p>Aromates</p>
+                  <p className="tag p">Aromates</p>
               </div>
             </Link>
             <Link to={`/producteurs/4`}>
               <div className="tag">
-                  <p>Fromages</p>
+                  <p className="tag p">Fromages</p>
               </div>
             </Link>
             <Link to={`/producteurs/5`}>
               <div className="tag">
-                  <p>Légumineuse</p>
+                  <p className="tag p">Légumineuse</p>
               </div>
             </Link>
             <Link to={`/producteurs/6`}>
               <div className="tag">
-                  <p>Farine</p>
+                  <p className="tag p">Farine</p>
               </div>
             </Link>
             <Link to={`/producteurs/7`}>
               <div className="tag">
-                  <p>Confiture</p>
+                  <p className="tag p">Confiture</p>
               </div>
             </Link>
             <Link to={`/producteurs/8`}>
               <div className="tag">
-                  <p>Oeufs</p>
+                  <p className="tag p">Oeufs</p>
               </div>
             </Link>
             <Link to={`/producteurs/9`}>
               <div className="tag">
-                  <p>Viande</p>
+                  <p className="tag p">Viande</p>
               </div>
             </Link>
             <Link to={`/producteurs/10`}>
               <div className="tag">
-                  <p>Miel</p>
+                  <p className="tag p">Miel</p>
               </div>
             </Link>
             <Link to={`/producteurs/11`}>
               <div className="tag">
-                  <p>Pain</p>
+                  <p className="tag p">Pain</p>
               </div>
             </Link>
             </div>
@@ -159,26 +159,30 @@ const Agriculteurs = () => {
             }
 
             return (
-            <div key={producteur.id} className="producteur-card">
+            <div key={producteur.id} className="producteurs-card">
             <Link to={`/producteur/${producteur.id}`}>
               <div className="relative-card">
-                <img className="producteur-img" src={imagePath} alt=""/>
-                <h3 className="producteur-name">{`${producteur.firstname} ${producteur.name}`}</h3>
+                <div className="producteurs-img-container">
+                  <img className="producteurs-card-img" src={imagePath} alt=""/>
+                </div>
+                <h3 className="producteurs-card-name">{`${producteur.firstname} ${producteur.name}`}</h3>
                 <div className="tags-container">
                 {
                   product.map(product => {
                     return(
-                      <div key={product} className="tag">
+                      <div key={product} className="tags-container">
                         {/* On affiche seulement les produits correspondants aux bonnes keys de l'objet productIdValue */}
-                        <p>{Object.values(productIdValue[product])}</p>
+                      <div className="tag">
+                        <p className="tag p">{Object.values(productIdValue[product])}</p>
+                      </div>
                       </div>
                     )
                   })
                 }
                 </div>
                 {/* Avec slice on réduit le text au 300 premiers caractères */}
-                <p className="producteur-card-text">{`${producteur.biography.slice(0, 300)} [...]`}</p>
-                <p className="read-more" >En savoir plus</p>
+                <p className="producteurs-card-text">{`${producteur.biography.slice(0, 300)} [...]`}</p>
+                <p className="producteurs-card-read-more" >En savoir plus</p>
               </div>
             </Link>
             </div>

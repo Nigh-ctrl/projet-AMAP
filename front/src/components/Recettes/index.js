@@ -68,7 +68,9 @@ const Recettes = () => {
               <Link className="recettes-a" key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
                 <article className="recettes-card">
                   <h3 className="recettes-title">{recette.title}</h3>
-                  <img className="recettes-img" src={imagePath} alt=""/>
+                  <div className="recettes-img-container">
+                    <img className="recettes-img" src={imagePath} alt=""/>
+                  </div>
                   <p className="recettes-description">{`${recette.description.slice(0, 300)} [...]`}</p>
                   <p className="recettes-read-more">En savoir plus</p>
                 </article>
