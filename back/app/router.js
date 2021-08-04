@@ -20,44 +20,44 @@ const farmerSchema = require('./schemas/farmer');
 /*******farmer********/
 
 /**
- * @route GET /agriculteurs
+ * @route GET /producteurs
  * @group Farmers
  * @returns {Array<Farmer>} 200 - An array of farmers
  */
-router.get('/agriculteurs',farmerController.findAll);
+router.get('/producteurs',farmerController.findAll);
 
 /**
- * @route GET /agriculteurs/{id}
+ * @route GET /producteurs/{id}
  * @group Farmers
  * @param {number} id.path.required The id of the farmer to fetch
  * @returns {Farmer.model} 200 - A single farmer identified by its id
  * @returns {String} 404 - An error message
  */
-router.get('/agriculteurs/:id(\\d+)',farmerController.findOne);
+router.get('/producteurs/:id(\\d+)',farmerController.findOne);
 
 /**
  * Responds with farmers with a specific product from database
- * @route GET /agriculteurs/produits/{id}
+ * @route GET /producteurs/produits/{id}
  * @group Farmers
  * @param {number} id.path.required The id of the product
  * @returns {Array<Farmer>} 200 - An array of farmers with a specific product
  */
-router.get('/agriculteurs/produits/:id(\\d+)', farmerController.findByProduct);
+router.get('/producteurs/produits/:id(\\d+)', farmerController.findByProduct);
 
 /**
  * Create a new farmer object and insert it in the database
- * @route POST /agriculteurs
+ * @route POST /producteurs
  * @group Farmers
  * @param {ReqPostJson.model} object.body.required JSON Post object to add in database
  * @returns {Article.model} 201 - The article just created
  * @returns {Array<product_ids>} 201 - An array of products id related to the farmer
  * @returns {String} 500 - An error message
  */
-router.post('/agriculteurs',checkAdminMiddleware,validateBody(farmerSchema),farmerController.addFarmer);
+router.post('/producteurs',checkAdminMiddleware,validateBody(farmerSchema),farmerController.addFarmer);
 
 /**
 * Update the corresponding famer in the database
-* @route PATCH /agriculteurs/{id}
+* @route PATCH /producteurs/{id}
 * @group Farmers
 * @param {number} id.path.required The id of the product
 * @param {ReqPostJson.model} object.body.required JSON Post object to add in database
@@ -65,15 +65,15 @@ router.post('/agriculteurs',checkAdminMiddleware,validateBody(farmerSchema),farm
 * @returns {String} 201 - The string of products id related to the farmer
 * @returns {String} 500 - An error message
 */
-router.patch('/agriculteurs/:id(\\d+)',checkAdminMiddleware,validateBody(farmerSchema),farmerController.updateFarmer);
+router.patch('/producteurs/:id(\\d+)',checkAdminMiddleware,validateBody(farmerSchema),farmerController.updateFarmer);
 
 /**
- * @route DELETE /agriculteurs/{id}
+ * @route DELETE /producteurs/{id}
  * @group Farmers
  * @param {number} id.path.required The id of the farmer to delete
  * @returns {String} true or 500 - An error message
  */
-router.delete('/agriculteurs/:id(\\d+)',checkAdminMiddleware,farmerController.delete);
+router.delete('/producteurs/:id(\\d+)',checkAdminMiddleware,farmerController.delete);
 
 
 /*******article********/

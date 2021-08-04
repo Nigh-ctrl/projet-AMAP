@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext }from "react";
 import { useParams } from "react-router";
 import axios from 'axios';
 import NavBar from '../NavBar';
+import DeleteButton from '../../DeleteButton'
 import EditButton from '../../EditButton';
 import {ConnexionContext} from '../../../ConnexionContext'
 
@@ -66,7 +67,10 @@ const Recette = () => {
       <h1 className="page-title">{recette.title}</h1>
       <NavBar />
         <article className="recette-article">
+          <div className="button-container" >
+          <DeleteButton />
       <EditButton />
+      </div>
           <div className="recette-container">
           {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
             <ul className="recette-container-ingredient">

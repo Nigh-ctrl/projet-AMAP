@@ -1,4 +1,4 @@
-.editArticle{
+.addProducteur{
   flex: 1;
   display: flex;
   justify-content: center;
@@ -13,6 +13,16 @@
     border: 1px solid black;
     border-radius: 2.5em;
 
+    .names-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      >div{
+      display: flex;
+      flex-direction: column;
+      }
+      }
+
     >div{
     display: flex;
     flex-direction: column;
@@ -21,6 +31,7 @@
     text-align: center;
     margin: 10px 0;
     width: 90%;
+
 
     label{
       color: green;
@@ -33,7 +44,7 @@
     margin: 20px 0px;
 
     padding: 1em;
-    &.content{
+    &.biography{
       width: 90%;
     }
 
@@ -45,8 +56,9 @@
      background-color: green;
      color: white;
      padding: 5px;
-     border-radius:2.5em
+     border-radius:25em
      
     } 
   }
 }
+

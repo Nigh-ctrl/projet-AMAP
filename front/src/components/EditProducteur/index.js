@@ -23,7 +23,7 @@ import {ConnexionContext} from '../../ConnexionContext'
     axios({
       method: 'get',
       // on met comme valeur l'id récupéré via le useParams
-      url: `${axios.default.baseURL}/agriculteurs/${id_producteur}`
+      url: `${axios.default.baseURL}/producteurs/${id_producteur}`
     })
     .then((res) => {
       setProduits(res.data.basket.split(' ,'));
@@ -39,7 +39,7 @@ import {ConnexionContext} from '../../ConnexionContext'
   const editOneProducteur= (tempData) => {
     axios({
       method: 'patch',
-      url: `${axios.default.baseURL}/agriculteurs/${id_producteur}`,
+      url: `${axios.default.baseURL}/producteurs/${id_producteur}`,
       data: tempData,
       headers: {'Authorization': `Bearer ${token}`},
     }).then((res) => {

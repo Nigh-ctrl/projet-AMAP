@@ -26,6 +26,7 @@ main{
   width: 80%;
 
   &-list {
+    perspective: 1em;
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
