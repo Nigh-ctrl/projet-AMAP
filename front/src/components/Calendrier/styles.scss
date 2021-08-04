@@ -1,0 +1,29 @@
+// import des variables sass 
+@import '../../styles/_vars.scss';
+
+
+.calendrier {
+  flex: 1;
+
+  &-div {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+
+}
+
+@media(max-width: $bp-phone)
+{
+  mentionsLegales {
+    &-div {
+      width: 80%;
+    }
+
+  }
+}
