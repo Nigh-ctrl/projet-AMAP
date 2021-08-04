@@ -1,12 +1,14 @@
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import './style.scss';
 import logo from "../../../public/logos/round.png"
 import {Link} from "react-router-dom"
 
 const Header =  () =>{
-  const [isActive, toggleBurger] = useState(true)
-  console.log(isActive)
+  const [isActive, toggleBurger] = useState(false)
+  const hidePanel = () =>{
+    toggleBurger(!isActive)
+  }
   return(
     <header>
         <div className="left">
@@ -17,10 +19,10 @@ const Header =  () =>{
         </div>
         <div className="right">
           <Link to="/" > 
-            <p>accueil</p>
+            <p>Accueil</p>
           </Link>
           <Link to="/contact">
-            <p>contact</p>
+            <p>Contact</p>
           </Link>
         </div>
         <div onTouchEnd={() => toggleBurger(!isActive)} className={isActive ? "burger active" : "burger"} >
@@ -30,17 +32,17 @@ const Header =  () =>{
         </div> 
         <div className={isActive ? "panel active" : "panel"}>
           
-          <Link to="/" > 
-            <p>accueil</p>
+          <Link to="/" onTouchEnd={hidePanel} > 
+            Accueil
           </Link>
-          <Link to="/contact">
-            <p>contact</p>
+          <Link to="/contact"onTouchEnd={hidePanel} >
+            Contact
           </Link>
-           <Link to="/mentions-legales">
-             <p>Mentions légales</p>
+           <Link to="/mentions-legales"onTouchEnd={hidePanel} >
+             Mentions légales
            </Link>
-           <Link to="/login">
-             <p>Connexion</p>
+           <Link to="/login" onTouchEnd={hidePanel} >
+            Connexion
            </Link>
         </div> 
     </header>
