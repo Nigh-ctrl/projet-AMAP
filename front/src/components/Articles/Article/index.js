@@ -3,6 +3,7 @@ import NavBar from '../NavBar'
 import { useParams } from "react-router";
 import axios from 'axios';
 import './styles.scss';
+import DeleteButton from '../../DeleteButton'
 import EditButton from '../../EditButton'
 import {ConnexionContext} from '../../../ConnexionContext'
 
@@ -70,7 +71,10 @@ const Article = () => {
       <h1 className="page-title">{article.title}</h1>
       <NavBar />
         <article className="article-card">
+          <div className="button-container">
           <EditButton />
+          <DeleteButton />
+          </div>
           <p className="article-text">
           {article.content}
           </p>

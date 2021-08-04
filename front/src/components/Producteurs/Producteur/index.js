@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from "react-router";
 import axios from 'axios';
 import EditButton from '../../EditButton'
+import DeleteButton from '../../DeleteButton'
 import {ConnexionContext} from '../../../ConnexionContext'
 
 // import de toutes les photos des producteurs. Trouver une autre solution
@@ -76,7 +77,10 @@ const Producteur = () => {
     return(
     <section className="agriculteur">
       <div className="agriculteur-main">
+        <div className="button-container">
         <EditButton />
+        <DeleteButton />
+        </div>
         <div className="agriculteur-images">
           <img src={imagePath} alt=""/>
           <div className="agriculteur-location">
