@@ -25,6 +25,7 @@ import EditProducteur from '../EditProducteur'
 import AddRecette from '../AddRecette'
 import AddArticle from '../AddArticle' 
 import AddProducteur from '../AddProducteur'
+import Calendrier from '../Calendrier'
 
 // == Composant
 const App = () => (
@@ -53,6 +54,7 @@ const App = () => (
         <Route path="/recettes/:id/edit" exact component={EditRecette}/>
         <Route path="/recettes/saison/:saison" exact component={Recettes}/>
         <Route path="/login" exact component={Connexion}/>
+        <Route path="/calendrier" exact component={Calendrier}/>
         </Switch>
         <Footer/>
     </ConnexionProvider>
