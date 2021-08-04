@@ -1,9 +1,10 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect, useContext }from "react";
 import NavBar from '../NavBar'
 import { useParams } from "react-router";
 import axios from 'axios';
 import './styles.scss';
 import EditButton from '../../EditButton'
+import {ConnexionContext} from '../../../ConnexionContext'
 
 // import des photos des recettes
 import benevole from '../../../../public/articles/benevole.jpeg';
@@ -15,6 +16,7 @@ import panier from '../../../../public/articles/panier.jpeg';
 import panier2 from '../../../../public/articles/panier2.jpeg';
 
 const Article = () => {
+  const token = useContext(ConnexionContext)
   // on destructure pour récupérer directement id et pas un objet
   const { id } = useParams();
   // on met comme valeur l'id récupéré via le useParams
@@ -62,12 +64,26 @@ const Article = () => {
     break;
   }
 
-  return (
+  if(token[0]){
+    return(
     <section className="article">
       <h1 className="page-title">{article.title}</h1>
       <NavBar />
         <article className="article-card">
           <EditButton />
+          <p className="article-text">
+          {article.content}
+          </p>
+          <img className="article-img" src={imagePath} alt=""/>
+      </article>
+    </section>
+    ) 
+  }
+  return (
+    <section className="article">
+      <h1 className="page-title">{article.title}</h1>
+      <NavBar />
+        <article className="article-card">
           <p className="article-text">
           {article.content}
           </p>

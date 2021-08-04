@@ -10,35 +10,21 @@ function Accueil () {
   console.log(token)
 return (
   <div className="accueil">
-    <div  className="presentation">
-    <Link to="/presentation">
-      <div className="text">Présentation de l'amap</div>
+    <Link className="presentation"to="/presentation">
+      <p className="text">Présentation de l'amap</p>
     </Link>
-    </div>
-    <div className="producteurs">
-      <Link to="/producteurs">
-
+      <Link className="producteurs"to="/producteurs">
       <div className="text">Nos producteurs</div>
       </Link> 
-    </div>
-    <div className="calendrier">
-      <Link to="/calendrier">
-
+      <Link className="calendrier"to="/calendrier">
       <div className="text">Calendrier de livraison</div>
       </Link> 
-    </div>
-    <div className="actu">
-      <Link to="/articles">
-
+      <Link className="actu"to="/articles">
       <div className="text">Actu de l'amap</div>
       </Link> 
-    </div>
-    <div className="recettes">
-      <Link to="/recettes">
-
+      <Link className="recettes"to="/recettes">
       <div className="text">Recettes</div>
       </Link> 
-    </div>
   </div>
 )
 

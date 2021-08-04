@@ -22,7 +22,7 @@ const Agriculteurs = () => {
     //requete axios
     axios({
       method: 'get',
-      url: 'http://localhost:5000/agriculteurs'
+      url: `${axios.default.baseURL}/agriculteurs`
     })
     .then((res) => {
       if(produits === undefined){

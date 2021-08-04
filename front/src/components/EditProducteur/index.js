@@ -36,11 +36,11 @@ import {ConnexionContext} from '../../ConnexionContext'
   )
 
 
-  const editOneProducteur= () => {
+  const editOneProducteur= (tempData) => {
     axios({
       method: 'patch',
       url: `${axios.default.baseURL}/agriculteurs/${id_producteur}`,
-      data: producteur,
+      data: tempData,
       headers: {'Authorization': `Bearer ${token}`},
     }).then((res) => {
     alert('modifications enregistrées')
@@ -55,15 +55,12 @@ import {ConnexionContext} from '../../ConnexionContext'
 
   const handleSubmit= (e) => {
    e.preventDefault();
-   editOneProducteur()
+   const tempData = {...producteur, products_id: producteur.products_id.split(',')}
+   editOneProducteur(tempData)
   }
 
 
-  function test(){
-   console.log(producteur) 
-}
   useEffect(getOneProducteur, []);
-  useEffect(test)
 
   if(redirect) return <Redirect to="/"  />
 
