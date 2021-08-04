@@ -10,16 +10,16 @@ const AddRecette = () => {
   const [token, setToken] = useContext(ConnexionContext)
   const { id } = useParams();
   const [recetteId, setRecetteId] = useState(id);
-  const [recette, setRecette] = useState([{
-    title: undefined,
-    ingredients: undefined,
-    description: undefined,
-  }]);
+  const [recette, setRecette] = useState({
+    admin_id: 2,
+    season_id: 4,
+    slug: "pissenlit",
+  });
 
   const addOneRecette = () => {
     axios({
       method: 'post',
-      url: `${axios.defaults.baseURL}/recettes`,
+      url: `${axios.default.baseURL}/recettes`,
       data: recette,
       headers: {'authorization': `Bearer ${token}`}
     }).then((res)=>{
@@ -28,12 +28,14 @@ const AddRecette = () => {
       }).catch((e) => {
       console.log("il y a une erreur")
       console.log(e)
+      console.log('la recette')
+      console.log(recette)
       })
   }
 
   const handleSubmit= (e) => {
     e.preventDefault()
-    console.log(recette)
+    addOneRecette()
   }
   return(
     

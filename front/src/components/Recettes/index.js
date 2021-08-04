@@ -25,6 +25,7 @@ const Recettes = () => {
       url: `${axios.default.baseURL}/recettes`
     })
     .then((res) => {
+        console.log(res.data)
       if(saison === undefined){
         setRecettes(res.data);
         return
