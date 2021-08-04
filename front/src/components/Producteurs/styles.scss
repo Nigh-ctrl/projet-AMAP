@@ -100,8 +100,15 @@ main{
       margin: 5px 10px;
       padding: 0.1em;
     }
-  }
+
+a {
+  text-align: right;
+  text-decoration: underline;
+  margin-right: 2.5em;
+  color: black;
 }
+}
+
 
 @media(max-width: $bp-tablet)
 {

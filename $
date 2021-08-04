@@ -47,12 +47,9 @@ header{
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    padding: 0;
     >a{
-    transition-delay: 0.7s;
-    transition: all 1.3s ease-in-out;
-    opacity: 0;
-    margin-left: 40px;
+    justify-self: center;
+    margin: 0px auto;
     }
   }
 
@@ -160,10 +157,6 @@ span:nth-child(2) {
 
   .panel.active{
     margin-left: 30vw;
-    a{
-      margin-left: 0px;
-      opacity: 1;
-  }
 }
     
 }}
