@@ -28,6 +28,8 @@ const AddArticle = () => {
     .then((res)=>{
     console.log("ça marche")
     console.log(res.data)
+    alert("enregistré")
+    setRedirect(true)
       })
     .catch((e)=>{
     console.log("erreur")

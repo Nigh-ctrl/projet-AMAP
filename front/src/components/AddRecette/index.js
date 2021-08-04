@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo, useContext}from "react";
 import {Redirect} from 'react-router-dom'
 import { useParams } from "react-router";
@@ -7,6 +6,7 @@ import './style.scss'
 import {ConnexionContext} from '../../ConnexionContext'
 
 const AddRecette = () => {
+  const [redirect, setRedirect] = useState(false)
   const [token, setToken] = useContext(ConnexionContext)
   const { id } = useParams();
   const [recetteId, setRecetteId] = useState(id);
@@ -25,6 +25,8 @@ const AddRecette = () => {
     }).then((res)=>{
     console.log("je crois que ça marche")
     console.log(res.data)
+    alert("enregisté")
+    setRedirect(true)
       }).catch((e) => {
       console.log("il y a une erreur")
       console.log(e)
@@ -37,6 +39,9 @@ const AddRecette = () => {
     e.preventDefault()
     addOneRecette()
   }
+
+  if(redirect) return <Redirect to="/" />
+
   return(
     
     <div className="addRecette">
