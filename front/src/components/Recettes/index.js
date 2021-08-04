@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import NavBar from './NavBar';
+import AddButton from '../AddButton'
 
 // import des photos des recettes
 import potofu from '../../../public/recettes/potofu.jpeg';
@@ -44,6 +45,7 @@ const Recettes = () => {
     <section className="recettes">
       <h1 className="page-title">Recettes</h1>
       <NavBar />
+      <AddButton />
       <div className="recettes-list">
         {
           recettes.map((recette) => {
