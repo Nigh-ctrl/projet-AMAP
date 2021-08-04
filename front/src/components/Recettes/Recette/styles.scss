@@ -1,14 +1,12 @@
 @import '../../../styles/vars';
 
-.recette {
+section .recette {
   flex: 1;
 
   &-article{
     display: flex;
     width: 70%;
     margin: 3em auto;
-    background-color: $tertiary-color;
-    border-radius: 2.5em;
     padding: 2em;
     //cette ligne est pour contraindre le composant EditButton a rester dans recette-container.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/position
@@ -22,6 +20,7 @@
   }
 
   &-container{
+    color: $last-color;
     padding: 2.5em;
     text-align: right;
     display: flex;
@@ -35,13 +34,29 @@
 
   &-img {
     border-radius: 2.5em;
-    border: 10px solid $last-color;
   }
 }
 
-
-
-
-
-
-
+@media(max-width: $bp-tablet)
+{
+  section .recette-article{
+    width: 90%;
+  }
+}
+@media(max-width: $bp-phone)
+{
+  section .recette{
+    &-article{
+      width: 100%;
+      flex-direction: column-reverse;
+      padding: 0;
+      margin: 0;
+    }
+    &-img {
+      position: static;
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+}

@@ -6,14 +6,13 @@ section .article {
   flex: 1;
 
   &-card {
+    color: $last-color;
     display: flex;
     justify-content: space-around;
     width: 60%;
     height: 35%;
     margin: 1.5em auto;
     padding: 1em;
-    background-color: $tertiary-color;
-    border-radius: 2.5em;
     //cette ligne est pour contraindre le composant EditButton a rester dans recette-container.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/position
     // voir la section "fixed" pour comprendre la relation entre display:fixed et perspective
@@ -22,36 +21,41 @@ section .article {
   &-text {
     padding: 2em;
     width: 45%;
+    margin: auto;
   }
   &-img {
     width: 45%;
     border-radius: 2.5em;
-    border: solid 10px $last-color;
   }
 }
 .page-title {
-    font-size: 2.5em;
-    padding: 1em;
-    text-align: center;
+  font-size: 2.5em;
+  padding: 1em;
+  text-align: center;
+}
+
+@media(max-width: $bp-tablet)
+{
+  section .article-card{
+    width: 80%;
   }
-  @media(max-width: $bp-tablet)
-  {
-    .evenements-img {
-      max-width: 100%;
+}
+@media(max-width: $bp-phone)
+{
+  section .article {
+    &-card{
+      flex-direction: column-reverse;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    &-text {
+      width: 100%;
+    }
+    &-img{
+      border-radius: 0;
+      width: 100%;
     }
   }
-  @media(max-width: $bp-tablet)
-  {
-    .evenements {
-      &-card {
-        min-width: 50%;
-      }
-      &-list {
-        flex-wrap: wrap;
-        flex-direction: column;
-      }
-      &-img {
-        max-width: 100%;
-      }
-    }
-  }
+  
+}
