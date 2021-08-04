@@ -68,7 +68,7 @@ const Recettes = () => {
               break;
             }
             return (
-              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recettes/${recette.id}`}>
+              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
                 <article className="recettes-card">
                   <h3 className="recettes-title">{recette.title}</h3>
                   <div className="recettes-img-container">

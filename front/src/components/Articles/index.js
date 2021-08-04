@@ -76,7 +76,7 @@ const Articles = () => {
               break;
             }
             return(
-            <Link className="articles-a" key={article.id+article.title} to={`/articles/${article.id}`}>
+            <Link className="articles-a" key={article.id+article.title} to={`/article/${article.id}`}>
               <article className="articles-card">
                 <h3 className="articles-title">{article.title}</h3>
                 <div className="articles-img-container">

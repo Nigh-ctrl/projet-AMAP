@@ -40,18 +40,18 @@ const App = () => (
         <Route path="/mentions-legales" exact component={MentionsLegales}/>
         <Route path="/producteurs" exact component={Producteurs}/>
         <Route path="/producteurs/add" exact component={AddProducteur} />
-        <Route path="/producteurs/:id_producteur" exact component={Producteur}/>
-        <Route path="/producteurs/:id_producteur/edit" exact component={EditProducteur} />
+        <Route path="/producteur/:id_producteur" exact component={Producteur}/>
+        <Route path="/producteur/:id_producteur/edit" exact component={EditProducteur} />
         <Route path="/producteurs/:produits" exact component={Producteurs}/>
         <Route path="/articles" exact component={Articles}/>
         <Route path="/articles/add" exact component={AddArticle}/>
-        <Route path="/articles/:id" exact component={Article}/>
-        <Route path="/articles/:id/edit" exact component={EditArticle} />
+        <Route path="/article/:id" exact component={Article}/>
+        <Route path="/article/:id/edit" exact component={EditArticle} />
         <Route path="/articles/:category" exact component={Articles}/>
         <Route path="/recettes" exact component={Recettes}/>
         <Route path="/recettes/add" exact component={AddRecette} />
-        <Route path="/recettes/:id" exact component={Recette}/>
-        <Route path="/recettes/:id/edit" exact component={EditRecette}/>
+        <Route path="/recette/:id" exact component={Recette}/>
+        <Route path="/recette/:id/edit" exact component={EditRecette}/>
         <Route path="/recettes/saison/:saison" exact component={Recettes}/>
         <Route path="/login" exact component={Connexion}/>
         <Route path="/calendrier" exact component={Calendrier}/>
