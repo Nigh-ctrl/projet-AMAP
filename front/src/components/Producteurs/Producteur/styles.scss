@@ -54,8 +54,12 @@ h2 {
 }
 @media(max-width: $bp-phone)
 {
+  main {
+    width: 100%;
+  }
   .agriculteur{
     margin: 0;
+    width: 100%;
 
     &-main{
       margin: 0;
