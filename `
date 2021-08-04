@@ -1,0 +1,9 @@
+import React from 'react';
+
+const AddArticle = () => {
+  <div>
+  <p>test</p>
+  </div>
+}
+
+export default AddArticle;

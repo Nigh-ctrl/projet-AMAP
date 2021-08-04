@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import AddButton from '../AddButton'
 
 // import des photos des recettes
 import benevole from '../../../public/articles/benevole.jpeg';
@@ -47,6 +48,7 @@ const Articles = () => {
     <section className="articles">
       <h1 className="page-title">Actu de l'amap</h1>
       <NavBar />
+      <AddButton />
       <div className="articles-list">
         {
           articles.map((article) => {
