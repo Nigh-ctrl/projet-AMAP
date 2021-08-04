@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import {Route, BrowserRouter} from 'react-router-dom'
+import {Route, BrowserRouter, Switch} from 'react-router-dom'
 // == import store
 import {ConnexionProvider} from '../../ConnexionContext'
 // == styles
@@ -29,26 +29,28 @@ const App = () => (
   <div className="app">
     <BrowserRouter>
     <ConnexionProvider>
-      <Header/>
-      <Route path="/" exact component={Accueil}/>
-      <Route path="/presentation" exact component={Presentation} />
-      <Route path="/contact" exact component={Contact}/>
-      <Route path="/mentions-legales" exact component={MentionsLegales}/>
-      <Route path="/producteurs" exact component={Producteurs}/>
-      <Route path="/producteurs/:id_producteur" exact component={Producteur}/>
-      <Route path="/producteurs/:id_producteur/edit" exact component={EditProducteur} />
-      <Route path="/producteurs/:produits" exact component={Producteurs}/>
-      <Route path="/articles" exact component={Articles}/>
-      <Route path="/articles/:id" exact component={Article}/>
-      <Route path="/articles/:id/edit" exact component={EditArticle} />
-      <Route path="/articles/:category" exact component={Articles}/>
-      <Route path="/recettes" exact component={Recettes}/>
-      <Route path="/recettes/:id" exact component={Recette}/>
-      <Route path="/recettes/:id/edit" exact component={EditRecette}/>
-      <Route path="/recettes/add" exact component={AddRecette} />
-      <Route path="/recettes/saison/:saison" exact component={Recettes}/>
-      <Route path="/login" exact component={Connexion}/>
-      <Footer/>
+        <Header/>
+        <Switch >
+        <Route path="/" exact component={Accueil}/>
+        <Route path="/presentation" exact component={Presentation} />
+        <Route path="/contact" exact component={Contact}/>
+        <Route path="/mentions-legales" exact component={MentionsLegales}/>
+        <Route path="/producteurs" exact component={Producteurs}/>
+        <Route path="/producteurs/:id_producteur" exact component={Producteur}/>
+        <Route path="/producteurs/:id_producteur/edit" exact component={EditProducteur} />
+        <Route path="/producteurs/:produits" exact component={Producteurs}/>
+        <Route path="/articles" exact component={Articles}/>
+        <Route path="/articles/:id" exact component={Article}/>
+        <Route path="/articles/:id/edit" exact component={EditArticle} />
+        <Route path="/articles/:category" exact component={Articles}/>
+        <Route path="/recettes" exact component={Recettes}/>
+        <Route path="/recettes/add" exact component={AddRecette} />
+        <Route path="/recettes/:id" exact component={Recette}/>
+        <Route path="/recettes/:id/edit" exact component={EditRecette}/>
+        <Route path="/recettes/saison/:saison" exact component={Recettes}/>
+        <Route path="/login" exact component={Connexion}/>
+        </Switch>
+        <Footer/>
     </ConnexionProvider>
     </BrowserRouter>
   </div>
