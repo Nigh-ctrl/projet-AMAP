@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from "react-router";
 import axios from 'axios';
 import EditButton from '../../EditButton'
+import DeleteButton from '../../DeleteButton'
 import {ConnexionContext} from '../../../ConnexionContext'
 
 // import de toutes les photos des producteurs. Trouver une autre solution
@@ -27,7 +28,7 @@ const Producteur = () => {
     axios({
       method: 'get',
       // on met comme valeur l'id récupéré via le useParams
-      url: `${axios.default.baseURL}/agriculteurs/${id_producteur}`
+      url: `${axios.default.baseURL}/producteurs/${id_producteur}`
     })
     .then((res) => {
       setProduits(res.data.basket.split(' ,'));
@@ -76,7 +77,10 @@ const Producteur = () => {
     return(
     <section className="agriculteur">
       <div className="agriculteur-main">
+        <div className="button-container">
         <EditButton />
+        <DeleteButton />
+        </div>
         <div className="agriculteur-images">
           <img src={imagePath} alt=""/>
           <div className="agriculteur-location">

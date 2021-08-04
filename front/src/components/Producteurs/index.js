@@ -22,7 +22,7 @@ const Agriculteurs = () => {
     //requete axios
     axios({
       method: 'get',
-      url: `${axios.default.baseURL}/agriculteurs`
+      url: `${axios.default.baseURL}/producteurs`
     })
     .then((res) => {
       if(produits === undefined){
@@ -160,7 +160,7 @@ const Agriculteurs = () => {
 
             return (
             <div key={producteur.id} className="producteur-card">
-            <Link to={`/producteur/${producteur.id}`}>
+            <Link to={`/producteurs/${producteur.id}`}>
               <div className="relative-card">
                 <img className="producteur-img" src={imagePath} alt=""/>
                 <h3 className="producteur-name">{`${producteur.firstname} ${producteur.name}`}</h3>
