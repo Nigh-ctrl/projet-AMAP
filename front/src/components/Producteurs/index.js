@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import addButton from '../AddButton'
 
 // import de toutes les photos des producteurs. Trouver une autre solution
 import one from '../../../public/producteurs/producteur 1/profil_1.jpg';
@@ -11,6 +12,7 @@ import height from '../../../public/producteurs/producteur 8/profil_1.jpg';
 
 
 import './styles.scss';
+import AddButton from '../AddButton';
 
 const Agriculteurs = () => {
   // Récupération du slug correspondant a l'id de chaque produit
@@ -22,7 +24,7 @@ const Agriculteurs = () => {
     //requete axios
     axios({
       method: 'get',
-      url: `${axios.default.baseURL}/agriculteurs`
+      url: `${axios.default.baseURL}/producteurs`
     })
     .then((res) => {
       if(produits === undefined){
@@ -66,6 +68,7 @@ const Agriculteurs = () => {
 
   return (
     <main>
+              <AddButton/>
     <article className="producteurs">
       <h1 className="page-title">Nos producteurs</h1>
             <div className="tags-container">
@@ -160,7 +163,7 @@ const Agriculteurs = () => {
 
             return (
             <div key={producteur.id} className="producteur-card">
-            <Link to={`/producteur/${producteur.id}`}>
+            <Link to={`/producteurs/${producteur.id}`}>
               <div className="relative-card">
                 <img className="producteur-img" src={imagePath} alt=""/>
                 <h3 className="producteur-name">{`${producteur.firstname} ${producteur.name}`}</h3>

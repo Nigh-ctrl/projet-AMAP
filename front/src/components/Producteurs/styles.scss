@@ -47,6 +47,7 @@ main{
   }
   
   &-list {
+    perspective: 1em;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

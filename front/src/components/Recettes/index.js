@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import NavBar from './NavBar';
+import AddButton from '../AddButton'
 
 // import des photos des recettes
 import potofu from '../../../public/recettes/potofu.jpeg';
@@ -24,6 +25,7 @@ const Recettes = () => {
       url: `${axios.default.baseURL}/recettes`
     })
     .then((res) => {
+        console.log(res.data)
       if(saison === undefined){
         setRecettes(res.data);
         return
@@ -44,6 +46,7 @@ const Recettes = () => {
     <section className="recettes">
       <h1 className="page-title">Recettes</h1>
       <NavBar />
+      <AddButton />
       <div className="recettes-list">
         {
           recettes.map((recette) => {
@@ -65,7 +68,7 @@ const Recettes = () => {
               break;
             }
             return (
-              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
+              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recettes/${recette.id}`}>
                 <article className="recettes-card">
                   <h3 className="recettes-title">{recette.title}</h3>
                   <img className="recettes-img" src={imagePath} alt=""/>
