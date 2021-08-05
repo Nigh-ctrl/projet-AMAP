@@ -1,6 +1,10 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
+section.recettes{
+  flex: 1;
+}
+
 section .recettes{
     width: 100%;
     flex: 1;
