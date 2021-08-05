@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import addButton from '../AddButton'
+import {ConnexionContext}  from '../../ConnexionContext.js'
 
 // import de toutes les photos des producteurs. Trouver une autre solution
 import one from '../../../public/producteurs/producteur 1/profil_1.jpg';
@@ -73,11 +74,160 @@ const Agriculteurs = () => {
   };
   // initialisation de la variable qui me sert a stocker le chemin de la photo
   let imagePath;
+  const [token, setToken] = useContext(ConnexionContext)
+
+  if(token){
+    return(
+
+    <main>
+    <div className="addButton">
+      <AddButton/>
+    </div>
+    <article className="producteurs">
+      <h1 className="page-title">Nos producteurs</h1>
+      <div className="tags-container">
+            <Link to={`/producteurs/1`}>
+              <div className="tag">
+                  <p className="tag p">Légumes</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/2`}>
+              <div className="tag">
+                  <p className="tag p">Fruits</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/3`}>
+              <div className="tag">
+                  <p className="tag p">Aromates</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/4`}>
+              <div className="tag">
+                  <p className="tag p">Fromages</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/5`}>
+              <div className="tag">
+                  <p className="tag p">Légumineuse</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/6`}>
+              <div className="tag">
+                  <p className="tag p">Farine</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/7`}>
+              <div className="tag">
+                  <p className="tag p">Confiture</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/8`}>
+              <div className="tag">
+                  <p className="tag p">Oeufs</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/9`}>
+              <div className="tag">
+                  <p className="tag p">Viande</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/10`}>
+              <div className="tag">
+                  <p className="tag p">Miel</p>
+              </div>
+            </Link>
+            <Link to={`/producteurs/11`}>
+              <div className="tag">
+                  <p className="tag p">Pain</p>
+              </div>
+            </Link>
+            </div>
+      <div className="producteurs-list">
+        {
+          producteurs.map(producteur => {
+            // je récupère les products_id de chaque producteurs dans un tableau (les elements sont unitaires)
+            const product = producteur.products_id.split(',');
+            // dans chaque cas on affiche envoie un chemin différent en fonction de l'id du producteur
+            switch (producteur.id){
+              case 1:
+                imagePath = one;
+              break;
+              case 2:
+                imagePath = two;
+              break;
+              case 3:
+                imagePath = three;
+              break;
+              case 4:
+                imagePath = four;
+              break;
+              case 5:
+                imagePath = five;
+              break;
+              case 6:
+                imagePath = six;
+              break;
+              case 7:
+                imagePath = seven;
+              break;
+              case 8:
+                imagePath = height;
+              break;
+              // case 9:
+              //   imagePath = nine;
+              // break;
+              // case 10:
+              //   imagePath = ten;
+              // break;
+              // case 8:
+              //   imagePath = eleven;
+              // break;
+              // case 8:
+              //   imagePath = twelve;
+              // break;
+              // case 8:
+              //   imagePath = thirteen;
+              // break;
+            }
+
+            return (
+            <div key={producteur.id} className="producteurs-card">
+            <Link to={`/producteur/${producteur.id}`}>
+              <div className="relative-card">
+                <div className="producteurs-img-container">
+                  <img className="producteurs-card-img" src={imagePath} alt=""/>
+                </div>
+                <h3 className="producteurs-card-name">{`${producteur.firstname} ${producteur.name}`}</h3>
+                <div className="tags-container">
+                {
+                  product.map(product => {
+                    return(
+                      <div key={product} className="tag">
+                        {/* On affiche seulement les produits correspondants aux bonnes keys de l'objet productIdValue */}
+                        <p className="tag p">{Object.values(productIdValue[product])}</p>
+                      </div>
+                    )
+                  })
+                }
+                </div>
+                {/* Avec slice on réduit le text au 300 premiers caractères */}
+                <p className="producteurs-card-text">{`${producteur.biography.slice(0, 300)} [...]`}</p>
+                <p className="producteurs-card-read-more" >En savoir plus</p>
+              </div>
+            </Link>
+            </div>
+            )
+          })
+        }
+      </div>
+    </article>
+    </main>
+    )
+  }
 
   return (
     <main>
     <div className="addButton">
-      <AddButton/>
     </div>
     <article className="producteurs">
       <h1 className="page-title">Nos producteurs</h1>

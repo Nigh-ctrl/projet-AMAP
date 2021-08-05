@@ -1,5 +1,10 @@
 @import '../../../styles/vars';
 
+section.recette{
+  flex: 1;
+}
+
+
 section .recette {
   flex: 1;
 
@@ -26,6 +31,8 @@ section .recette {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 70%;
+    font-size: larger;
     
     &-ingredient{
       margin-bottom: 1em;
