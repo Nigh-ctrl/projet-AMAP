@@ -1,4 +1,7 @@
 @import '../../styles/_vars.scss';
+.app::-webkit-scrollbar{
+  display: none;
+}
 .app {
   width: 100vw;
   min-height: 100vh;
