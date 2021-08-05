@@ -1,7 +1,7 @@
 import React from 'react';
 import calendar from '../../../public/calendrier/calendar.png'
 
-// import PropTypes from 'prop-types';
+
 
 import './styles.scss';
 
@@ -13,8 +13,8 @@ const Calendrier = () => (
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt necessitatibus molestiae quaerat tenetur porro! Qui tempora aliquam distinctio, ipsa tenetur voluptatem id error eveniet? Quibusdam nisi iure harum nam repellat.
         </p>
       </div>
-      <div className="calendrier-div">
-        {/* je ne fais pas de style sur l'image car elle sera remplaçée par un vrai calendrier en V2 */}
+      <div className="calendrier-api-div">
+        {/*l'image car elle sera remplaçée par un vrai calendrier en V2 */}
         <img className="img" src={calendar} alt=""/>
         
       </div>
@@ -23,12 +23,5 @@ const Calendrier = () => (
 );
 
 
-// Content.propTypes = {
-// 
-// };
-
-// Content.defaultProps = {
-//   
-// };
 
 export default Calendrier;
