@@ -12,7 +12,7 @@
 
 7 Bertrand Allais Farines et légumineuses
 
-8 POmmes
+8 Gregoire Delabre, Pommes
 
 9 Phillipe Bilocq, poires
 
