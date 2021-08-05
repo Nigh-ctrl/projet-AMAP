@@ -1,10 +1,14 @@
 @import '../../styles/_vars.scss';
+.app::-webkit-scrollbar{
+  display: none;
+}
 .app {
   width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: $main-font;
+  z-index: 90;
 
   a{
     text-decoration: none;

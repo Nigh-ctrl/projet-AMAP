@@ -8,6 +8,9 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./styles.scss";
+import moment from "moment";
+import 'moment/locale/fr';
+
 
 const locales = {
     "fr": require("date-fns/locale/fr"),
@@ -24,6 +27,7 @@ const messages = {
   date: 'date',
   time: 'heure',
   event: 'événement', // Or anything you want
+  monday: 'lundi',
   showMore: total => `+ ${total} événement(s) supplémentaire(s)`
 }
 const localizer = dateFnsLocalizer({
@@ -39,18 +43,18 @@ const events = [
     {
         title: "Vente paniers fruits de saison",
         allDay: true,
-        start: new Date(2021, 8, 1),
-        end: new Date(2021, 8, 1),
+        start: new Date(2021, 7, 1),
+        end: new Date(2021, 7, 1),
     },
     {
         title: "Vente paniers légumes de saison",
-        start: new Date(2021, 8, 7),
-        end: new Date(2021, 8, 7),
+        start: new Date(2021, 7, 7),
+        end: new Date(2021, 7, 7),
     },
     {
         title: "Réunion informative sur l'AMAP",
-        start: new Date(2021, 8, 20),
-        end: new Date(2021, 8, 23),
+        start: new Date(2021, 7, 20),
+        end: new Date(2021, 7, 23),
     },
 ];
 
@@ -63,7 +67,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <section className="calendrier">
             <h1>Calendrier</h1>
             <h2>Ajouter un nouveau panier</h2>
             <div>
@@ -74,8 +78,8 @@ function App() {
                     Ajouter un panier
                 </button>
             </div>
-            <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
-        </div>
+            <Calendar messages={messages} localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+        </section>
     );
 }
 

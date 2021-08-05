@@ -1,15 +1,18 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
-
+main::-webkit-scrollbar{
+  display: none;
+}
 main{
   width: 100%;
   flex-direction: column;
   flex: 1;
+  scrollbar-width: none;
 }
 .page-title{
   font-size: 2.5em;
   background-color: $tertiary-color;
-  color: $last-color;
+  color: white;
   font-weight: 700;
   border-radius: 2.5em;
   margin: 2rem auto;
@@ -36,7 +39,7 @@ main{
     overflow: hidden;
     margin-bottom: 2em;
     border-radius: 2.5em;
-    border: 10px solid $last-color;
+    border: 5px solid $last-color;
   }
   &-card {
     flex-direction: column;
@@ -84,7 +87,7 @@ main{
   justify-content: space-around;
   align-items: center;
   height: 3em;
-  overflow: auto;
+
 
   &::-webkit-scrollbar {
     display: none;
@@ -132,6 +135,9 @@ main{
 {
   .page-title{
     width: fit-content;
+  }
+  .tags-container{
+    overflow: auto;
   }
   .producteurs-card{
     height: 36em;

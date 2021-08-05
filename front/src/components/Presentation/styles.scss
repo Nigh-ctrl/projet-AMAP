@@ -1,7 +1,6 @@
 @import '../../styles/vars';
 
-section .presentation {
-  font-family: $main-font;
+section.presentation-container {
   flex: 1;
 
   h1 {
@@ -10,20 +9,32 @@ section .presentation {
     
   }
 
-  &-div {
+  .presentation {
     width: 80%;
     margin: auto;
-  }
+    margin-bottom: 30px;
+    h3{
+      font-weight: bold;
+    }
+    p, li{
+      margin: 1em 0;
+    }
 
-  &-schema {
-    width: 50%;
-    margin: auto;
-
-    img {
-      width: 70%;
-      margin-left: 10em;
+    li{
+      list-style: circle;
+      margin-left: 13px;
+    }
+    &-schema{
+      display: flex;
+      max-width: 90%;
+    }
+    img{
+      max-width: 90%;
+      justify-self: center;
+      margin: 0 auto;
     }
   }
+
   
 }
 
