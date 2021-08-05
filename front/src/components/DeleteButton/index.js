@@ -1,5 +1,5 @@
 import React, { useContext, useState} from "react"
-import {useLocation, Redirect} from 'react-router-dom'
+import {useLocation, Redirect, useParams} from 'react-router-dom'
 import {ConnexionContext} from '../../ConnexionContext'
 import './style.scss'
 import axios from 'axios'
@@ -8,11 +8,28 @@ import {FiDelete} from 'react-icons/fi'
 const DeleteButton = () => {
   const [token, setToken] = useContext(ConnexionContext)
   const [redirect, setRedirect]= useState(false)
-  const deleteURL = axios.default.baseURL + useLocation().pathname
+  const currentUrl = useLocation().pathname
+
+  String.prototype.cleanUp = function(){
+    switch (this.replace(/[0-9'/']/g, '')) {
+      case 'producteur':
+          const {id_producteur} = useParams()
+          return this.replace(/[0-9'/']/g, '') + `s/${id_producteur}`
+        break;
+      default:
+          const {id} = useParams()
+          return this.replace(/[0-9'/']/g, '') + `s/${id}`
+        break;
+    }
+  }
+
+  const deleteURL = '/'+currentUrl.cleanUp()
+  console.log(`delete url = ${deleteURL}`)
+
   const handleDelete = () => {
     axios({
       method: 'delete',
-      url: deleteURL,
+      url: axios.default.baseURL + deleteURL,
       headers: {'Authorization': `Bearer ${token}`}
     }).then((res)=>{
     console.log('askip ça marche')
@@ -21,6 +38,7 @@ const DeleteButton = () => {
       })
     .catch((e)=>{
     alert("une erreur est servenue")
+    console.log(e)
       })
   }
   if(redirect){
