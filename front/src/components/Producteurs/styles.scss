@@ -3,18 +3,16 @@
 
 main{
   width: 100%;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   flex: 1;
 }
-
 .page-title{
   font-size: 2.5em;
   background-color: $tertiary-color;
   color: $last-color;
   font-weight: 700;
   border-radius: 2.5em;
-  margin: 3rem auto;
+  margin: 2rem auto;
   width: 80%;
 }
 .relative-card {
@@ -24,6 +22,7 @@ main{
 }
 .producteurs {
   width: 80%;
+  margin: auto;
 
   &-list {
     perspective: 1em;
@@ -36,7 +35,7 @@ main{
     overflow: hidden;
     border-radius: 2.5em;
     border: 10px solid $last-color;
-    margin: auto;
+    // margin: auto;
     margin-bottom: 2em;
   }
   &-card {
@@ -81,14 +80,16 @@ main{
 }
 .tags-container{
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+  height: 3em;
+  overflow: scroll;
 
   .tag{
     background-color: $last-color;
     border-radius: 2.5em;
     transition: transform 0.7s;
     padding: 0.1em;
+    margin: 0.5em;
 
     &:hover{
       -webkit-transform: scale(1.2);
@@ -103,35 +104,15 @@ main{
   }
 }
 
-@media(max-width: $bp-tablet)
+@media(max-width: 1341px)
 {
-  .producteurs{
-    &-card {
-      // flex-direction: column;
-      width: 70%;
-      max-height: 38rem;
-      &-text{
-        margin-bottom: 1em;
-      }
-      &-read-more {
-        display: none;
-      }
-    }
+  .tags-container{
+    justify-content: start;
   }
 }
 @media(max-width: $bp-phone)
 {
-  .producteurs{
-    width: 100%;
-  }
-  .producteurs-card{
-    width: 80%;
-
-    &-read-more {
-      display: none;
-    }
-  }
-  .producteurs-img-container{
-    height: 12em;
+  .page-title{
+    width: fit-content;
   }
 }
