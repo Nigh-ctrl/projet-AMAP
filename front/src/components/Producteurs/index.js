@@ -68,7 +68,7 @@ const Agriculteurs = () => {
 
   return (
     <main>
-    <div classNAme="addButton">
+    <div className="addButton">
       <AddButton/>
     </div>
     <article className="producteurs">
@@ -175,11 +175,9 @@ const Agriculteurs = () => {
                 {
                   product.map(product => {
                     return(
-                      <div key={product} className="tags-container">
+                      <div key={product} className="tag">
                         {/* On affiche seulement les produits correspondants aux bonnes keys de l'objet productIdValue */}
-                      <div className="tag">
                         <p className="tag p">{Object.values(productIdValue[product])}</p>
-                      </div>
                       </div>
                     )
                   })

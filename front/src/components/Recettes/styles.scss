@@ -14,7 +14,7 @@ section .recettes{
     }
     &-img-container{
       width: 100%;
-      height: 22em;
+      max-height: 22em;
       overflow: hidden;
       margin: 0 auto 2em auto;
     }
@@ -34,7 +34,7 @@ section .recettes{
     }
     &-a {
       margin-right: 0;
-      width: 45%;
+      width: 40em;
     }
     &-description{
       font-size: 1.3em;
@@ -65,7 +65,7 @@ section .recettes{
   section .recettes{
     &-list{
       flex-direction: column;
-      width: 45%;
+      width: 60%;
     }
     &-a{
       width: 100%;
@@ -73,6 +73,9 @@ section .recettes{
     &-card{
       width: 100%;
       margin: 0 0 2em 0;
+    }
+    &-img-container{
+      height: auto;
     }
   }
 }
