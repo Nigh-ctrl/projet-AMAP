@@ -68,7 +68,9 @@ const Agriculteurs = () => {
 
   return (
     <main>
-              <AddButton/>
+    <div classNAme="addButton">
+      <AddButton/>
+    </div>
     <article className="producteurs">
       <h1 className="page-title">Nos producteurs</h1>
       <div className="tags-container">
