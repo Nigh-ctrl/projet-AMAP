@@ -1,15 +1,8 @@
-           
+« Moi ce que j’aime c’est le pouvoir aromatiques des céréales… » 
+ Bertrand Allais
+Céréalier, meunier
 
-**Philippe Bilocq**
+Entre Bras et Châteauvert se trouve le domaine de la Rouvière plane où Bertrand Allais cultive céréales et légumineuses depuis 1977. Converti à l’agriculture biologique depuis l’an 2000, sur les 70 hectares de son exploitation, il en cultive 60, en laisse 10 en jachères. L’irrigation se fait par le canal de l’Argens. 
+Le compost à base de fumier récupéré chez des éleveurs biologiques et de temps à autre un engrais azoté viennent nourrir ses terres déjà enrichies en azote par la culture de légumineuses telles que luzerne et sainfoin.
+Il choisit de cultiver d’anciennes variétés de céréales plus adaptées au climat, plus goûteuses mais forcément moins productives : blé tendre, blé des Pharaons dit Kamut, petit épeautre, seigle… à partir desquelles il fabrique ses farines. Il produit également des pois chiches et des lentilles vertes.
 
-Arboriculteur
-
-Domaine de Saint André, La Saulce
-
-L’exploitation familiale, le Domaine St André, a été créée de toute pièce en 1992 dans les Hautes-Alpes. Elle se situe à 15km au sud de Gap, à 600m d'altitude au pied du massif de Céüse sur les coteaux ensoleillés dominant la Durance. Depuis plus de 15 ans, pommiers et poiriers sont cultivés ainsi que de la vigne selon les méthodes de l'Agriculture Biologique. 23 variétés de fruits (poires,coings…), dont 17 de pommes sont produites.
-
-Ceci entraine un étalement de la récolte entre le 15 août au 30 octobre.
-
-Les fruits sont ramassés à la main. Un premier tri est effectué dans le champ, d’un côté les fruits qui iront en frigo et, de l’autre, ceux à transformer de suite en purées, gelées, confiture, jus de fruits et cidre.
-
-Tous les produits de l’exploitation sont certifiés AB par Ecocert.
