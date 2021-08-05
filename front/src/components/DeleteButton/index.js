@@ -24,7 +24,6 @@ const DeleteButton = () => {
   }
 
   const deleteURL = '/'+currentUrl.cleanUp()
-  console.log(`delete url = ${deleteURL}`)
 
   const handleDelete = () => {
     axios({
