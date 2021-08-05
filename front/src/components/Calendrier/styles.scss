@@ -1,22 +1,70 @@
 // import des variables sass 
 @import '../../styles/_vars.scss';
 
-section.calendrier {
+section .calendrier {
   flex: 1;
-  &-div {
-    width: 60%;
-    margin: auto;
+
+  &-div{
     display: flex;
+    max-width: 70%;
+    margin: auto;
     align-items: center;
+    justify-content: space-around;
+  }
+  &-p {
+    width: 50%;
+    flex-direction: column;
+
+    p {
+      color: $last-color;
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+  }
+  &-api-div {
+    margin: 2em auto;
+    max-width: 90%;
+    display: flex;
     justify-content: center;
+
+    img {
+      width: 100%;
+      
+      
+    }
+  }
+}
+@media(max-width: $bp-tablet)
+{
+  section .contact{
+    flex: 1;
+
+    &-div{
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 12em;
+    }
+   
   }
 }
 @media(max-width: $bp-phone)
 {
-  mentionsLegales {
-    &-div {
-      width: 80%;
-    }
+  section .contact {
+    flex: 1;
 
+    &-div{
+      width: 100%;
+    }
+    &-p{
+      margin-bottom: 4em;
+    }
+    &-api-div{
+      width: 90%;
+      margin: auto;
+      .img{
+        width: 100%;
+      }
+    }
   }
 }
+
