@@ -14,7 +14,7 @@ const Calendrier = () => (
         </p>
       </div>
       <div className="calendrier-api-div">
-        {/*l'image car elle sera remplaçée par un vrai calendrier en V2 */}
+        {/*l'image sera remplaçée par un vrai calendrier en V2 */}
         <img className="img" src={calendar} alt=""/>
         
       </div>
