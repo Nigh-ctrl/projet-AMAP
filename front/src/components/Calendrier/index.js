@@ -63,7 +63,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <section className="calendrier">
             <h1>Calendrier</h1>
             <h2>Ajouter un nouveau panier</h2>
             <div>
@@ -75,7 +75,7 @@ function App() {
                 </button>
             </div>
             <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
-        </div>
+        </section>
     );
 }
 
