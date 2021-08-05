@@ -28,21 +28,21 @@ main{
     perspective: 1em;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: 50px;
   }
   &-img-container{
-    height: 17em;
+    max-height: 22em;
     overflow: hidden;
+    margin-bottom: 2em;
     border-radius: 2.5em;
     border: 10px solid $last-color;
-    // margin: auto;
-    margin-bottom: 2em;
   }
   &-card {
     flex-direction: column;
-    width: 35%;
-    margin: 4em auto;
-    padding: 4em;
+    width: 616px;
+    margin: 5em 2em;
+    padding: 3em;
     padding-bottom: 0;
     background-color: $tertiary-color;
     border-radius: 2.5em;
@@ -80,10 +80,15 @@ main{
 }
 .tags-container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   height: 3em;
-  overflow: scroll;
+  overflow: auto;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .tag{
     background-color: $last-color;
     border-radius: 2.5em;
@@ -102,25 +107,46 @@ main{
       padding: 0.1em;
     }
 
-a {
-  text-align: right;
-  text-decoration: underline;
-  margin-right: 2.5em;
-  color: black;
-}
+    a {
+      text-align: right;
+      text-decoration: underline;
+      margin-right: 2.5em;
+      color: black;
+    }
+  }
 }
 
-
-@media(max-width: 1341px)
+@media(max-width: $bp-tablet)
 {
-  .tags-container{
+  .tags-container:first-child(){
     justify-content: start;
+  }
+  .producteurs-card{
+    height: 670px;
+  }
+  .producteurs-card:nth-child(8n){
+    height: 760px;
   }
 }
 @media(max-width: $bp-phone)
 {
   .page-title{
     width: fit-content;
+  }
+  .producteurs-card{
+    height: 36em;
+    width: 560px;
+    margin: 5em 0;
+    &-text{
+      height: 8.6em;
+      overflow: scroll;
+    }
+    &-name{
+      margin: 1em;
+    }
+    &-text{
+      margin-top: 1em;
+    }
   }
 }
 }
