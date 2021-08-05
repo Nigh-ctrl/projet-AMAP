@@ -7,10 +7,18 @@ import {ConnexionContext} from '../../../ConnexionContext'
 
 // import de toutes les photos des producteurs. Trouver une autre solution
 import one from '../../../../public/producteurs/producteur 1/profil_1.jpg';
+import two from '../../../../public/producteurs/producteur 2/profil_1.png';
 import three from '../../../../public/producteurs/producteur 3/profil_1.jpg';
 import four from '../../../../public/producteurs/producteur 4/profil_1.jpg';
-import six from '../../../../public/producteurs/producteur 6/profil_1.jpg';
+import five from '../../../../public/producteurs/producteur 5/profil_1.jpg';
+import six from '../../../../public/producteurs/producteur 6/profil_1.png';
+import seven from '../../../../public/producteurs/producteur 7/profil_1.jpg';
 import height from '../../../../public/producteurs/producteur 8/profil_1.jpg';
+// import nine from '../../../public/producteurs/producteur 8/profil_1.jpg';
+// import ten from '../../../public/producteurs/producteur 8/profil_1.jpg';
+// import eleven from '../../../public/producteurs/producteur 8/profil_1.jpg';
+// import twelve from '../../../public/producteurs/producteur 8/profil_1.jpg';
+// import thirteen from '../../../public/producteurs/producteur 8/profil_1.jpg';
 
 
 import './styles.scss'
@@ -51,7 +59,7 @@ const Producteur = () => {
       imagePath = one;
     break;
     case 2:
-      imagePath = '';
+      imagePath = two;
     break;
     case 3:
       imagePath = three;
@@ -60,17 +68,32 @@ const Producteur = () => {
       imagePath = four;
     break;
     case 5:
-      imagePath = '';
+      imagePath = five;
     break;
     case 6:
       imagePath = six;
     break;
     case 7:
-      imagePath = '';
+      imagePath = seven;
     break;
     case 8:
       imagePath = height;
     break;
+    // case 9:
+    //   imagePath = nine;
+    // break;
+    // case 10:
+    //   imagePath = ten;
+    // break;
+    // case 8:
+    //   imagePath = eleven;
+    // break;
+    // case 8:
+    //   imagePath = twelve;
+    // break;
+    // case 8:
+    //   imagePath = thirteen;
+    // break;
   }
 
   if(token[0]){
