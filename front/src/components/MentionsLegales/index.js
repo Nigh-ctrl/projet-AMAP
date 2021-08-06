@@ -10,7 +10,7 @@ const MentionsLegales = () => (
         
         <p className="mentionsLegales-information">
         
-          Nom : AMAP La Seyne sur Mer <br/>
+          Nom : AMAP La Seyne-sur-Mer <br/>
           Contact : amaplaseynesurmer@hotmail.fr <br/>
           Hebergement : <br/>
          

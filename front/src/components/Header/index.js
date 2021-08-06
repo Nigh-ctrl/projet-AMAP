@@ -26,7 +26,7 @@ const Header =  () =>{
                 <img src={logo}/>
         </div>
         <div className="center">
-            <span>Amap la Seyne sur Mer</span>
+            <span>Amap la Seyne-sur-Mer</span>
         </div>
         <div className="right">
           <Link to="/" > 
@@ -66,7 +66,7 @@ const Header =  () =>{
                 <img src={logo}/>
         </div>
         <div className="center">
-            <span>Amap la Seyne sur Mer</span>
+            <span>Amap la Seyne-sur-Mer</span>
         </div>
         <div className="right">
           <Link to="/" > 

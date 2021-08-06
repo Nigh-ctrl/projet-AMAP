@@ -44,6 +44,7 @@ const Connexion = () => {
           <div className="admin-login-email">
             <input
               type="text"
+              placeholder="Adresse mail"
               autoComplete="username"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -52,6 +53,7 @@ const Connexion = () => {
           <div className="admin-login-password">
             <input icon='lock'
               type="password"
+              placeholder="Mot de passe"
               autoComplete="current_password"
               value={password}
               onChange={(e)=> setPassword(e.target.value)}

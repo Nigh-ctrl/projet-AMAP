@@ -6,7 +6,7 @@ Pour nous joindre
 					- Espace Associatif Jean Baptiste Coste
 								 (ancienne école JB Coste)
 							64 Chemin Aimé Genou
-							83500 La Seyne sur Mer
+							83500 La Seyne-sur-Mer
 							
 							
 							Plan + photo nommée Espace de distribution

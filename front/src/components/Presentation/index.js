@@ -5,13 +5,13 @@ import './styles.scss'
 
 const Presentation = () => (
   <section className="presentation-container">
-    <h1 className="page-title">Présentation de l'amap</h1>
+    <h1 className="page-title">Présentation de l'Amap</h1>
     <div className="presentation">
         <h2>Schéma de présentation de l'Amap</h2>
     <div className="presentation-schema">
       <img src={schema} alt=""/>
     </div>
-        <h2 >qu'est-ce qu'une Amap?</h2>
+        <h2 >Qu'est-ce qu'une Amap?</h2>
         <p>
         Une AMAP est une Association pour le Maintien d’une Agriculture Paysanne. Elle a pour objectif de préserver l’existence et la continuité des fermes de proximité dans une logique d’agriculture durable et biologique. Le fermier s’engage à cultiver sain, dans le respect de la nature et de l’environnement. Conformément à la Charte des AMAP, iI n’utilise ni engrais chimique de synthèse, ni pesticide, ni OGM.
       </p>
@@ -29,7 +29,7 @@ En contrepartie, l’approvisionnement de l'Amapien en aliments de qualité est 
 Au travers des échanges avec le producteur, des visites de la ferme et des fêtes les membres apprennent à connaître les producteurs et leurs lieux de productions.
 Dans ce système hors économie de marché, l’agriculteur livre l’intégralité de sa production, évite la surproduction et toute mévente due à la forte concurrence internationale. N’ayant plus le souci de vendre, il peut se consacrer à la valorisation de son savoir-faire et à la qualité de sa pratique agricole.
       </p>
-        <h2>L'AMAP la Seyne sur Mer</h2>
+        <h2>L'AMAP la Seyne-sur-Mer</h2>
         <p className="subtitle">La naissance des AMAP en France</p>
       <p>
 A l'origine de toutes les AMAP, se trouvent les teikei (qu'on peut traduire en japonais par « coopération », « collaboration » ou « partenariat ») qui ont émergé dans les années 1970 aux Japon. Le fonctionnement est simple : en échange de l’achat par souscription de la récolte du paysan, ce dernier s’engage à fournir des aliments cultivés sans produits chimiques.
@@ -38,9 +38,9 @@ A l'origine de toutes les AMAP, se trouvent les teikei (qu'on peut traduire en 
 Dans un contexte de prise de conscience citoyenne face aux crises traversées par les domaines de l’agriculture (remise en question de modèle de production intensive,…) et de l’alimentation (interrogation sur la séparation entre lieu de production et lieu de consommation, remise en question du modèle agroalimentaire industriel...), ce concept s'exporte aux Etats-Unis (Community Supported Agriculture) et au Canada, puis arrive en France en 2001. 
 Le Var et les bouches du Rhône sont les figures de proue d’un mouvement qui depuis 20 ans se répand en France
       </p>
-        <p className="subtitle">La naissance de l'AMAP la Seyne sur Mer</p>
+        <p className="subtitle">La naissance de l'AMAP la Seyne-sur-Mer</p>
       <p>
-L’AMAP la Seyne sur Mer nait en 2008 du souhait de quelques amapiens issus du premier groupe d’Aubagne de fonder une AMAP centrée sur la production biologique et locale (statuts, sous le régime d’une association 1901, déposés en Préfecture du Var JO du 24/01/2009 N° 1903).
+L’AMAP la Seyne-sur-Mer nait en 2008 du souhait de quelques amapiens issus du premier groupe d’Aubagne de fonder une AMAP centrée sur la production biologique et locale (statuts, sous le régime d’une association 1901, déposés en Préfecture du Var JO du 24/01/2009 N° 1903).
       </p>
       <p>
 Elle a pour objet de maintenir et promouvoir une agriculture durable, de proximité, socialement équitable et écologiquement saine.
@@ -50,7 +50,7 @@ L'association fait partie du Réseau des AMAP DE PROVENCE (cf l’amap tout un r
 L’association, ses membres, ses producteurs adhèrent aux principes portées par la charte des Amap (lien vers charte des amap).
       </p>
       <p>
-Organisée autour d'un projet de soutien à l'agriculture biologique, l'AMAP LA SEYNE SUR MER est liée depuis plusieurs années avec les mêmes producteurs :  
+Organisée autour d'un projet de soutien à l'agriculture biologique, l'AMAP LA Seyne-sur-Mer est liée depuis plusieurs années avec les mêmes producteurs :  
       </p>
       <ul>
         <li>Thierry, le maraîcher cultive ses terres à la Cadière d'Azur, </li>
