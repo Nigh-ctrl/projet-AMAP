@@ -8,7 +8,7 @@ import {ConnexionContext} from '../../ConnexionContext'
   const addProducteur = () => {
   const [producteur, setProducteur] = useState({
     slug: "default_slug",
-    location: "la seyne sur mer",
+    location: "la Seyne-sur-Mer",
     basket: "des oeufs",
     products_id: [1, 3],
     admin_id: 2,

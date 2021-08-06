@@ -84,7 +84,7 @@ const Agriculteurs = () => {
       <AddButton/>
     </div>
     <article className="producteurs">
-      <h1 className="page-title">Nos producteurs</h1>
+      <h1 className="page-title">Nos Producteurs</h1>
       <div className="tags-container">
             <Link to={`/producteurs/1`}>
               <div className="tag">
@@ -230,7 +230,7 @@ const Agriculteurs = () => {
     <div className="addButton">
     </div>
     <article className="producteurs">
-      <h1 className="page-title">Nos producteurs</h1>
+      <h1 className="page-title">Nos Producteurs</h1>
       <div className="tags-container">
             <Link to={`/producteurs/1`}>
               <div className="tag">

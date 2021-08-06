@@ -46,7 +46,7 @@ const Articles = () => {
 
   return(
     <section className="articles">
-      <h1 className="page-title">Actu de l'amap</h1>
+      <h1 className="page-title">Actu de l'Amap</h1>
       <NavBar />
       <AddButton />
       <div className="articles-list">

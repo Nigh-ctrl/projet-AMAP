@@ -10,7 +10,7 @@ const Contact = () => (
         <div className="contact-p">
           <p>04 94 62 80 15</p>
           <p>amaplaseynesurmer@hotmail.fr</p>
-          <p>64 Chemin Aimé Genoud 83500 La Seyne sur Mer</p>
+          <p>64 Chemin Aimé Genoud 83500 La Seyne-sur-Mer</p>
         </div>
         <div className="contact-api-div">
           {/* je ne fais pas de style sur l'image car elle sera remplaçée par l'api google maps par la suite */}

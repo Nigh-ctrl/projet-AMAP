@@ -16,18 +16,18 @@ const locales = {
     "fr": require("date-fns/locale/fr"),
 };
 const messages = {
-  allDay: 'journée',
-  previous: 'précédent',
-  next: 'suivant',
-  today: 'aujourd\'hui',
-  month: 'mois',
-  week: 'semaine',
-  day: 'jour',
+  allDay: 'Journée',
+  previous: 'Précédent',
+  next: 'Suivant',
+  today: 'Aujourd\'hui',
+  month: 'Mois',
+  week: 'Semaine',
+  day: 'Jour',
   agenda: 'Agenda',
-  date: 'date',
-  time: 'heure',
-  event: 'événement', // Or anything you want
-  monday: 'lundi',
+  date: 'Date',
+  time: 'Heure',
+  event: 'Événement', // Or anything you want
+  monday: 'Lundi',
   showMore: total => `+ ${total} événement(s) supplémentaire(s)`
 }
 const localizer = dateFnsLocalizer({
