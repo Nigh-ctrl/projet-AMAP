@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 import {ConnexionContext} from '../../ConnexionContext'
 
 const Connexion = () => {
-
   const [token, setToken] = useContext(ConnexionContext) 
   const [email, setEmail ] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +32,8 @@ const Connexion = () => {
         console.log("erreur lors du login", e);
       })
   }
-
+  
+  
   if(token) return <Redirect to="/"  />
 
   return (
@@ -51,7 +51,7 @@ const Connexion = () => {
             />
           </div>
           <div className="admin-login-password">
-            <input icon='lock'
+            <input
               type="password"
               placeholder="Mot de passe"
               autoComplete="current_password"
