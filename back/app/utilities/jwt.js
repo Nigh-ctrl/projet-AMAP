@@ -1,6 +1,7 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
+//This method create a valid JWtoken for admins
 const token={
 
     generateTokenForAdmin:(user)=>{
@@ -9,7 +10,7 @@ const token={
         },
         process.env.JWT_SIGN_SECRET,
         {
-            expiresIn:'1800s'
+            expiresIn:'1h'
         })
 
     }

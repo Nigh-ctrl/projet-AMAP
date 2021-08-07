@@ -1,63 +1,66 @@
-import React, {useState, useEffect} from 'react';
-import 'semantic-ui-css/semantic.min.css'
-import { Button, Input } from 'semantic-ui-react';
+import React, {useState, useContext} from 'react';
 import './styles.scss'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom';
+import {ConnexionContext} from '../../ConnexionContext'
 
 const Connexion = () => {
-  
-  const [email, setEmail ] = useState();
-  const [password, setPassword] = useState();
+  const [token, setToken] = useContext(ConnexionContext) 
+  const [email, setEmail ] = useState("");
+  const [password, setPassword] = useState("");
 
-  function handleSubmit(event){
-    event.preventDefault();
-    console.log(event)
-    console.log(email, password)
-    //TODO requete axios, envoyer les vals dans le body,
+
+  function handleSubmit (event) {
+      // annule le refresh de la page
+      event.preventDefault()
+      const token = email + password
+      //requete axios
+      axios({
+        method: 'post',
+        url: `${axios.default.baseURL}/login`,
+        data: {
+          email: email,
+          password: password
+        }
+      }, { headers: {'Authorization': `Bearer ${token}`}} )
+      .then((res) => {
+        console.log(res.data)
+        setToken(res.data.token)
+        localStorage.setItem('tokenStored', res.data.token)
+      })
+      .catch((e) => {
+        console.log("erreur lors du login", e);
+      })
   }
-  const getAdmins = () => {
-    axios({
-      method: 'post',
-      url: 'http://localhost:5000/login',
-      data: {
-        email: email,
-        password: password
-      }
-    })//, { headers: {'Authorization': `Bearer ${token}`}} 
-    .then((res) => {
-      console.log(res.data);
-      setPassword(res.data.password);
-      setEmail(res.data.email);
-    })
-    .catch((e) => {
-      console.log("erreur lors du login", e);
-    })
-  }  
   
-  useEffect(getAdmins, []);  
+  
+  if(token) return <Redirect to="/"  />
 
   return (
     <section className="connexion">
       <div className="admin-login">
         <h1>Connexion</h1>
-        <form className="admin-login-form" onSubmit={handleSubmit} >
+        <form className="admin-login-form" onSubmit={handleSubmit}>
           <div className="admin-login-email">
-            <Input
-              onChange={(event) => setEmail(event.target.value)}
+            <input
+              type="text"
+              placeholder="Adresse mail"
+              autoComplete="username"
+              onChange={(e) => setEmail(e.target.value)}
               value={email}
-              labelPosition='right'
-              placeholder='Ex: CamLag@'
             />
           </div>
           <div className="admin-login-password">
-            <Input
-              icon='lock'
-              onChange={(event)=> setPassword(event.target.value)}
-              placeholder='****' 
-              value={password}/>
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              autoComplete="current_password"
+              value={password}
+              onChange={(e)=> setPassword(e.target.value)}
+               />
           </div>
           <div className="admin-login-submit">
-              <Button  type="submit">Se connecter</Button>
+              <button  type="submit">Se connecter</button>
           </div>
         </form>
       </div>

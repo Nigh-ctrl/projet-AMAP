@@ -1,6 +1,7 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
+//This middleware will check if the user have a valid JWT token before execute some restricted action
 const checkAdminMiddleware=(request, response,next)=>{
     const authHeader=request.headers['authorization'];
     const token =authHeader && authHeader.split(' ')[1];
@@ -13,6 +14,8 @@ const checkAdminMiddleware=(request, response,next)=>{
         if(err){
             response.status(403).json({"error":"Vous n'avez pas les droits"});
         }else{
+            console.log(user);
+            request.user=user;
             next();
         }
     })

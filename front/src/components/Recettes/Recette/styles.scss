@@ -1,47 +1,68 @@
-.clicked {
-  background-color:  rgb(0, 131, 0);
-  color: white;
-  padding: 0.3em 1em 0 1em;
-  border-radius: 0.3em 0.3em 0 0;
-}
-.nav-link {
-  padding: 0.3em 1em 0 1em;
-  color: black;
-}
-.recette {
-  width: 100%;
+@import '../../../styles/vars';
 
-  &-navBar {
-    width: 80%;
-    margin: auto;
+section.recette{
+  flex: 1;
+}
+
+
+section .recette {
+  flex: 1;
+
+  &-article{
     display: flex;
-    justify-content: space-between;
-    border-bottom: black 1px solid;
+    width: 70%;
+    margin: 3em auto;
+    padding: 2em;
+    //cette ligne est pour contraindre le composant EditButton a rester dans recette-container.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/position
+    // voir la section "fixed" pour comprendre la relation entre display:fixed et perspective
+    perspective: 1em;
   }
-
-}
-
-.recette-article{
-
-  display: flex;
-  justify-content: center;
-
 
   &-img{
-
     width: 50%;
+    margin: auto;
+  }
+
+  &-container{
+    color: $last-color;
+    padding: 2.5em;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    font-size: larger;
+    
+    &-ingredient{
+      margin-bottom: 1em;
+    }
+  }
+
+  &-img {
+    border-radius: 2.5em;
   }
 }
 
-
-.recette-title {
-    font-size: 2.5em;
-    padding: 1em;
-    text-align: center;
-
-
-
+@media(max-width: $bp-tablet)
+{
+  section .recette-article{
+    width: 90%;
   }
-
-
-
+}
+@media(max-width: $bp-phone)
+{
+  section .recette{
+    &-article{
+      width: 100%;
+      flex-direction: column-reverse;
+      padding: 0;
+      margin: 0;
+    }
+    &-img {
+      width: 80%;
+      border-radius: 0;
+      margin:auto;
+    }
+  }
+}

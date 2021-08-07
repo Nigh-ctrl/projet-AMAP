@@ -1,69 +1,136 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-import 'semantic-ui-css/semantic.min.css'
-import { Icon, Input } from 'semantic-ui-react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
+import NavBar from './NavBar';
+import AddButton from '../AddButton'
+import {ConnexionContext} from '../../ConnexionContext.js'
+
+// import des photos des recettes
+import potofu from '../../../public/recettes/potofu.jpeg';
+import poivrons from '../../../public/recettes/poivrons-farcis.jpeg';
+import salade from '../../../public/recettes/salade-fraicheur.jpeg';
+import veloute from '../../../public/recettes/veloute.jpeg';
+import gaufres from '../../../public/recettes/gaufres.jpeg';
 
 import './styles.scss';
 
-const Recettes = () => (
-  <section className="recettes">
-    <h1 className="page-title">Recettes</h1>
-    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-    <nav className="recettes-navBar">
-    <a className="clicked" href="">Accueil des Recettes</a>
-      <a className="nav-link" href="">Recette de printemps</a>
-      <a className="nav-link" href="">Recette d'été</a>
-      <a className="nav-link" href="">Recette d'automne</a>
-      <a className="nav-link" href="">Recette d'hiver</a>
-      <form action="POST">
-      <Input icon={<Icon name='search' inverted circular link />}placeholder='Rechercher par produit...'/>
-      </form>
-    </nav>
-    <div className="recettes-list">
-      {/* Ici un map lors de la dynamisation */}
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 1 </h3>
-        
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      {/* fin du map */}
-      <article className="recettes-card">
-        <h3 className="recettes-title"> Recette 2</h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 3 </h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recette 4 </h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      </article>
-      <article className="recettes-card">
-        <h3 className="recettes-title">Recettes 5</h3>
-        <img className="recettes-img" src="https://thumbs.dreamstime.com/z/panier-en-osier-avec-les-l%C3%A9gumes-organiques-crus-assortis-dans-le-jardin-48896220.jpg" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a className="recettes-read-more" href="">En savoir plus</a>
-      
-      </article>
-    </div>
-  </section>
-);
+const Recettes = () => {
+  const { saison } = useParams();
 
-// Content.propTypes = {
-// 
-// };
+  const [recettes, setRecettes] = useState([]);
 
-// Content.defaultProps = {
-//   
-// };
+  const [token, setToken] = useContext(ConnexionContext)
+  
+  const getRecipes = () => (
+    //requete axios
+    axios({
+      method: 'get',
+      url: `${axios.default.baseURL}/recettes`
+    })
+    .then((res) => {
+        console.log(res.data)
+      if(saison === undefined){
+        setRecettes(res.data);
+        return
+      }
+      const saisonFiltre = res.data.filter(recette => (recette.season_id == saison));
+      setRecettes(saisonFiltre);
+    })
+    .catch((e) => {
+      console.log("erreur lors du login", e);
+    })
+  )
+ 
+  useEffect(getRecipes, [saison]);
+
+  let imagePath;
+
+  if(token){
+    return(
+    <section className="recettes">
+      <h1 className="page-title">Recettes</h1>
+      <NavBar />
+      <AddButton />
+      <div className="recettes-list">
+        {
+          recettes.map((recette) => {
+            switch (recette.id){
+              case 1:
+                imagePath = salade;
+              break;
+              case 2:
+                imagePath = potofu;
+              break;
+              case 3:
+                imagePath = poivrons;
+              break;
+              case 4:
+                imagePath = veloute;
+              break;
+              case 5:
+                imagePath = gaufres;
+              break;
+            }
+            return (
+              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
+                <article className="recettes-card">
+                  <h3 className="recettes-title">{recette.title}</h3>
+                  <div className="recettes-img-container">
+                    <img className="recettes-img" src={imagePath} alt=""/>
+                  </div>
+                  <p className="recettes-description">{`${recette.description.slice(0, 300)} [...]`}</p>
+                  <p className="recettes-read-more">En savoir plus</p>
+                </article>
+              </Link>
+            )
+          })
+        }
+      </div>
+    </section>
+    )
+  }
+
+  return(
+    <section className="recettes">
+      <h1 className="page-title">Recettes</h1>
+      <NavBar />
+      <div className="recettes-list">
+        {
+          recettes.map((recette) => {
+            switch (recette.id){
+              case 1:
+                imagePath = salade;
+              break;
+              case 2:
+                imagePath = potofu;
+              break;
+              case 3:
+                imagePath = poivrons;
+              break;
+              case 4:
+                imagePath = veloute;
+              break;
+              case 5:
+                imagePath = gaufres;
+              break;
+            }
+            return (
+              <Link className="recettes-a" key={recette.id+recette.slug} to={`/recette/${recette.id}`}>
+                <article className="recettes-card">
+                  <h3 className="recettes-title">{recette.title}</h3>
+                  <div className="recettes-img-container">
+                    <img className="recettes-img" src={imagePath} alt=""/>
+                  </div>
+                  <p className="recettes-description">{`${recette.description.slice(0, 300)} [...]`}</p>
+                  <p className="recettes-read-more">En savoir plus</p>
+                </article>
+              </Link>
+            )
+          })
+        }
+      </div>
+    </section>
+  )
+};
 
 export default Recettes;

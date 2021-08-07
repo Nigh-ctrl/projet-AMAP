@@ -10,6 +10,7 @@ CREATE TABLE admin(
 
 CREATE TABLE farmer(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    slug VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
     "name" VARCHAR(50) NOT NULL,
     "location" VARCHAR(100) NOT NULL,
@@ -25,6 +26,7 @@ CREATE TABLE category(
 
 CREATE TABLE article(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    slug VARCHAR(50) NOT NULL,
     title VARCHAR(50) NOT NULL,
     content TEXT NOT NULL,
     admin_id INT NOT NULL REFERENCES admin(id),
@@ -43,6 +45,7 @@ CREATE TABLE season(
 
 CREATE TABLE recipe(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    slug VARCHAR(50) NOT NULL,
     title VARCHAR(50) NOT NULL,
     ingredients TEXT NOT NULL,
     "description" TEXT NOT NULL,

@@ -1,9 +1,10 @@
 //We call here the class we needed
 const Recipe = require('../models/recipe');
 
-//The controller which contains all the method for the farmer class
+//The controller which contains all the method for the recipe class
 const recipeController={
     
+    //This function catch all recipes from the database and send them in a JSON object
     findAll:async(_,response)=>{
         try{
             const recipes=await Recipe.findAll();
@@ -14,6 +15,7 @@ const recipeController={
         
     },
 
+    //This method catch one recipe from the database and send it in a JSON object
     findOne:async(request,response,next)=>{
         const id=parseInt(request.params.id,10);
 
@@ -29,6 +31,7 @@ const recipeController={
         }
     },
 
+    //This method catch all recipes of a specific season from the database and send them in a JSON object
     findBySeason: async (request, response) => {
         const seasonId = parseInt(request.params.id, 10);
 
@@ -40,6 +43,7 @@ const recipeController={
         }
     },
 
+    //This method recieve JSON object and add a recipe in the database 
     addRecipe: async (request, response) => {
         try{
 
@@ -54,6 +58,7 @@ const recipeController={
 
     },
 
+    //This method recieve JSON object and update a recipe in the database 
     updateRecipe: async (request, response) => {
 
         const id = parseInt(request.params.id, 10);
@@ -62,10 +67,14 @@ const recipeController={
 
             const recipe = await Recipe.findOne(id);
 
-            const {title,ingredients,description,admin_id,season_id}=request.body;
+            const {slug,title,ingredients,description,admin_id,season_id}=request.body;
 
             //We do the test for each property of the object
             //We modify the property only if it exists
+            if(slug){
+                recipe.slug = slug;
+            }
+
             if(recipe){
                 recipe.title = title;
             }
@@ -96,6 +105,7 @@ const recipeController={
 
     },
 
+    //This method delete a recipe in the database
     delete: async (request, response) => {
         const id = parseInt(request.params.id, 10);
 

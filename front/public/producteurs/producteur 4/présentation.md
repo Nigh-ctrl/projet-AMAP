@@ -1,3 +1,4 @@
+Mathias Carel
 Chevrier à La Roquebrussane
 EARL Les Vallons
 Élevage extensif de chèvres en système sylvopastoral : les animaux pâturent dans les collines du massif de la Sainte Baume. Le troupeau profite ainsi des ressources fourragères et participe à la prévention des incendies en entretenant les sous-bois. Cette pratique donne un lait parfumé et riche.

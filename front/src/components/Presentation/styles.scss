@@ -1,30 +1,83 @@
 @import '../../styles/vars';
 
-.presentation {
-  font-family: $main-font;
+section.presentation-container {
   flex: 1;
 
   h1 {
     text-align: center;
     margin-top: 1em;
+    
   }
 
-  &-div {
+  .presentation {
     width: 80%;
     margin: auto;
+    margin-bottom: 30px;
+    h3{
+      font-weight: bold;
+    }
+    p, li{
+      margin: 1em 0;
+    }
+
+    li{
+      list-style: circle;
+      margin-left: 13px;
+    }
+    &-schema{
+      display: flex;
+      max-width: 90%;
+    }
+    img{
+      max-width: 90%;
+      justify-self: center;
+      margin: 0 auto;
+    }
   }
 
-  &-schema {
-    width: 80%;
-    margin: auto;
-
-    h2 {
-      margin-top: 1em;
-    }
-    img {
-      width: 70%;
-      margin-left: 10em;
-    }
-  }
   
+}
+
+@media(max-width: $bp-tablet)
+{
+  section .presentation{
+
+    h1 {
+      margin-bottom: 3em;
+    }
+    h2 {
+      margin: 1.5em auto;
+    }
+    &-schema {
+      width: 80%;
+      height: 80%;
+      margin: 3em auto 11em auto;
+      img{
+        margin-left: 1em;
+        width: 95%;
+        height: 95%;
+      }
+    }
+  }
+}
+
+@media(max-width: $bp-phone)
+{
+  div .presentation{
+
+    h1{
+      margin-bottom: 2em;
+    }
+
+    &-schema{
+      width: 100%;
+      margin-bottom: 1em;
+      
+      img{
+        margin-left: 0;
+        width: 100%;
+        margin-bottom: 2em;
+      }
+    }
+  }
 }

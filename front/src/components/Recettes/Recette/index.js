@@ -1,54 +1,114 @@
-import React from "react";
-// import PropTypes from 'prop-types';
-import "semantic-ui-css/semantic.min.css";
-import { Icon, Input } from "semantic-ui-react";
+import React, { useState, useEffect, useContext }from "react";
+// on a besoin d'importer useParams pour avoir accés au slug de l'url
+import { useParams } from "react-router";
+import axios from 'axios';
+import NavBar from '../NavBar';
+import DeleteButton from '../../DeleteButton'
+import EditButton from '../../EditButton';
+import {ConnexionContext} from '../../../ConnexionContext'
+
+// import des photos des recettes
+import potofu from '../../../../public/recettes/potofu.jpeg';
+import poivrons from '../../../../public/recettes/poivrons-farcis.jpeg';
+import salade from '../../../../public/recettes/salade-fraicheur.jpeg';
+import veloute from '../../../../public/recettes/veloute.jpeg';
+import gaufres from '../../../../public/recettes/gaufres.jpeg';
 
 import "./styles.scss";
 
-const Recette = () => (
-  <section className="recette">
-    <h1 className="page-title"></h1>
-    {/* Ajout de NavLink pour indiquer quelle est la page affichée (activeClassName)*/}
-    <nav className="recettes-navBar">
-      <a className="clicked" href="">
-        Accueil des Recettes
-      </a>
-      <a className="nav-link" href="">
-        Recette de printemps
-      </a>
-      <a className="nav-link" href="">
-        Recette d'été
-      </a>
-      <a className="nav-link" href="">
-        Recette d'automne
-      </a>
-      <a className="nav-link" href="">
-        Recette d'hiver
-      </a>
-      <form action="POST">
-        <Input
-          icon={<Icon name="search" inverted circular link />}
-          placeholder="Rechercher par produit..."
-        />
-      </form>
-    </nav>
+const Recette = () => {
+  const token = useContext(ConnexionContext)
+  // on destructure pour récupérer directement id et pas un objet
+  const { id } = useParams();
+  // on met comme valeur l'id récupéré via le useParams
+  const [recetteId, setRecetteId] = useState(id);
+  const [recette, setRecette] = useState([]);
+  const [recetteIngredients, setRecetteIgredients] = useState([]);
 
-    <div className="recette-article">
-      <article>
-        <h1 class="recette-title">Recette vue principale</h1>
-        <img className="recette-img" src="" alt=""/>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        </article>
+  const getOneRecipe = () => (
+    //requete axios
+    axios({
+      method: 'get',
+      url: `${axios.default.baseURL}/recettes/${recetteId}`
+    })
+    .then((res) => {
+      setRecetteIgredients(res.data.ingredients.split(','));
+      setRecette(res.data);
+    })
+    .catch((e) => {
+      console.log("erreur lors du login", e);
+    })
+    )
+    
+  useEffect(getOneRecipe, []);
+
+  let imagePath;
+  switch (recette.id){
+    case 1:
+      imagePath = salade;
+    break;
+    case 2:
+      imagePath = potofu;
+    break;
+    case 3:
+      imagePath = poivrons;
+    break;
+    case 4:
+      imagePath = veloute;
+    break;
+    case 5:
+      imagePath = gaufres;
+    break;
+  }
+
+  if(token[0]){
+    return(
+    <section className="recette">
+      <h1 className="page-title">{recette.title}</h1>
+      <NavBar />
+        <article className="recette-article">
+          <div className="button-container" >
+          <DeleteButton />
+      <EditButton />
       </div>
-  </section>
-);
+          <div className="recette-container">
+          {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
+            <ul className="recette-container-ingredient">
+              {
+                recetteIngredients.map(row => (
+                  <li key={row}>{row}</li>
+                ))
+              }
+            </ul>
+            <p className="recette-container-description">{recette.description}</p>
+          </div>
+          <img className="recette-img" src={imagePath} alt=""/>
+        </article>
+    </section>
+    )
+  }
 
-// Content.propTypes = {
-//
-// };
+  return(
+    <section className="recette">
+      <h1 className="page-title">{recette.title}</h1>
+      <NavBar />
+        <article className="recette-article">
+          <div className="recette-container">
+          {/*besoin de fix le rendu de la liste d'ingrédient on reçoit un seul string*/}
+            <ul className="recette-container-ingredient">
+              {
+                recetteIngredients.map(row => (
+                  <li key={row}>{row}</li>
+                ))
+              }
+            </ul>
+            <p className="recette-container-description">{recette.description}</p>
+          </div>
+          <img className="recette-img" src={imagePath} alt=""/>
+        </article>
+    </section>
+  )
+};
 
-// Content.defaultProps = {
-//
-// };
 
 export default Recette;

@@ -1,11 +1,13 @@
 //We call here the class we needed
 const Admin = require('../models/admin');
 const jwtToken=require('../utilities/jwt');
+const bcrypt = require('bcrypt');
 
 const adminController={
 
+    //This method for admin log in
     loginSubmit: async (request, response) => {
-        // s'authentifier
+        //Authentification
         
         try{
             const email = request.body.email;
@@ -15,22 +17,21 @@ const adminController={
 
 
             if(!user) {
-                // l'utilisateur n'éxiste pas
-                // on s'arrte là (return) affiche la page de login avec l'erreur
+                //The user doesn't exist
+                //We stop the program here and provide the error
                 return response.status(500).json({"error":"Cet admin n'existe pas"});
             }
             
-            // si on arrive jusqu'ici c'est que l'utilisateur existe
-            //const isPasswordValid = bcrypt.compareSync(password, user.password);
-            const isPasswordValid = password;
+            //If we arrive here, that's mean the user exist
+            const isPasswordValid = bcrypt.compareSync(password, user.password);
 
-            if(isPasswordValid===user.password) {
+            if(isPasswordValid) {
                 return response.status(200).json({
                     "adminId":user.id,
                     "token":jwtToken.generateTokenForAdmin(user)
                 });
             }else{
-                // si le mot de passe ne correspond pas a celui qui à été encrypté en BDD alors on reaffiche la page de login avec une erreur
+                //If the password doesn't correspond to the one encrypted in database, we provide an error
                 return response.status(403).json({"error":"Mot de passe invalide"});
             }
 
