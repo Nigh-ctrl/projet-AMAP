@@ -10,7 +10,7 @@ DELETE FROM "season";
 INSERT INTO "farmer" ("slug","firstname","name","location","biography","basket","admin_id") VALUES
 ('Thierry_Vallarino','Thierry','Vallarino','Maraîcher à la Cadière d’Azur','A La Cadière d’Azur où il est un des derniers maraîchers bio, il lui faut pugnacité et passion pour persévérer entre les aléas de la météo, les prédateurs ailés ou à grandes oreilles, la convoitise immobilière et l’expansionnisme viticole.
 Thierry Vallarino exploite depuis trois décennies deux hectares au cœur de l’AOP Bandol. Soucieux de la terre, de la qualité de ses produits il n’a de cesse de chercher à faire évoluer ses pratiques entre demande des amapiens et pragmatisme de leur mise en culture (rotation des cultures, jachères pour le repos des sols, culture sous serre ou de plein champs, temps d’occupation du sol par production…).
-En toute saison il fournit des légumes dont la qualité gustative et la fraicheur ravissent nos papilles. Quelques fraises peuvent venir compléter le panier à la belle saison.','Contrat été (de mai à octobre) ,
+En toute saison il fournit des légumes dont la qualité gustative et la fraicheur ravissent nos papilles. Quelques fraises peuvent venir compléter le panier à la belle saison.Contrat été (de mai à octobre) ,
 Tomates (longues, rondes, jaunes rouges…) ,
 Courgettes (longues, rondes, jaune ou vertes) ,
 Aubergines (blanches ou violettes) ,
@@ -30,7 +30,7 @@ Choux variés ,
 Courge ,
 Épinard ou blette ,
 Salade ,
-Persil',1),
+Persil','Farine',1),
 
 ('Theodore_Planas-Rastoin','Théodore','Planas-Rastoin','Meyreuil','Ce jeune paysan-boulanger de 30 ans a plus d’une corde à son arc ; il cultive ses propres céréales, pétrit manuellement un pain bio à base de blés de variétés anciennes.
 Passionné d’authenticité et respectueux de biodynamie, Théodore fait revivre les terres familiales,  y plante des céréales et installe un vignoble qu’il travaille à la main dans le plus strict respect des règles Bio et laboure avec un cheval.
@@ -40,7 +40,7 @@ Mais quel régal pour nos papilles.
 
 On parle d''eux
 https://www.pressreader.com/france/la-revue-du-vin-de-france/20150213/283948881028213
-https://domaine-rochefontaine.com/actualite/','Farine , Pain',1),
+https://domaine-rochefontaine.com/actualite/','Farine , test',1),
 
 ('Sylvain_Apostolo','Sylvain','Apostolo','Le Jas du Vignal','La ferme du Jas du Vignal se situe à Sillans-la-cascade, petit village du haut-var entre Draguignan et Brignoles. 
 « Les 200 brebis de race Lacaune pâturent dans les collines et les prés toute l’année suivant les conditions climatiques et nous offrent un lait onctueux, aromatique et délicat.
