@@ -21,6 +21,13 @@ section .contact {
     width: 50%;
     flex-direction: column;
 
+    a {
+      color: $last-color;
+      font-size: 1.5em;
+      margin: 1em 0;
+      text-decoration: underline;
+    }
+
     p {
       color: $last-color;
       font-size: 1.5em;

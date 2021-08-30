@@ -8,8 +8,7 @@ const Contact = () => (
       <h1 className="page-title">Contact</h1>
       <div className="contact-div">
         <div className="contact-p">
-          <p>04 94 62 80 15</p>
-          <p>amaplaseynesurmer@hotmail.fr</p>
+          <a href="mailto:amaplaseynesurmer@hotmail.fr">amaplaseynesurmer@hotmail.fr</a>
           <p>64 Chemin Aimé Genoud 83500 La Seyne-sur-Mer</p>
         </div>
         <div className="contact-api-div">
